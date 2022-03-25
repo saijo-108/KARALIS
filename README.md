@@ -66,5 +66,4 @@ README〜ER図作成 : 3/25 〆切
 https://www.figma.com/file/sA4mDfDNVGTelE5aYOK7V9/KARALIS%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0%3A1
 
 ## ER図
-
-https://drive.google.com/file/d/1pnS8ye4LOnkf64cFcMmAlowSZh-7L5rK/view?usp=sharing
+https://drive.google.com/file/d/1V5Z9oEObnO-8dXtsp-iB-VgP986EbSdH/view?usp=sharing
