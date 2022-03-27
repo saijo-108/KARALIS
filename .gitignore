@@ -26,5 +26,5 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-#Ignore uploaded files in development 
+#Ignore uploaded files in development  
 /config/database.yml
