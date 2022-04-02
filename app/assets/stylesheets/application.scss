@@ -1,3 +1,39 @@
 @import 'bootstrap';
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+// ヘッダー
+header {
+    width: 100%;
+    align-items: center;
+  
+    .logo {
+      width: 50%;
+      padding-top: 10px;
+    }
+  }
+  
+  // フッター
+  footer {
+    position: absolute;
+    bottom: 0;
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    height: auto;
+    background-color: rgba(19,20,19,0.9);
+    box-shadow: black;
+  
+    p {
+      display: inline;
+    }
+  
+    .text-copyright p {
+      color: white;
+    }
+  }
+  
+  .text-color {
+    color: white;
+  }
