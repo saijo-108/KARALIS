@@ -7,11 +7,11 @@ body {
 .wrapper {
   width: 645px;
   height: 438px;
-  background: rgba(249,253,255,1);
+  background: rgb(255, 255, 255);
   opacity: 1;
   position: relative;
-  top: 0px;
-  left: 20pxpx;
+  top: 250px;
+  left: 600px;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   border-bottom-left-radius: 7px;
@@ -52,7 +52,7 @@ body {
   text-align: center;
   position: relative;
   opacity: 1;
-  top: 200px;
+  top: 98px;
   left: 60px;
   border: 1px solid rgba(112,112,112,1);
   border-top-left-radius: 4px;
@@ -72,7 +72,7 @@ body {
 .line_icon {
   opacity: 1;
   position: absolute;
-  top: 205px;
+  top: 190px;
   left: 66px;
   overflow: hidden;
   z-index: 2;
@@ -144,7 +144,7 @@ body {
   width: 150px;
   color: rgba(0,0,0,1);
   position: absolute;
-  top: 339px;
+  top: 346px;
   left: 247px;
   font-family: Roboto;
   font-weight: Regular;
@@ -174,11 +174,8 @@ body {
 }
 .register_btn {
   width: 165px;
-  height: 42px;
   background: rgba(255,251,251,1);
   opacity: 1;
-  top: 375px;
-  left: 240px;
   border: 1px solid rgba(0,0,0,0.36000001430511475);
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
@@ -233,3 +230,13 @@ body {
   left: 400px;
 }
 
+button.close {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.logo2 {
+  height: 60px;
+  margin-top: 28px;
+  margin-left: 206px;
+}
