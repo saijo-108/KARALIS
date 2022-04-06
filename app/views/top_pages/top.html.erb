@@ -7,5 +7,28 @@
     <h1>『好き』を共有しよう</h1>
   </div>
 </div>
+<%= render("sign_up") %>
 
 <%= render("login") %>
+
+<script>
+    $(function(){
+        $('#register').on('click', function() {
+            changeModal('loginModal', 'signUpModal');
+        });
+        function changeModal(beforeModal, afterModal) {
+            $('#'+beforeModal).modal( 'hide' );
+            $('#'+afterModal).modal( 'hide' );
+        }
+    });
+
+    $(function(){
+        $('#to_login').on('click', function() {
+            changeModal('signUpModal', 'loginModal');
+        });
+        function changeModal(beforeModal, afterModal) {
+            $('#'+beforeModal).modal( 'hide' );
+            $('#'+afterModal).modal( 'hide' );
+        }
+    });
+</script>

@@ -1,22 +1,24 @@
-* {
-  box-sizing: border-box;
-}
+
 body {
   font-size: 14px;
 }
 .wrapper {
   width: 645px;
   height: 438px;
-  background: rgb(255, 255, 255);
+  background: url("suit.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   opacity: 1;
   position: relative;
-  top: 250px;
-  left: 600px;
+  top: 50%;
+  left: 50%;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 .login_btn {
@@ -50,9 +52,9 @@ body {
   font-weight: Regular;
   font-size: 28px;
   text-align: center;
-  position: relative;
+  position: absolute;
   opacity: 1;
-  top: 98px;
+  top: 186px;
   left: 60px;
   border: 1px solid rgba(112,112,112,1);
   border-top-left-radius: 4px;
@@ -130,7 +132,8 @@ body {
 
 .or_text{
   width: 30px;
-  color: rgba(0,0,0,0.550000011920929);
+  color: white;
+  text-shadow: 1px 1px 1px black;
   position: absolute;
   top: 193px;
   left: 305px;
@@ -142,7 +145,8 @@ body {
 }
 .new_text {
   width: 150px;
-  color: rgba(0,0,0,1);
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 1px 4px black;
   position: absolute;
   top: 346px;
   left: 247px;
@@ -154,7 +158,8 @@ body {
 }
 .forget_text {
   width: 130px;
-  color: rgba(50,166,192,1);
+  color: rgb(0, 162, 255);
+  text-shadow: 1px 1px 1px black;
   position: absolute;
   top: 301px;
   left: 480px;
@@ -183,6 +188,9 @@ body {
   border-bottom-right-radius: 2px;
   box-shadow: 2px 4px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  top: 383px;
+  left: 235px;
+  position: absolute
 }
 
 .register_btn:active {
@@ -228,6 +236,8 @@ body {
   position: absolute;
   top: 220px;
   left: 400px;
+  text-shadow: 2px 1px 9px black;
+  color: white;
 }
 
 button.close {
@@ -239,4 +249,45 @@ button.close {
   height: 60px;
   margin-top: 28px;
   margin-left: 206px;
+}
+
+.title2 {
+  width: 182px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 33px;
+  left: 245px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+  font-family: Roboto;
+  font-weight: Regular;
+  font-size: 46px;
+  opacity: 1;
+  text-align: left;
+}
+
+.singer_black2 {
+  width: 69px;
+  height: 69px;
+  background: url("singer_icon1.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 31px;
+  left: 183px;
+  overflow: hidden;
+}
+.singer_white2 {
+  width: 65px;
+  height: 65px;
+  background: url("singer_icon2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 33px;
+  left: 190px;
+  overflow: hidden;
 }
