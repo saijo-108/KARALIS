@@ -39,6 +39,15 @@ header {
     width: 50%;
     padding-top: 10px;
   }
+
+  a {
+    color: white;
+    padding-left: 10px;
+  }
+
+  .nav-item a {
+    display: inline-block;
+  }
 }
 
 // フッター
