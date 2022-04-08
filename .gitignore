@@ -28,3 +28,6 @@
 
 #Ignore uploaded files in development  
 /config/database.yml
+
+# Ignore .env File
+/.env

@@ -1,0 +1,62 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'users/registrations' %>
+<% end %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name))  do |f| %>
+
+<div class="modal" id="signUpModal" role="dialog" tabindex="-1" area-hidden="true">
+<body>
+  <div class="wrapper2">
+    <div class="background_img"></div>
+    <div class="singer_black"></div>
+    <div class="singer_white"></div>
+    <span class="description">KARALISは</br>
+                          好きな曲のリストを作成し、共有できるサービスです。</br>
+                          無料会員登録して「好き」を共有しよう！</span>
+    <span class="login">すでに登録済みの方は<%= link_to 'こちら', '#', "data-toggle": "modal", "data-target": "#loginModal", id:"to_login" %></span>
+    <span class="or">or</span>
+    <span class="title">KARALIS</span>
+    <button type="button" data-dismiss="modal" aria-label="Close" class="close2">
+      <span>×</span>
+    </button>
+    <%- if devise_mapping.omniauthable? %>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <%= link_to omniauth_authorize_path(resource_name, provider), method: :post do %>
+        <button class="btn LINE">LINE</button>
+      <% end %><br />
+    <% end %>
+    <% end %>
+    <div class="LINE_icon"></div>
+    <%= f.submit "登録", class:"registration"  do %>
+      <% if resource.errors.any? %>
+        <div id="error_explanation">
+        <h2>
+          <%= I18n.t("errors.messages.not_saved",
+                 count: resource.errors.count,
+                 resource: resource.class.model_name.human.downcase) %>
+        </h2>
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
+    <% end %>
+    <div class="password"></div>
+    <div class="email"></div>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"パスワード", class:"password_text2" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text2" %>
+    <div class="email_icon2"></div>
+    <div class="key_icon2"></div>
+    <div class="password2"></div>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"パスワード確認", class:"password2_text" %>
+    <div class="key2_icon"></div>
+    <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+    </div>
+  </div>
+</body>
+</div>
+<% end %>

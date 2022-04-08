@@ -1,0 +1,76 @@
+// トップページ
+.top-wrapper {
+  background-image: image-url("top.png");
+  background-repeat:  no-repeat;
+  background-position:center right;
+  background-size: 2500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .top-inner-text {
+    position: absolute;
+    top: 45%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    text-align: center;
+    color: white;
+    width: 60%;
+
+    @media screen and (max-width: 767px) {
+      font-size: 2.0rem;
+    }
+  }
+}
+
+// ヘッダー
+header {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+
+  .logo {
+    width: 50%;
+    padding-top: 10px;
+  }
+
+  a {
+    color: white;
+    padding-left: 10px;
+  }
+
+  .nav-item a {
+    display: inline-block;
+  }
+}
+
+// フッター
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-top: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  height: auto;
+  background-color: rgba(19,20,19,0.9);
+  box-shadow: black;
+
+  p {
+    display: inline;
+  }
+
+  .text-copyright p {
+    color: white;
+  }
+}
+
+.text-color {
+  color: white;
+}
