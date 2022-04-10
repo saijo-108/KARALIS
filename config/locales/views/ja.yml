@@ -1,0 +1,20 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '無料新規登録'
+    logout: 'ログアウト'
+    mylist: 'マイリスト'
+    mypage: 'マイページ'
+    make_group: 'グループ作成'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+  lists:
+    index:
+      title: 'リスト一覧'
+    new:
+      title: 'リスト作成'
+  group:
+    index:
+      title: 'グループ一覧'

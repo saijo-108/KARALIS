@@ -48,6 +48,10 @@ header {
   .nav-item a {
     display: inline-block;
   }
+
+  @media (min-width: 100px) {
+    width: 100%;
+  }
 }
 
 // フッター

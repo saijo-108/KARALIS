@@ -13,19 +13,14 @@
           <a href='#' class='nav-link dropdown-toggle text-color' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
             使用方法
           </a>
-
-          <div class='dropdown-menu dropdown-menu-right'>
-            <%= link_to '掲示板一覧', '#', class: 'dropdown-item' %>
-            <%= link_to '掲示板作成', '#', class: 'dropdown-item' %>
-          </div>
         </li>
 
         <li class='nav-item ml-5'>
-          <%= link_to '無料会員登録', '#', class: 'nav-link text-color', "data-toggle": "modal", "data-target": "#signUpModal" %>
+          <%= link_to (t 'defaults.register'), '#', class: 'nav-link text-color', "data-toggle": "modal", "data-target": "#signUpModal" %>
         </li>
 
         <li class='nav-item ml-5'>
-          <%= link_to 'ログイン', '#', class: 'nav-link text-color', "data-toggle": "modal", "data-target": "#loginModal" %>
+          <%= link_to (t 'defaults.login'), '#', class: 'nav-link text-color', "data-toggle": "modal", "data-target": "#loginModal" %>
         </li>
       </ul>
     </div>

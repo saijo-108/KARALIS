@@ -53,9 +53,9 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"パスワード確認", class:"password2_text" %>
     <div class="key2_icon"></div>
     <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"ユーザーネーム", class: "name" %>
     </div>
+    <div class="name_icon"></div>
   </div>
 </body>
 </div>

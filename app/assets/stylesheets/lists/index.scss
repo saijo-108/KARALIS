@@ -1,0 +1,14 @@
+body {
+    background-image: image-url("top.png");
+    background-repeat:  no-repeat;
+    background-position:center right;
+    height: 100vh;
+
+    .top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}
+
