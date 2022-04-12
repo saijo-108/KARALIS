@@ -6,6 +6,12 @@ ja:
     mylist: 'マイリスト'
     mypage: 'マイページ'
     make_group: 'グループ作成'
+  devise:
+    login_success: 'ログインしました'
+    login_fail: 'ログインに失敗しました'
+    logout_success: 'ログアウトしました'
+    new_success: 'KARALISへようこそ'
+    new_fail: 'ユーザー登録に失敗しました'
   users:
     new:
       title: 'ユーザー登録'

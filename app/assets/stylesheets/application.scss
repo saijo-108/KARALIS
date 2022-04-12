@@ -3,7 +3,7 @@
 @import "font-awesome";
 
 // ヘッダー
-header {
+  header {
     width: 100%;
     align-items: center;
   
@@ -36,4 +36,26 @@ header {
   
   .text-color {
     color: white;
+  }
+
+// フラッシュメッセージ
+  .alert {
+    background-color: white;
+    color: red;
+    position: absolute;
+    padding: 0px;
+    border: 0px;
+    margin-bottom: 0px;
+    top: 14px;
+    left: 724px;
+    font-size: 20px;
+  }
+
+  .notice {
+    background-color: white;
+    position: absolute;
+    color: blue;
+    top: 14px;
+    left: 724px;
+    font-size: 20px;
   }
