@@ -3,7 +3,9 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+//= require jquery.validationEngine-en
+//= require jquery.validationEngine
+//= require jquery.validationEngine-ja.js
 //= require_tree .
 
 $(function(){

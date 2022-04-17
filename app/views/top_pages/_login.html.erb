@@ -2,7 +2,7 @@
     <%= stylesheet_link_tag 'users/sessions' %>
 <% end %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { id: "login_validate" }) do |f| %>
   <%= render "shared/error_messages", resource: resource %>
   <div class="modal" id="loginModal" role="dialog" tabindex="-1" area-hidden="true">
   <div class="wrapper">
@@ -23,8 +23,8 @@
           <% end %><br />
         <% end %>
       <% end %>
-      <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class:"password_text" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class:"password_text validate[required]" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text validate[required]" %>
       <span class="or_text">or</span>
       <span class="new_text">はじめての方はこちら</span>
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>

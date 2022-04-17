@@ -1,0 +1,10 @@
+<h1>Lists</h1>
+<p>新しくリストを作成するページ</p>
+
+<%= form_for @list do |f| %>
+  <p>
+    <%= f.label :name,"リスト" %>
+    <%= f.text_field :name %>
+  </p>
+  <%= f.submit %>
+<% end %>

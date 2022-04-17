@@ -1,0 +1,26 @@
+<div class="col-sm-12 mb-3">
+  <div id="list-id-<%= list.id %>">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          <a href="#">
+            <%= list.name %>
+          </a>
+        </h4>
+        <div class='mr10 float-right'>
+          <a href="#"><%= icon 'fas', 'trash', class: 'pr-1' %></a>
+          <a href="#"><%= icon 'fa', 'pen' %></a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <%= icon 'far', 'user' %>
+          </li>
+          <li class="list-inline-item">
+            <%= icon 'far', 'calendar' %>
+            <%= l list.created_at, format: :long %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
