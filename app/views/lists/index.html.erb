@@ -4,12 +4,6 @@
 
 
 <div class="new">
-  <%= link_to "#" do %>
-    <div class="button new-button new-group">
-      <span>新しくグループを作成する</span>
-    </div>
-  <% end %>
-
   <%= link_to new_list_path do %>
     <div class="button new-button new-list">
       <span>新しくリストを作成する</span>
@@ -18,25 +12,18 @@
 </div>
 
 <div class="flex">
-  <div class="group">
-    <div class="group-head">
-      グループ一覧
-    </div>
-    <% if @lists.present? %>
-      <%= render @lists %>
-      <% else %>
-      <p><%= t('グループがありません') %></p>
-    <% end %>
-  </div>
-
   <div class="list">
-    <div class="list-head">
-      リスト一覧
+    <div class="list-wrapper">
+      <div class="list-head">
+        リスト一覧
+      </div>
+      <div class="playlist">
+        <% if @lists.present? %>
+          <%= render @lists %>
+          <% else %>
+          <p><%= t('リストがありません') %></p>
+        <% end %>
+      </div>
     </div>
-    <% if @lists.present? %>
-      <%= render @lists %>
-      <% else %>
-      <p><%= t('リストがありません') %></p>
-    <% end %>
   </div>
 </div>

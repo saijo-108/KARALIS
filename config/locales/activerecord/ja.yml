@@ -10,3 +10,5 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         user_name: 'ユーザーネーム'
+      list:
+        name: 'リスト名'

@@ -15,3 +15,7 @@ $(function(){
 $(function(){
     $('.notice').fadeOut(6000);  //４秒かけて消えていく
 });
+
+$(function(){
+    $('.success').fadeOut(6000);  //４秒かけて消えていく
+});

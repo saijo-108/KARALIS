@@ -1,0 +1,38 @@
+<%= form_with model: list, local: true do |f| %>
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form', placeholder:"リスト名" %>
+    <div class="list-table">
+      <table>
+      <tr>
+        <th class="preview-length">プレビュー</th>
+        <th class="song-length">曲名</th>
+        <th class="artist-length">アーティスト</th>
+        <th class="time-length">時間</th>
+        <th class="short">非公開</th>
+      </tr>
+      <tr>
+        <td class="icon bird">トリさん</td>
+        <td>空を飛ぶこと</td>
+        <td>グリーン</td>
+        <td>山</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td class="icon whale">クジラさん</td>
+        <td>潮を吹くこと</td>
+        <td>ブルー</td>
+        <td>海</td>
+        <td>a</td>
+      </tr>
+      <tr>
+        <td class="icon crab">カニさん</td>
+        <td>反復横飛び</td>
+        <td>レッド</td>
+        <td>川</td>
+        <td>a</td>
+      </tr>
+      </table>
+    </div>
+    <%= f.submit "作成", class: 'btn btn-primary register' %>
+  </div>
+<% end %>

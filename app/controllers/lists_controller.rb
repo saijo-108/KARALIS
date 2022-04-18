@@ -6,14 +6,18 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
-    @list.user_id = current_user.id
-    @list.save
-    redirect_to lists_path
+    @list = current_user.lists.build(list_params)
+    if @list.save
+      redirect_to lists_path
+      flash[:success] = "リストを作成しました"
+    else
+      flash.now['alert'] = " リストが作成できませんでした"
+      render :new
+    end
   end
 
   def index
-    @lists = List.all.includes(:user).order(created_at: :desc)
+    @lists = List.all.includes(:user).order(created_at: :asc)
   end
 
   def show

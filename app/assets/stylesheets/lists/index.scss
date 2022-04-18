@@ -70,13 +70,6 @@ body {
       transform: translateY(4px);
     }
 
-    .group-head {
-      font-size: 40px;
-      color: white;
-      padding-left: 30px;
-      text-align: center;
-    }
-
     .flex {
       display: flex;
     }
@@ -88,12 +81,37 @@ body {
       text-align: center;
     }
 
-    .group {
-      width: 50%;
+    .list {
+      width: 100%;
+      margin: 0 auto;
     }
 
-    .list {
-      width: 50%;
+    .list-wrapper {
+      border: solid;
+      border-color: rgb(255, 255, 255);
+      background-color: rgba(44, 39, 39, 0.552);
+      height: 67vh;
+      margin: 20px;
+    }
+
+    .playlist {
+      display: flex;
+      height: 67vh;
+      width: 100%;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .song {
+      color: white;
+      margin: 10px;
+      height: 10vh;
+      width: 30%;
+      text-align: center;
+    }
+
+    .center {
+      display: inline-block;
     }
 }
 

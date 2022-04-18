@@ -1,10 +1,11 @@
-<h1>Lists</h1>
-<p>新しくリストを作成するページ</p>
-
-<%= form_for @list do |f| %>
-  <p>
-    <%= f.label :name,"リスト" %>
-    <%= f.text_field :name %>
-  </p>
-  <%= f.submit %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'lists/new' %>
 <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <%= render 'form', { list: @list } %>
+    </div>
+  </div>
+</div>
