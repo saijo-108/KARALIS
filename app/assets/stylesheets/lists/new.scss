@@ -9,7 +9,7 @@ body {
     }
     .form {
       font-size: 1rem;
-      width: 50%;
+      width: 30%;
       height: 4vh;
     }
 
@@ -21,8 +21,8 @@ body {
     .list-table {
         color: white;
         margin-top: 100px;
-        margin-right: calc(50% - 35vw);
-        margin-left: calc(50% - 35vw);
+        margin-right: calc(50% - 43vw);
+        margin-left: calc(50% - 43vw);
     }
 
     table{
@@ -39,7 +39,10 @@ body {
         text-align: center;
         padding: 15px 0;
     }
-    
+
+    td {
+        width: 20%;
+    }
 
 
     .register {
@@ -52,5 +55,22 @@ body {
 
     .long {
         width: 35%;
+    }
+
+    .preview-length {
+        width: 10%;
+    }
+
+    .artist-length {
+        width: 20%;
+    }
+
+    .position {
+        margin-top: 2%;
+    }
+
+    .white_text{
+        color: white;
+        font-size: 3rem;
     }
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_14_143204) do
+ActiveRecord::Schema.define(version: 2022_04_20_125430) do
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "name", null: false
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2022_04_14_143204) do
     t.integer "status"
     t.integer "user_id"
     t.integer "group_id"
+    t.string "searchsong_id"
+  end
+
+  create_table "searches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.string "song_title", null: false
+    t.string "artist", null: false
+    t.integer "song_time"
+    t.bigint "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_searches_on_list_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
@@ -41,4 +52,5 @@ ActiveRecord::Schema.define(version: 2022_04_14_143204) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "searches", "lists"
 end

@@ -1,8 +1,14 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
+  require 'rspotify'
+  require 'open-uri'
+
+  ENV['ACCEPT_LANGUAGE'] = "ja"
+  
+  RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
   def new
-    @list = List.new
+    @list = current_user.lists.build(search_params)
   end
 
   def create
@@ -25,9 +31,20 @@ class ListsController < ApplicationController
     @user = @list.user
   end
 
+  def search
+    if params[:search].present?
+      @searchsongs = RSpotify::Track.search(params[:search]).first(10)
+    end
+    @list = List.new
+  end
+
   private
 
   def list_params
-    params.require(:list).permit(:name)
+    params.permit(:name, :searchsong_id, :song_title, :artist, :preview)
+  end
+
+  def search_params
+    params.permit(:searchsong_id, :artist, :preview, :song_title)
   end
 end
