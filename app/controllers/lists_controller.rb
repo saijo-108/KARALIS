@@ -35,13 +35,23 @@ class ListsController < ApplicationController
     if params[:search].present?
       @searchsongs = RSpotify::Track.search(params[:search]).first(10)
     end
-    @list = List.new
+  end
+
+  def destroy
+    list = List.find(params[:id])
+    list.destroy!
+    redirect_to lists_path, success: "削除しました！"
+  end
+
+  private
+
+  def board_params
   end
 
   private
 
   def list_params
-    params.permit(:name, :searchsong_id, :song_title, :artist, :preview)
+    params.require(:list).permit(:name, :searchsong_id, :song_title, :artist, :preview)
   end
 
   def search_params

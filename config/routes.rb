@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "omniauth_callbacks"
   }
   root 'top_pages#top'
-  resources :lists, only: [:index, :new, :show, :create] do
+  resources :lists do
     collection do
       get 'search'
     end
