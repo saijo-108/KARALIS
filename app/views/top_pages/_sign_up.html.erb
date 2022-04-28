@@ -2,8 +2,8 @@
   <%= stylesheet_link_tag 'users/registrations' %>
 <% end %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name))  do |f| %>
-
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { id: "validate_id" }) do |f| %>
+  <%= render "shared/error_messages", resource: resource %>
 <div class="modal" id="signUpModal" role="dialog" tabindex="-1" area-hidden="true">
 <body>
   <div class="wrapper2">
@@ -45,17 +45,17 @@
     <% end %>
     <div class="password"></div>
     <div class="email"></div>
-      <%= f.password_field :password, autocomplete: "new-password", placeholder:"パスワード", class:"password_text2" %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text2" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"パスワード", class:"password_text2 validate[required]" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text2 validate[required]" %>
     <div class="email_icon2"></div>
     <div class="key_icon2"></div>
     <div class="password2"></div>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"パスワード確認", class:"password2_text" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"パスワード確認", class:"password2_text validate[required]" %>
     <div class="key2_icon"></div>
     <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder:"ユーザーネーム", class: "name" %>
     </div>
+    <div class="name_icon"></div>
   </div>
 </body>
 </div>

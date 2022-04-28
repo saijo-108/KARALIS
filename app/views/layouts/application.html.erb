@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
     <% if user_signed_in? %>
       <%= render 'shared/header' %>
     <% else %>
@@ -18,5 +21,15 @@
     <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
+    <body>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+  jQuery("#validate_id").validationEngine();
+});
+jQuery(document).ready(function(){
+  jQuery("#login_validate").validationEngine();
+});
+</script>
+</body>
   </body>
 </html>

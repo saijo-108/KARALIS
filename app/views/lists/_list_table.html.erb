@@ -1,0 +1,18 @@
+<div class="list_wrapper">
+  <ul class="list_header">
+    <li>プレビュー</li>
+    <li>曲名</li>
+    <li>アーティスト</li>
+    <li>非公開</li>
+  </ul>
+  <div class="list_content">
+    <% @song.each_with_index do |song, i| %>
+        <ul class="list">
+            <li class="index"><%= i+1 %>.</li>
+            <li class="preview">preview</li>
+            <li class="song_title"><%= song.song_title %></li>
+            <li class="artist"><%= song.artist %></li>
+            <li class="status"><input type="checkbox" id="status" name="status"></li>
+        </ul>
+    <% end %>
+  </div>

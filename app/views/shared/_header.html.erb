@@ -14,15 +14,16 @@
             使用方法
           </a>
 
-          <a href='#' class='menu nav-link dropdown-toggle text-color ml-5' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+          <a href='#' class='menu dropdown-toggle text-color ml-5' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
             メニュー
           </a>
 
           <div class='dropdown-menu dropdown-menu-right'>
-            <%= link_to 'マイリスト', lists_path, class: 'dropdown-item' %>
-            <%= link_to 'グループ作成', '#', class: 'dropdown-item' %>
-            <%= link_to 'マイページ', '#', class: 'dropdown-item' %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'dropdown-item logout' %>
+            <%= link_to (t 'defaults.home'), lists_path, class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.make_group'), '#', class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.make_list'), new_list_path, class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.mypage'), '#', class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, class: 'dropdown-item logout' %>
           </div>
         </li>
         

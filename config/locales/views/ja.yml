@@ -1,0 +1,27 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '無料新規登録'
+    logout: 'ログアウト'
+    home: 'ホーム'
+    mypage: 'マイページ'
+    make_group: 'グループ作成'
+    make_list: 'リスト作成'
+  devise:
+    login_success: 'ログインしました'
+    login_fail: 'ログインに失敗しました'
+    logout_success: 'ログアウトしました'
+    new_success: 'KARALISへようこそ'
+    new_fail: 'ユーザー登録に失敗しました'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+  lists:
+    index:
+      title: 'リスト一覧'
+    new:
+      title: 'リスト作成'
+  group:
+    index:
+      title: 'グループ一覧'

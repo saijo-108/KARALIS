@@ -1,9 +1,9 @@
 <% content_for :css do %>
-  <%= stylesheet_link_tag 'users/sessions' %>
+  <%= stylesheet_link_tag 'another/sign_up' %>
 <% end %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+  
 <div class="wrapper">
     <div class="login_text">
       <%= f.submit "ログイン", class:"login_btn" %>

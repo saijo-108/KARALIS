@@ -1,0 +1,117 @@
+body {
+    background-image: image-url("top.png");
+    background-repeat:  no-repeat;
+    background-position:center right;
+    height: 100vh;
+
+    .wrapper {
+      margin: 0 10px 0 10px;
+    }
+
+    .new-button {
+      margin: 30px;
+    }
+
+    .button{
+      /*影の基点とするためrelativeを指定*/
+      position: relative;
+        /*ボタンの形状*/
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      background: transparent;
+      border-radius: 25px;
+      border: solid 1px #333;
+      outline: none;
+        /*アニメーションの指定*/
+      transition: all 0.2s ease;
+    }
+    
+    /*hoverをした後のボタンの形状*/
+    .button:hover{
+      border-color:transparent; 
+    }
+    
+    /*ボタンの中のテキスト*/
+    .button span {
+      position: relative;
+      z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+        /*テキストの形状*/
+      display: block;
+      padding: 10px 30px;
+      background:rgb(104, 182, 221);
+      border-radius: 25px;
+      color:#333;
+        /*アニメーションの指定*/
+      transition: all 0.3s ease;
+    }
+    
+    /*== 下に押し込まれる（立体が平面に） */
+    
+    /*影の設定*/
+    .button:before {
+        content:"";
+        /*絶対配置で影の位置を決める*/
+      position: absolute;
+      z-index: -1;
+      top:3px;
+      left:2px;
+        /*影の形状*/
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      background-color: #333;
+    }
+    
+    /*hoverの際にY軸に4pxずらす*/
+    .button:hover span {
+      background-color: rgb(51, 33, 140);
+      color: #fff;
+      transform: translateY(4px);
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .list-head {
+      font-size: 40px;
+      color: white;
+      padding-left: 30px;
+      text-align: center;
+    }
+
+    .list {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .list-wrapper {
+      border: solid;
+      border-color: rgb(255, 255, 255);
+      background-color: rgba(44, 39, 39, 0.552);
+      height: 67vh;
+      margin: 20px;
+    }
+
+    .playlist {
+      display: flex;
+      height: 67vh;
+      width: 100%;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .song {
+      color: white;
+      margin: 10px;
+      height: 10vh;
+      width: 30%;
+      text-align: center;
+    }
+
+    .center {
+      display: inline-block;
+    }
+}
+

@@ -1,0 +1,25 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'lists/new' %>
+<% end %>
+
+<div class="list_form">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 white_text">
+      <div class="list_title"><%= @list.name %></div>
+    </div>
+  </div>
+</div>
+
+<div class="text_right">
+  <%= link_to "曲を探す", new_list_song_path(@list.id) %>
+</div>
+
+<%= render "list_table" %>
+
+<%= form_with model: @list, class:"text_center", local: true do |f| %>
+  <%= f.submit "作成", class: 'btn btn-primary register' %>
+<% end %>
+
+<div class="text_right">
+  <%= link_to 'リストを削除', list_path(@list.id), method: :delete %>
+</div>

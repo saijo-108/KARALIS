@@ -1,0 +1,61 @@
+body {
+    background-image: image-url("top.png");
+    background-repeat:  no-repeat;
+    background-position:center right;
+    height: 100vh;
+
+    h1 {
+        color: white;
+        text-align: center;
+    }
+
+    .search {
+        text-align: center;
+    }
+
+    .form1 {
+        margin-bottom: 30px;
+    }
+
+    .result {
+        text-align: center;
+        margin: 28px;
+        width: 16%;
+    }
+
+    .song-name {
+        color: white;
+        margin-top: 20px;
+        font-size: 25px;
+    }
+
+    .song-title {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: calc(50% - 48vw);
+    }
+
+    .artist-name {
+        font-size: 15px;
+    }
+
+    .spotify {
+
+        .spotify iframe {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+        }
+    }
+
+    .color {
+        color: white;
+    }
+
+    .white_text{
+        color: white;
+    }
+}

@@ -9,24 +9,30 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    self.resource = warden.authenticate!(auth_options)
+    if sign_in(resource_name, resource)
+      flash[:notice] = "ログインしました"
+      redirect_to lists_path
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
   #   super
   # end
 
-  # protected
-
-  def after_sign_in_path_for(resource)
-    lists_path
+  def failed
+    flash[:alert] = "メールアドレスまたはパスワードが違います"
+    redirect_to root_path
   end
 
-  def after_sign_out_path_for(resource)
-    root_path
+  protected
+
+  def auth_options
+    { scope: resource_name, recall: "#{controller_path}#failed" }
   end
+
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

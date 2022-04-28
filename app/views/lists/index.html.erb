@@ -1,1 +1,29 @@
-<a>これはリスト一覧のページです</a>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'lists/index' %>
+<% end %>
+
+
+<div class="new">
+  <%= link_to new_list_path do %>
+    <div class="button new-button new-list">
+      <span>新しくリストを作成する</span>
+    </div>
+  <% end %>
+</div>
+
+<div class="flex">
+  <div class="list">
+    <div class="list-wrapper">
+      <div class="list-head">
+        リスト一覧
+      </div>
+      <div class="playlist">
+        <% if @lists.present? %>
+          <%= render @lists %>
+          <% else %>
+          <p><%= t('リストがありません') %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
