@@ -2,56 +2,24 @@
   <%= stylesheet_link_tag 'lists/new' %>
 <% end %>
 
-<%= form_with model: @list, local: true do |f| %>
-    <div class="form-group">
-      <% if @list.searchsong_id.present? %>
-        <div class="white_text"><%= @list.name %></div>
-        <div class="list-table">
-          <%= form_with model: @list, class: 'text-light', local: true do  |f| %>
-            <table>
-            <tr>
-              <th class="preview-length">プレビュー</th>
-              <th class="song-length">曲名</th>
-              <th class="artist-length">アーティスト</th>
-              <th class="short">非公開</th>
-            </tr>
-            <tr>
-              <td></td>
-              <td><%= @list.song_title %></td>
-              <td><%= @list.artist %></td>
-              <td></td>
-              <td><%= render 'crud_menus', list: @list %></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            </table>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="list-table">
-          <table>
-          <tr>
-            <th class="preview-length">プレビュー</th>
-            <th class="song-length">曲名</th>
-            <th class="artist-length">アーティスト</th>
-            <th class="short">非公開</th>
-          </tr>
-          </table>
-        </div>
-      <% end %>
+<div class="list_form">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2 white_text">
+      <div class="list_title"><%= @list.name %></div>
     </div>
-  <% end %>
-  
-  <%= link_to '削除', list_path(@list.id), method: :delete %>
+  </div>
+</div>
+
+<div class="text_right">
+  <%= link_to "曲を探す", new_list_song_path(@list.id) %>
+</div>
+
+<%= render "list_table" %>
+
+<%= form_with model: @list, class:"text_center", local: true do |f| %>
+  <%= f.submit "作成", class: 'btn btn-primary register' %>
+<% end %>
+
+<div class="text_right">
+  <%= link_to 'リストを削除', list_path(@list.id), method: :delete %>
+</div>

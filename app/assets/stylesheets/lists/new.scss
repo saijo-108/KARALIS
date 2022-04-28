@@ -18,51 +18,17 @@ body {
         opacity: 0.3;
     }
 
-    .list-table {
-        color: white;
-        margin-top: 100px;
-        margin-right: calc(50% - 43vw);
-        margin-left: calc(50% - 43vw);
+    .text_right {
+        text-align: right;
+        margin-bottom: 20px;
     }
 
-    table{
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-    }
-    
-    table tr{
-        border-bottom: solid 1px #eee;
-    }
-    
-    table th,table td{
+    .text_center {
         text-align: center;
-        padding: 15px 0;
     }
-
-    td {
-        width: 20%;
-    }
-
 
     .register {
         margin-top: 200px;
-    }
-
-    .short {
-        width: 10%;
-    }
-
-    .long {
-        width: 35%;
-    }
-
-    .preview-length {
-        width: 10%;
-    }
-
-    .artist-length {
-        width: 20%;
     }
 
     .position {
@@ -72,5 +38,54 @@ body {
     .white_text{
         color: white;
         font-size: 3rem;
+    }
+
+    .list_title {
+        text-align: center;
+    }
+
+// リスト関連
+    .list_wrapper {
+        .list_header {
+            color: white;
+            background-color: black;
+            text-align: center;
+            list-style: none;
+            width: 90%;
+            margin: auto;
+            height: 4vh;
+            line-height: 4vh;
+            font-size: large;
+
+            li {
+                display: inline;
+            }
+        }
+        .list_content {
+            color: white;
+            background-color: rgba(51, 228, 149, 0.47);
+            text-align: center;
+            width: 90%;
+            margin: auto;
+            font-size: large;
+
+            ul {
+                list-style: none;
+
+                li {
+                    display: inline;
+                    height: 4vh;
+                    line-height: 4vh;
+                }
+            }
+
+            .list {
+                border-bottom: 1px solid rgb(0, 0, 0);
+                width: 100%;
+                height: 7vh;
+                line-height: 7vh;
+                margin-bottom: 0;
+            }
+        }
     }
 }

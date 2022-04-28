@@ -8,13 +8,13 @@ class ListsController < ApplicationController
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
   def new
-    @list = current_user.lists.build(search_params)
+    @list = current_user.lists.build
   end
 
   def create
     @list = current_user.lists.build(list_params)
     if @list.save
-      redirect_to lists_path
+      redirect_to list_path(@list.id)
       flash[:success] = "リストを作成しました"
     else
       flash.now['alert'] = " リストが作成できませんでした"
@@ -29,6 +29,10 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @user = @list.user
+    @songs = Song.all
+    @song = @songs.select do |x|
+      x.list_id == @list.id
+    end
   end
 
   def search
@@ -45,16 +49,8 @@ class ListsController < ApplicationController
 
   private
 
-  def board_params
-  end
-
-  private
-
   def list_params
-    params.require(:list).permit(:name, :searchsong_id, :song_title, :artist, :preview)
+    params.require(:list).permit(:name, :id)
   end
 
-  def search_params
-    params.permit(:searchsong_id, :artist, :preview, :song_title)
-  end
 end
