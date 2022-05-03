@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
   root 'top_pages#top'
   resources :lists do
-    resources :songs, only: [:create, :index, :new]
+    resources :songs
     collection do
       get 'search'
     end

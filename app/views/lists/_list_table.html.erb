@@ -1,18 +1,26 @@
 <div class="list_wrapper">
   <ul class="list_header">
-    <li>プレビュー</li>
-    <li>曲名</li>
-    <li>アーティスト</li>
-    <li>非公開</li>
+    <li class="index1"></li>
+    <li class="preview1">プレビュー</li>
+    <li class="song_title1">曲名</li>
+    <li class="artist1">アーティスト</li>
+    <li class="status1">非公開</li>
+    <li class="save1"></li>
+    <li class="delete1"></li>
   </ul>
   <div class="list_content">
     <% @song.each_with_index do |song, i| %>
+      <%= form_with model: [@list, song], local: true do |f| %>
         <ul class="list">
             <li class="index"><%= i+1 %>.</li>
-            <li class="preview">preview</li>
+            <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
             <li class="song_title"><%= song.song_title %></li>
             <li class="artist"><%= song.artist %></li>
-            <li class="status"><input type="checkbox" id="status" name="status"></li>
+            <li class="status"><%= f.check_box :status, {}, "nonrelease", "release" %></li>
+            <li class="save"><%= f.submit "保存" %></li>
+            <li class="delete"><%= link_to '削除', list_song_path(song.list_id, song.id), class:"text_red", method: :delete %></li>
         </ul>
+      <% end %>
     <% end %>
   </div>
+

@@ -7,10 +7,20 @@ body {
     .form-group {
       text-align: center;
     }
+
+    .row {
+        margin-right: 0;
+    }
+
+    .field_with_errors {
+        display: contents;
+    }
+
     .form {
       font-size: 1rem;
       width: 30%;
       height: 4vh;
+      margin-right: 10px;
     }
 
     input::placeholder {
@@ -28,7 +38,7 @@ body {
     }
 
     .register {
-        margin-top: 200px;
+        margin-top: -4px;
     }
 
     .position {
@@ -42,50 +52,5 @@ body {
 
     .list_title {
         text-align: center;
-    }
-
-// リスト関連
-    .list_wrapper {
-        .list_header {
-            color: white;
-            background-color: black;
-            text-align: center;
-            list-style: none;
-            width: 90%;
-            margin: auto;
-            height: 4vh;
-            line-height: 4vh;
-            font-size: large;
-
-            li {
-                display: inline;
-            }
-        }
-        .list_content {
-            color: white;
-            background-color: rgba(51, 228, 149, 0.47);
-            text-align: center;
-            width: 90%;
-            margin: auto;
-            font-size: large;
-
-            ul {
-                list-style: none;
-
-                li {
-                    display: inline;
-                    height: 4vh;
-                    line-height: 4vh;
-                }
-            }
-
-            .list {
-                border-bottom: 1px solid rgb(0, 0, 0);
-                width: 100%;
-                height: 7vh;
-                line-height: 7vh;
-                margin-bottom: 0;
-            }
-        }
     }
 }

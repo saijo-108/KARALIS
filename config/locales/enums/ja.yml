@@ -1,0 +1,6 @@
+ja:
+  enums: 
+    song:
+      status:
+        release: '公開'
+        nonrelease: '非公開'

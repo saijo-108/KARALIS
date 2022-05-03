@@ -26,4 +26,8 @@ class User < ApplicationRecord
     self.raw_info = raw_info.to_json
     self.save!
   end
+
+  def own?(object)
+    id == object.user_id
+  end
 end

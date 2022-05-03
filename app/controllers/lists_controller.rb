@@ -1,9 +1,8 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_list, only: [:edit, :update, :destroy]
   require 'rspotify'
   require 'open-uri'
-
-  ENV['ACCEPT_LANGUAGE'] = "ja"
   
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
@@ -35,22 +34,31 @@ class ListsController < ApplicationController
     end
   end
 
-  def search
-    if params[:search].present?
-      @searchsongs = RSpotify::Track.search(params[:search]).first(10)
-    end
+  def destroy
+    @list.destroy!
+    redirect_to lists_path, success: "削除しました！"
   end
 
-  def destroy
-    list = List.find(params[:id])
-    list.destroy!
-    redirect_to lists_path, success: "削除しました！"
+  def edit; end
+
+  def update
+    if @list.update(list_params)
+      redirect_to @list
+      flash[:success] = "リスト名を変更しました"
+    else
+      flash.now['danger'] = "リストを変更できません"
+      render :edit
+    end
   end
 
   private
 
   def list_params
     params.require(:list).permit(:name, :id)
+  end
+
+  def set_list
+    @list = List.find(params[:id])
   end
 
 end
