@@ -1,0 +1,238 @@
+body {
+    background-image: image-url("top.png");
+    background-repeat:  no-repeat;
+    background-position: center right;
+    height: 100vh;
+
+    .rrr {
+        margin-bottom: 10px;
+        display: flex;
+    }
+
+    .list_change {
+        .btn_cubic {
+            border-bottom: 5px solid #21366a;
+        }
+
+        .btn_cubic:hover {
+            margin-top: 3px;
+            border-bottom: 2px solid #d75b45;
+        }
+
+        .btn_radius {
+            border-radius: 100vh;
+        }
+
+        .change {
+            position: absolute;
+            top: 14%;
+            left: 72%;
+            margin-left: 55px;
+        }
+
+        .btn_back {
+            background-color: #4144a1;
+            color: white;
+            width: 10%;
+        }
+    }
+
+    .white_text{
+        color: white;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+
+        .list_title {
+            display: inline-block;
+            font-size: 4rem;
+            position: absolute;
+            left: 18%;
+            top: 10%;
+        }
+    }
+
+
+    .add {
+        margin-top: 50px;
+
+        .btn_cubic {
+            border-bottom: 5px solid #21366a;
+        }
+
+        .btn_cubic:hover {
+            margin-top: 3px;
+            border-bottom: 2px solid #88e350;
+        }
+
+        .btn_radius {
+            border-radius: 100vh;
+        }
+
+        .change {
+            position: absolute;
+            top: 14%;
+            left: 84%;
+            margin-left: 55px;
+        }
+
+        .btn_back {
+            background-color: #4144a1;
+            color: white;
+            width: 8%;
+        }
+    }
+    .text_right {
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+
+        a {
+            margin: 0 40px;
+        }
+    }
+
+    .register {
+        margin-top: 200px;
+    }
+
+    .text_red {
+        color: red;
+    }
+
+    // リスト関連
+    .list_wrapper {
+        .list_header {
+            color: white;
+            background-color: black;
+            text-align: center;
+            list-style: none;
+            width: 70%;
+            margin: auto;
+            height: 4vh;
+            line-height: 4vh;
+            font-size: large;
+            display: flex;
+            align-items: center;
+            margin-top: 60px;
+            padding: 0;
+
+            .index1 {
+                width: 5%;
+            }
+
+            .preview1 {
+                width: 20%;
+                text-align: center;
+            }
+
+            .song_title1 {
+                width: 30%;
+                text-align: center;
+            }
+
+            .artist1 {
+                width: 30%;
+                text-align: center;
+            }
+
+            .status1 {
+                width: 15%;
+            }
+
+            .save1 {
+                width: 11%;
+            }
+
+            .delete1 {
+                width: 11%;
+            }
+
+            li {
+                display: inline;
+            }
+        }
+        .list_content {
+            color: white;
+            background-color: rgba(51, 228, 149, 0.47);
+            text-align: center;
+            width: 70%;
+            margin: auto;
+            font-size: large;
+
+            ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+
+                li {
+                    display: inline;
+                    height: 4vh;
+                    line-height: 4vh;
+                }
+
+                .index {
+                    width: 5%;
+                }
+
+                .preview {
+                    width: 20%;
+                    text-align: left;
+                }
+
+                .song_title {
+                    width: 30%;
+                    text-align: center;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                    padding-left: 10px;
+                }
+
+                .artist {
+                    width: 30%;
+                    text-align: center;
+                    overflow-x: scroll;
+                    white-space: nowrap;
+                }
+
+                .status {
+                    width: 15%;
+                }
+
+                .save {
+                    width: 11%;
+                    text-align: right;
+                    
+                    input {
+                        background-color: white;
+                    }
+                }
+
+                .delete {
+                    width: 11%;
+                }
+            }
+
+            .list {
+                border-bottom: 1px solid rgb(0, 0, 0);
+                width: 100%;
+                height: 7vh;
+                line-height: 7vh;
+                margin-bottom: 0;
+                padding: 0;
+
+                img {
+                    width: 40%;
+                    height: 4vh;
+                    line-height: 4vh;
+                }
+            }
+        }
+    }
+    audio {
+        position: absolute;
+        width: 10%;
+        height: 4%;
+        margin-left: 10px;
+    }
+}

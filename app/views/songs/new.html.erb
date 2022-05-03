@@ -4,13 +4,12 @@
 
 <div class="search">
     <div class="form1">
-    <%= form_with url: new_list_song_path(@list.id), method: :get, local: true do |form| %>
-      <%= form.text_field :search, placeholder:"曲を検索する", value:params[:search] %>
+    <%= form_with url: new_list_song_path(@list.id), method: :get, html: { id: "search_validate" }, local: true do |form| %>
+      <%= form.text_field :search, placeholder:"曲を検索する", value:params[:search], class:"validate[required]" %>
       <%= form.submit '曲を検索', name: nil %>
     <% end %>
     </div>
 </div>
-<div class="white_text"><%= @list.id %></div>
 <h1>検索結果</h1>
 
   <div class="song-title">
@@ -21,14 +20,12 @@
               <iframe src="https://open.spotify.com/embed/track/<%= searchsong.id %>" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
             <%= form_with model: @song, url: list_songs_path, class: 'text-light', local: true do  |f| %>
-              <%= searchsong.name %>
-              <%= searchsong.artists[0].name %>
               <%= f.hidden_field :song_title, value: searchsong.name %>
               <%= f.hidden_field :artist, value: searchsong.artists[0].name %>
-              <%= f.submit "追加" %>
+              <%= f.hidden_field :preview, value: searchsong.preview_url %>
+              <%= f.submit "追加", class:"add_btn" %>
             <% end %>
           </div>
           <% end %>
       <% end %>
   </div>
-  

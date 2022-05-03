@@ -19,8 +19,12 @@
       </div>
       <div class="playlist">
         <% if @lists.present? %>
-          <%= render @lists %>
-          <% else %>
+          <% @lists.each do |list| %>
+            <% if current_user.own?(list) %>
+              <%= render list %>
+            <% end %>
+          <% end %>
+        <% else %>
           <p><%= t('リストがありません') %></p>
         <% end %>
       </div>

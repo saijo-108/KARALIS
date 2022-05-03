@@ -1,0 +1,45 @@
+body {
+    background-image: image-url("top.png");
+    background-repeat:  no-repeat;
+    background-position: center right;
+    height: 100vh;
+
+    .register {
+        position: absolute;
+        top: 80%;
+        left: 88%;
+    }
+
+    .white_text{
+        color: white;
+        font-size: 3rem;
+    }
+
+    .form-group {
+        text-align: center;
+
+        .form {
+            width: 60%;
+            height: 6rem;
+            font-size: 3rem;
+        }
+    }
+
+    .row {
+        margin-right: 0;
+    }
+
+    .text_center {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .btn-primary {
+        background-color: #21df46d9;
+    }
+
+    .back_btn {
+        text-align: center;
+        margin-top: 10%;
+    }
+}

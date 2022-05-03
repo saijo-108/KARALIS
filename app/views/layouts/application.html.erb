@@ -11,25 +11,26 @@
   </head>
 
   <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <% if user_signed_in? %>
-      <%= render 'shared/header' %>
-    <% else %>
-      <%= render 'shared/before_login_header' %>
-    <% end %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-    <body>
-<script type="text/javascript">
-jQuery(document).ready(function(){
-  jQuery("#validate_id").validationEngine();
-});
-jQuery(document).ready(function(){
-  jQuery("#login_validate").validationEngine();
-});
-</script>
-</body>
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      <header>
+        <% if user_signed_in? %>
+          <%= render 'shared/header' %>
+        <% else %>
+          <%= render 'shared/before_login_header' %>
+        <% end %>
+      </header>
+      <main>
+        <%= yield %>
+      </main>
+      <footer>  
+        <%= render 'shared/footer' %>
+      </footer>
+    <script type="text/javascript">
+      jQuery(document).ready(function(){
+        jQuery("#validate_id, #login_validate, #name_validate, #search_validate").validationEngine();
+      });
+    </script>
   </body>
 </html>
