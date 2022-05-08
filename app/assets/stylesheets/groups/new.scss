@@ -1,6 +1,7 @@
 body {
     .form-group {
       text-align: center;
+      margin-top: 100px;
     }
 
     .row {
@@ -16,6 +17,15 @@ body {
       width: 30%;
       height: 4vh;
       margin-right: 10px;
+    }
+
+    .area_width {
+        height: 100px;
+    }
+
+    .area {
+        margin-top: 100px;
+        margin-bottom: 100px;
     }
 
     input::placeholder {
@@ -47,5 +57,10 @@ body {
 
     .list_title {
         text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
     }
 }

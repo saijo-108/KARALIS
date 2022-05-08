@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+
+  resource :profile, only: %i[show edit update]
+  resources :groups
 end

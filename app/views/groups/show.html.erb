@@ -1,0 +1,27 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'groups/show' %>
+<% end %>
+
+<div class="readmore over_view">
+    <p class="white_text head_text">このグループについて</p>
+    <input id="check1" class="readmore-check" type="checkbox">
+    <div class="readmore-content white_text description">
+      <%= simple_format(@group.description) %>
+    </div>
+    <label class="readmore-label" for="check1"></label>
+</div>
+
+<p class="name_title white_text">グループ名</p>
+<div class="white_text name"><%= simple_format(@group.name) %></div>
+
+<div class="flex">
+  <div class="group">
+    <div class="group-wrapper">
+      <div class="group-head">
+        メンバー
+      </div>
+    </div>
+  </div>
+</div>
+

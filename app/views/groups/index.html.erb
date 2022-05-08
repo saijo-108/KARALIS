@@ -1,0 +1,32 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'groups/index' %>
+<% end %>
+
+
+<div class="new">
+  <%= link_to new_group_path do %>
+    <div class="button new-button">
+      <span>新しくグループを作成する</span>
+    </div>
+  <% end %>
+</div>
+
+<div class="flex">
+  <div class="group">
+    <div class="group-wrapper">
+      <div class="group-head">
+        グループ一覧
+      </div>
+      <div class="grouplist">
+        <% if @groups.present? %>
+          <% @groups.each do |group| %>
+              <%= render group %>
+          <% end %>
+        <% else %>
+          <p><%= t('グループがありません') %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+body {
+    .white_text {
+        color: white;
+    }
+
+    .name {
+        position: absolute;
+        top: 13%;
+        left: 3%;
+        font-size: 2rem;
+        background-color: #2e2f348a;
+        width: 20%;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .name_title {
+        position: relative;
+        font-size: 0.8rem;
+        padding-right: 10px;
+        left: 3%;
+        width: 10%;
+        z-index: 3;
+    }
+
+    .description {
+        font-size: 1rem;
+        word-wrap: break-word;
+    }
+
+    .head_text {
+        font-size: 0.8rem;
+        padding-right: 10px;
+    }
+
+    .over_view {
+        position: absolute;
+        width: 30%;
+        top: 4%;
+        left: 50%;
+    }
+    
+
+    .readmore{
+        position: absolute;
+        box-sizing: border-box;
+        padding: 5px;
+        border-bottom: 2px solid #c6c6c6b8;
+    }
+    
+    .readmore-content{
+        position: relative;
+        overflow: hidden;
+        height: 50px;
+    }
+
+    
+    /* 続きを読むボタン */
+    .readmore-label{
+        display: table;
+        bottom: 5px;
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        margin: 0 auto;
+        z-index: 2;
+        padding: 0 10px;
+        background-color: #222222;
+        border-radius: 10px;
+        color: #FFF;
+    }
+    .readmore-label:before{
+        content: '続きを読む';
+    }
+    
+    .readmore-check{
+        display: none;
+    }
+    /*チェック時にボタンを非表示*/
+    .readmore-check:checked ~ .readmore-label{
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+    .readmore-check:checked ~ .readmore-label:before{
+        content: '閉じる';
+    }
+    /*チェック時に高さを自動に戻す*/
+    .readmore-check:checked ~ .readmore-content{
+        height: auto;
+    }
+    /*チェック時グラデーション等を削除*/
+    .readmore-check:checked ~ .readmore-content::before {
+        display: none;
+    }
+
+
+    .flex {
+      display: flex;
+      margin-top: 100px;
+    }
+
+    .group-head {
+      font-size: 40px;
+      color: white;
+      padding-left: 30px;
+      text-align: center;
+    }
+
+    .group {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .group-wrapper {
+      border: solid;
+      border-color: rgb(255, 255, 255);
+      background-color: rgba(44, 39, 39, 0.552);
+      height: 67vh;
+      margin: 20px;
+    }
+}

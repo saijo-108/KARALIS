@@ -1,0 +1,20 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'profiles/edit' %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h1><%= t('.title') %></h1>
+      <%= form_with model: @user, url: profile_path, html: { id: "edit_validate" }, local: true do |f| %>
+        <%= f.label :email, class: "white_text" %>
+        <%= f.email_field :email, class: 'form-control mb-3 validate[required]' %>
+
+        <%= f.label :name, class: "white_text" %>
+        <%= f.text_field :name, class: 'form-control mb-3 validate[required]' %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

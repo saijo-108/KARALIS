@@ -5,7 +5,7 @@ ja:
     logout: 'ログアウト'
     home: 'ホーム'
     mypage: 'マイページ'
-    make_group: 'グループ作成'
+    group_list: 'グループ一覧'
     make_list: 'リスト作成'
   devise:
     login_success: 'ログインしました'
@@ -19,9 +19,27 @@ ja:
       to_login_page: 'ログインページへ'
   lists:
     index:
-      title: 'リスト一覧'
+      title: 'ホーム'
     new:
-      title: 'リスト作成'
-  group:
+      title: '新規リスト作成'
+    show:
+      title: 'リスト詳細'
+    edit:
+      title: 'リスト名変更'
+  songs:
+    new:
+      title: '曲検索'
+  groups:
     index:
       title: 'グループ一覧'
+    new:
+      title: '新規グループ作成'
+    show:
+      title: 'グループ詳細'
+    edit:
+      title: 'グループ編集'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'

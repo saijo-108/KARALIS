@@ -12,7 +12,7 @@ class Users::SessionsController < Devise::SessionsController
   def create
     self.resource = warden.authenticate!(auth_options)
     if sign_in(resource_name, resource)
-      flash[:notice] = "ログインしました"
+      flash[:success] = "ログインしました"
       redirect_to lists_path
     end
   end
@@ -22,16 +22,9 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  def failed
-    flash[:alert] = "メールアドレスまたはパスワードが違います"
-    redirect_to root_path
-  end
+
 
   protected
-
-  def auth_options
-    { scope: resource_name, recall: "#{controller_path}#failed" }
-  end
 
 
   # If you have extra params to permit, append them to the sanitizer.

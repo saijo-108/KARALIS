@@ -69,19 +69,19 @@ body {
       display: flex;
     }
 
-    .list-head {
+    .group-head {
       font-size: 40px;
       color: white;
       padding-left: 30px;
       text-align: center;
     }
 
-    .list {
+    .group {
       width: 100%;
       margin: 0 auto;
     }
 
-    .list-wrapper {
+    .group-wrapper {
       border: solid;
       border-color: rgb(255, 255, 255);
       background-color: rgba(44, 39, 39, 0.552);
@@ -89,7 +89,7 @@ body {
       margin: 20px;
     }
 
-    .playlist {
+    .grouplist {
       display: flex;
       height: 67vh;
       width: 100%;

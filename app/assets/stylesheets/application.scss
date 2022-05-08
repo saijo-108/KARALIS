@@ -13,6 +13,10 @@ html {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    background-image: image-url("top.png");
+    background-repeat:  no-repeat;
+    background-position: center right;
+    height: 100vh;
   }
 
   main {
@@ -51,6 +55,7 @@ html {
     color: white;
   }
 }
+
 // フラッシュメッセージ
   .alert {
     color: red;
@@ -86,4 +91,30 @@ html {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     font-size: 20px;
+  }
+
+  // パーシャル共有
+
+  .back_to_page {
+    text-align: right;
+    margin-top: 50px;
+    font-size: 2rem;
+    padding-right: 150px;
+  }
+
+  #error_explanation {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+
+    ul {
+      margin-top: 30px;
+    }
+    
+    li {
+      list-style: none;
+      margin-top: 15px;
+      font-size: 2rem;
+      color: red;
+    }
   }

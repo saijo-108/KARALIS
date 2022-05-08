@@ -20,9 +20,9 @@
 
           <div class='dropdown-menu dropdown-menu-right'>
             <%= link_to (t 'defaults.home'), lists_path, class: 'dropdown-item' %>
-            <%= link_to (t 'defaults.make_group'), '#', class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.group_list'), groups_path, class: 'dropdown-item' %>
             <%= link_to (t 'defaults.make_list'), new_list_path, class: 'dropdown-item' %>
-            <%= link_to (t 'defaults.mypage'), '#', class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.mypage'), profile_path, class: 'dropdown-item' %>
             <%= link_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, class: 'dropdown-item logout' %>
           </div>
         </li>
