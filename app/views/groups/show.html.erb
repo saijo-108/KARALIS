@@ -21,7 +21,18 @@
       <div class="group-head">
         メンバー
       </div>
+      <div class="grouplist">
+        <%= render partial:"member" %>
+      </div>
     </div>
   </div>
 </div>
+
+<%= link_to 'リストを削除', group_destroy_group_path(@group.id),class:"white_text", method: :delete %>
+
+  <% if @group.users.include?(current_user) %>
+    <%= link_to '退会する', group_path(@group.id), method: :delete %>
+  <% else %>
+    <%= link_to "参加する", join_group_path(@group) %>
+  <% end %>
 

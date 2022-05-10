@@ -13,5 +13,11 @@ Rails.application.routes.draw do
   end
 
   resource :profile, only: %i[show edit update]
-  resources :groups
+  resources :groups do
+    member do
+      get 'select'
+      get 'join'
+      delete 'group_destroy'
+    end
+  end
 end

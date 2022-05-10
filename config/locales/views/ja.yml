@@ -38,6 +38,8 @@ ja:
       title: 'グループ詳細'
     edit:
       title: 'グループ編集'
+    select:
+      title: '参加確認ページ'
   profiles:
     show:
       title: 'プロフィール'

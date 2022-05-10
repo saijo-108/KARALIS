@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_list, only: [:edit, :update, :destroy]
+  before_action :set_list, only: [:edit, :update, :destroy, :show]
   require 'rspotify'
   require 'open-uri'
   
@@ -26,7 +26,6 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
     @user = @list.user
     @songs = Song.all
     @song = @songs.select do |x|

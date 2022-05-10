@@ -1,0 +1,22 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'groups/show' %>
+<% end %>
+
+<p class="name_title white_text">グループ名</p>
+<div class="white_text name"><%= simple_format(@group.name) %></div>
+
+<div class="flex">
+  <div class="group">
+    <div class="group-heads">
+    メンバー一覧
+    </div>
+    <div class="grouplist">
+        <% @members.each do |member| %>
+            <div class="white_text member_name">
+              <%= member.name %>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>

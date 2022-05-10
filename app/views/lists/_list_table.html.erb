@@ -4,9 +4,11 @@
     <li class="preview1">プレビュー</li>
     <li class="song_title1">曲名</li>
     <li class="artist1">アーティスト</li>
-    <li class="status1">非公開</li>
-    <li class="save1"></li>
-    <li class="delete1"></li>
+    <% if @user.id == current_user.id %>
+      <li class="status1">非公開</li>
+      <li class="save1"></li>
+      <li class="delete1"></li>
+    <% end %>
   </ul>
   <div class="list_content">
     <% @song.each_with_index do |song, i| %>
@@ -16,9 +18,11 @@
             <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
             <li class="song_title"><%= song.song_title %></li>
             <li class="artist"><%= song.artist %></li>
-            <li class="status"><%= f.check_box :status, {}, "nonrelease", "release" %></li>
-            <li class="save"><%= f.submit "保存" %></li>
-            <li class="delete"><%= link_to '削除', list_song_path(song.list_id, song.id), class:"text_red", method: :delete %></li>
+            <% if @user.id == current_user.id %>
+              <li class="status"><%= f.check_box :status, {}, "nonrelease", "release" %></li>
+              <li class="save"><%= f.submit "保存" %></li>
+              <li class="delete"><%= link_to '削除', list_song_path(song.list_id, song.id), class:"text_red", method: :delete %></li>
+            <% end %>
         </ul>
       <% end %>
     <% end %>

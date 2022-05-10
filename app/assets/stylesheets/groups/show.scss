@@ -120,4 +120,22 @@ body {
       height: 67vh;
       margin: 20px;
     }
+
+    .grouplist {
+        height: 67vh;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    // showページ
+
+    .member_name {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .group-heads {
+        font-size: 40px;
+        color: white;
+        padding-left: 30px;
+      }
 }

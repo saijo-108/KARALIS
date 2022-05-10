@@ -1,0 +1,13 @@
+<% @members.each do |member| %>
+  <div class="white_text">
+    <%= member.name %>
+    <% @lists.each do |list| %>
+      <% if member.id == list.user_id %>
+        <%= link_to list_path(list) do %>
+          <%= list.name %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+

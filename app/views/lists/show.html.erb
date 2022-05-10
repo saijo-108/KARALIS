@@ -25,7 +25,9 @@
 
 <div class="text_right">
   <%= link_to "ホームへ", lists_path, class:'back_home' %>
-  <%= link_to "グループ一覧へ", "#", class:'back_group' %>
-  <%= link_to 'リストを削除', list_path(@list.id),class:"text_red", method: :delete %>
+  <%= link_to "グループ一覧へ", groups_path, class:'back_group' %>
+  <% if @user.id == current_user.id %>
+    <%= link_to 'リストを削除', list_path(@list.id),class:"text_red", method: :delete %>
+  <% end %>
 </div>
 
