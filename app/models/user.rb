@@ -32,4 +32,6 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
+
+  validates :name, presence: true, length: { maximum: 20 }
 end

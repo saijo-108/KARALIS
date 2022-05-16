@@ -13,7 +13,10 @@
 
         <%= f.label :name, class: "white_text" %>
         <%= f.text_field :name, class: 'form-control mb-3 validate[required]' %>
-        <%= f.submit class: 'btn btn-primary' %>
+        <div class="btn_zone">
+          <%= f.submit "変更", class: 'btn btn-primary' %>
+          <%= link_to "変更せずに戻る", :back, class: "btn btn-danger left" %>
+        </div>
       <% end %>
     </div>
   </div>

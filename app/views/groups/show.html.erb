@@ -17,22 +17,27 @@
 
 <div class="flex">
   <div class="group">
-    <div class="group-wrapper">
-      <div class="group-head">
-        メンバー
-      </div>
-      <div class="grouplist">
-        <%= render partial:"member" %>
-      </div>
+    <div class="group-head">
+      メンバー
+    </div>
+    <div class="grouplist">
+      <%= render partial:"member" %>
+    </div>
+    <div class="leave">
+      <% if @group.users.include?(current_user) %>
+        <%= link_to '退会する', group_path(@group.id), class:"text_red", method: :delete %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<%= link_to 'リストを削除', group_destroy_group_path(@group.id),class:"white_text", method: :delete %>
+<% if @leader.user_id == current_user.id %>
+  <%= link_to 'リストを削除', group_destroy_group_path(@group.id),class:"text_red", method: :delete %>
+<% end %>
 
-  <% if @group.users.include?(current_user) %>
-    <%= link_to '退会する', group_path(@group.id), method: :delete %>
-  <% else %>
-    <%= link_to "参加する", join_group_path(@group) %>
-  <% end %>
+<div class="list_change">
+  <%= link_to "グループ一覧へ", groups_path, class:"btn change btn_cubic1 btn_radius btn_back" %>
+  <%= link_to "ホームへ", lists_path, class:"btn change btn_cubic2 btn_radius btn_back" %>
+</div>
+
 

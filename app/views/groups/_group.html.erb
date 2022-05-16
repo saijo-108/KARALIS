@@ -4,8 +4,14 @@
 
 <div class="song">
   <div class="center">
-    <%= link_to group_path(group) do %>
-      <%= group.name %>
+    <% if group.user_ids.any? { |id| id == current_user.id } %>
+      <%= link_to group_path(group) do %>
+        <%= group.name %>
+      <% end %>
+    <% else %>
+      <%= link_to select_group_path(group) do %>
+        <%= group.name %>
+      <% end %>
     <% end %>
   </div>
 </div>

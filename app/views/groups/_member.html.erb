@@ -1,13 +1,30 @@
-<% @members.each do |member| %>
-  <div class="white_text">
-    <%= member.name %>
-    <% @lists.each do |list| %>
+<table class="table">
+  <tr class="white_text">
+    <th class="th_top user">ユーザーネーム</th>
+    <th class="th_top list">共有リスト</th>
+    <th class="th_top date">参加日</th>
+    <% if @leader.user_id == current_user.id %>
+      <th class="th_top destroy"></th>
+    <% end %>
+  </tr>
+  <% @members.zip(@times).each do |member, time| %>
+    <% @list.zip(@group_user).each do |list, group_user| %>
       <% if member.id == list.user_id %>
-        <%= link_to list_path(list) do %>
-          <%= list.name %>
-        <% end %>
+        <tr class="white_text">
+          <td scope="row"><%= member.name %></td>
+          <td><%= link_to list.name,list_path(list) %></td>
+          <td><%= time.created_at.strftime('%Y/%m/%d') %></td>
+          <% if @leader.user_id == current_user.id %>
+            <div class="delete_btn">
+              <% unless @group_user.size == 1 %>
+                <td><%= link_to '削除', group_group_user_path(group_user.group_id, group_user.id), class:"text_red side", method: :delete %></td>
+              <% end %>
+            </div>
+          <% end %>
+        </tr>
       <% end %>
     <% end %>
-  </div>
-<% end %>
+  <% end %>
+</table>
+
 

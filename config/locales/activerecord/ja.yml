@@ -9,6 +9,6 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
-        user_name: 'ユーザーネーム'
+        name: 'ユーザーネーム'
       list:
         name: 'リスト名'

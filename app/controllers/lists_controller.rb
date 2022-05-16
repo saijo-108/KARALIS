@@ -31,6 +31,8 @@ class ListsController < ApplicationController
     @song = @songs.select do |x|
       x.list_id == @list.id
     end
+    @release_song = Song.where(list_id: @list.id).where(status: "release")
+    @nonrelease_song =Song.where(list_id: @list.id).where(status: "nonrelease")
   end
 
   def destroy

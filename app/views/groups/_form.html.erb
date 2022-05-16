@@ -3,6 +3,10 @@
     <%= text_field_tag 'group[user_ids]', "#{current_user.id}", type: 'hidden' %>
     <%= f.text_field :name, class: 'form validate[required]', placeholder:"グループ名" %>
     <div class="area"><%= f.text_area :description, class: 'form area_width', placeholder:"グループの説明" %></div>
+      <%= form_with model: @select_list, local: true do |f| %>
+        <%= f.select :id, List.where(user_id: current_user).map { |l| [l.name, l.id] } %>
+      <% end %>
     <%= f.submit "作成", class: 'btn btn-primary register' %>
   </div>
 <% end %>
+

@@ -14,9 +14,10 @@ Rails.application.routes.draw do
 
   resource :profile, only: %i[show edit update]
   resources :groups do
+    resources :group_users, only: %i[destroy]
     member do
       get 'select'
-      get 'join'
+      post 'join'
       delete 'group_destroy'
     end
   end

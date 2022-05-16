@@ -17,7 +17,16 @@
           <th scope="row">ユーザーネーム</th>
           <td><%= current_user.name %></td>
         </tr>
+        <tr class="white_text">
+          <th scope="row">作ったリスト: <%= " #{@total_lists}" %>個</th>
+          <th scope="row">所属グループ: <%= " #{@total_groups}" %>つ</th>
+        </tr>
       </table>
     </div>
   </div>
+</div>
+
+<div class="list_change">
+  <%= link_to 'リスト一覧へ', lists_path, class:"btn change btn_cubic1 btn_radius btn_back" %>
+  <%= link_to 'グループ一覧へ', groups_path, class:"btn change btn_cubic2 btn_radius btn_back" %>
 </div>

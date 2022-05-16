@@ -5,4 +5,45 @@ body {
     h1 {
         color: white;
     }
+
+    .list_change {
+        position: relative;
+        text-align: center;
+        margin-top: 50px;
+
+        .btn_cubic1 {
+            border-bottom: 5px solid #21366a;
+        }
+
+        .btn_cubic1:hover {
+            margin-top: 3px;
+            border-bottom: 2px solid #d75b45;
+        }
+
+        .btn_cubic2 {
+            border-bottom: 5px solid #21366a;
+        }
+
+        .btn_cubic2:hover {
+            margin-top: 3px;
+            border-bottom: 2px solid #45d74f;
+        }
+
+
+        .btn_radius {
+            border-radius: 100vh;
+        }
+
+        .change {
+            top: 14%;
+            left: 72%;
+            margin-left: 55px;
+        }
+
+        .btn_back {
+            background-color: #4144a1;
+            color: white;
+            width: 10%;
+        }
+    }
 }

@@ -13,7 +13,10 @@ before_action :set_user, only: %i[edit update]
     end
   end
 
-  def show; end
+  def show
+    @total_lists = current_user.lists.count
+    @total_groups = current_user.groups.count
+  end
 
   private
 

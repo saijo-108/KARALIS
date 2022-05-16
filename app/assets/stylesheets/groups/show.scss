@@ -12,6 +12,11 @@ body {
         width: 20%;
         text-align: center;
         z-index: 2;
+
+        p {
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+        }
     }
 
     .name_title {
@@ -21,6 +26,7 @@ body {
         left: 3%;
         width: 10%;
         z-index: 3;
+        display: inline-block;
     }
 
     .description {
@@ -97,45 +103,184 @@ body {
 
 
     .flex {
+      width: 60%;
       display: flex;
-      margin-top: 100px;
+      margin: auto;
+      margin-top: 100px
     }
 
     .group-head {
       font-size: 40px;
       color: white;
-      padding-left: 30px;
       text-align: center;
     }
 
     .group {
       width: 100%;
       margin: 0 auto;
-    }
-
-    .group-wrapper {
       border: solid;
       border-color: rgb(255, 255, 255);
       background-color: rgba(44, 39, 39, 0.552);
-      height: 67vh;
       margin: 20px;
     }
 
+
+
     .grouplist {
-        height: 67vh;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-
-    // showページ
-
-    .member_name {
+        width: 80%;
         text-align: center;
-        margin-top: 30px;
+        margin: auto;
     }
-    .group-heads {
-        font-size: 40px;
-        color: white;
-        padding-left: 30px;
+    .new-button {
+        margin: 30px;
       }
+
+      .button{
+      /*影の基点とするためrelativeを指定*/
+      position: relative;
+        /*ボタンの形状*/
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      background: transparent;
+      border-radius: 25px;
+      border: solid 1px #333;
+      outline: none;
+        /*アニメーションの指定*/
+      transition: all 0.2s ease;
+    }
+    
+    /*hoverをした後のボタンの形状*/
+    .button:hover{
+      border-color:transparent; 
+    }
+    
+    /*ボタンの中のテキスト*/
+    .button span {
+      position: relative;
+      z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+        /*テキストの形状*/
+      display: block;
+      padding: 10px 30px;
+      background:rgb(104, 182, 221);
+      border-radius: 25px;
+      color:#333;
+        /*アニメーションの指定*/
+      transition: all 0.3s ease;
+    }
+    
+    /*== 下に押し込まれる（立体が平面に） */
+    
+    /*影の設定*/
+    .button:before {
+        content:"";
+        /*絶対配置で影の位置を決める*/
+      position: absolute;
+      z-index: -1;
+      top:3px;
+      left:2px;
+        /*影の形状*/
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      background-color: #333;
+    }
+    
+    /*hoverの際にY軸に4pxずらす*/
+    .button:hover span {
+      background-color: rgb(51, 33, 140);
+      color: #fff;
+      transform: translateY(4px);
+    }
+
+    .text_red {
+      color: red;
+    }
+
+    .memberflex {
+      display: flex;
+    }
+
+    .list_item {
+      display: inline-block;
+    }
+
+    .delete_btn {
+      position: absolute;
+    }
+
+    .table {
+      margin-bottom: 30px;
+    }
+    
+    .th_top {
+      border-top: none;
+    }
+
+    .user {
+      width: 13%;
+    }
+
+    .list {
+      width: 20%;
+    }
+
+    .date {
+      width: 10%;
+    }
+
+    .destroy {
+      width: 10%;
+    }
+
+    tbody {
+      width: 70%;
+    }
+
+    .list_change {
+      position: relative;
+      text-align: center;
+      margin-top: 50px;
+
+      .btn_cubic1 {
+          border-bottom: 5px solid #21366a;
+      }
+
+      .btn_cubic1:hover {
+          margin-top: 3px;
+          border-bottom: 2px solid #d75b45;
+      }
+
+      .btn_cubic2 {
+          border-bottom: 5px solid #21366a;
+      }
+
+      .btn_cubic2:hover {
+          margin-top: 3px;
+          border-bottom: 2px solid #45d74f;
+      }
+
+
+      .btn_radius {
+          border-radius: 100vh;
+      }
+
+      .change {
+          top: 14%;
+          left: 72%;
+          margin-left: 55px;
+      }
+
+      .btn_back {
+          background-color: #4144a1;
+          color: white;
+          width: 10%;
+      }
+    }
+
+    .leave {
+      text-align: right;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
 }
