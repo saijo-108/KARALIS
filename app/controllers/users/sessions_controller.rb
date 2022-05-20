@@ -9,13 +9,9 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  def create
-    self.resource = warden.authenticate!(auth_options)
-    if sign_in(resource_name, resource)
-      flash[:success] = "ログインしました"
-      redirect_to lists_path
-    end
-  end
+  # def create
+  #     super
+  # end
 
   # DELETE /resource/sign_out
   # def destroy

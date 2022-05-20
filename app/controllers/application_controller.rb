@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
     flash[:warning] = "ログインしてください"
     redirect_to root_path
   end
+
+  def after_sign_in_path_for(resource) 
+    lists_path
+  end
 end

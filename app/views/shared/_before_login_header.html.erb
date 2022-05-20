@@ -16,11 +16,11 @@
         </li>
 
         <li class='nav-item ml-5'>
-          <%= link_to (t 'defaults.register'), '#', class: 'nav-link text-color', "data-toggle": "modal", "data-target": "#signUpModal" %>
+          <%= link_to (t 'defaults.register'), new_user_registration_path, class: 'nav-link text-color' %>
         </li>
 
         <li class='nav-item ml-5'>
-          <%= link_to (t 'defaults.login'), '#', class: 'nav-link text-color', "data-toggle": "modal", "data-target": "#loginModal" %>
+          <%= link_to (t 'defaults.login'), new_user_session_path, class: 'nav-link text-color' %>
         </li>
       </ul>
     </div>
