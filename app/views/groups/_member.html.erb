@@ -1,8 +1,8 @@
 <table class="table">
   <tr class="white_text">
-    <th class="th_top user">ユーザーネーム</th>
-    <th class="th_top list">共有リスト</th>
-    <th class="th_top date">参加日</th>
+    <th class="th_top user"><%= User.human_attribute_name(:name) %></th>
+    <th class="th_top list"><%= ListGroup.human_attribute_name(:name) %></th>
+    <th class="th_top date"><%= GroupUser.human_attribute_name(:created_at) %></th>
     <% if @leader.user_id == current_user.id %>
       <th class="th_top destroy"></th>
     <% end %>
@@ -12,12 +12,13 @@
       <% if member.id == list.user_id %>
         <tr class="white_text">
           <td scope="row"><%= member.name %></td>
-          <td><%= link_to list.name,list_path(list) %></td>
+          <td><%= link_to list.name,list_path(list) %>
+          </td>
           <td><%= time.created_at.strftime('%Y/%m/%d') %></td>
           <% if @leader.user_id == current_user.id %>
             <div class="delete_btn">
-              <% unless @group_user.size == 1 %>
-                <td><%= link_to '削除', group_group_user_path(group_user.group_id, group_user.id), class:"text_red side", method: :delete %></td>
+              <% unless current_user.id == member.id %>
+                <td><%= link_to t('defaults.destroy'), group_group_user_path(group_user.group_id, group_user.id), class:"text_red side", method: :delete , data: { confirm: "メンバーをグループから削除しますか？" } %></td>
               <% end %>
             </div>
           <% end %>

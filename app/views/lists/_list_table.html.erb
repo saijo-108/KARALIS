@@ -21,7 +21,7 @@
                   <li class="artist"><%= song.artist %></li>
                     <li class="status"><%= f.check_box :status, {}, "nonrelease", "release" %></li>
                     <li class="save"><%= f.submit "保存" %></li>
-                    <li class="delete"><%= link_to '削除', list_song_path(song.list_id, song.id), class:"text_red", method: :delete %></li>
+                    <li class="delete"><%= link_to '削除', list_song_path(song.list_id, song.id), class:"text_red", method: :delete, data: { confirm: "「#{song.song_title}」を削除しますか？" } %></li>
               </ul>
             <% end %>
           <% end %>

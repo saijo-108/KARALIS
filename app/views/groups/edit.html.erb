@@ -1,0 +1,17 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'groups/edit' %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1 class="white_text text_center"><%= t(".title") %></h1>
+      <%= render 'edit_form' %>
+    </div>
+  </div>
+</div>
+
+<div class="back_btn">
+  <%= link_to t(".back_group"), group_path(@group) %>
+</div>

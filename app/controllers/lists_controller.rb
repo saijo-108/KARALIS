@@ -47,7 +47,7 @@ class ListsController < ApplicationController
       redirect_to @list
       flash[:success] = "リスト名を変更しました"
     else
-      flash.now['danger'] = "リストを変更できません"
+      flash.now['alert'] = "リストを変更できません"
       render :edit
     end
   end

@@ -6,12 +6,12 @@
 <div class="search">
     <div class="form1">
     <%= form_with url: new_list_song_path(@list.id), method: :get, html: { id: "search_validate" }, local: true do |form| %>
-      <%= form.text_field :search, placeholder:"曲を検索する", value:params[:search], class:"validate[required]" %>
-      <%= form.submit '曲を検索', name: nil %>
+      <%= form.text_field :search, placeholder:t('.search_song'), value:params[:search], class:"validate[required]" %>
+      <%= form.submit t('.search'), name: nil %>
     <% end %>
     </div>
 </div>
-<h1>検索結果</h1>
+<h1><%= t('.result') %></h1>
 
   <div class="song-title">
       <% if @searchsongs.present? %>

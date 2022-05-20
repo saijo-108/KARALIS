@@ -6,6 +6,7 @@ class GroupUsersController < ApplicationController
         @found_list = ListGroup.where(list_id: @list_id).where(group_id: @group.id)
         @group_user.destroy!
         @found_list.destroy_all
+        binding.pry
         redirect_to group_path(@group), success: "ユーザーを削除しました"
     end
 end

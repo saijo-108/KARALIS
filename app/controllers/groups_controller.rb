@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:select]
     before_action :set_group, only: [:edit, :update, :destroy, :join, :group_destroy, :member_destroy]
 
     def index
@@ -12,17 +12,17 @@ class GroupsController < ApplicationController
     end
 
     def create
+        @select_list = List.new
         @group = Group.new(group_params)
         @list_id = List.where(user_id: current_user).map(&:id)
         if @list_id.present?
           @list = List.find(list_params["id"])
-          @group.lists << @list
+          @group.add_list_groups(@list)
         end
         if @group.save
             flash[:success] = "グループを作成しました"
             redirect_to groups_path
         else
-            flash.now[:alert] = "グループが作成できませんでした"
             render :new
         end
     end
@@ -32,6 +32,12 @@ class GroupsController < ApplicationController
         @members = @group.users
         @lists = List.all.includes(:user).order(created_at: :asc)
         @list = @group.lists
+        @my_list =  @list.find{|n| n.user_id == current_user.id }
+        if @members.any? { |m| m.id == current_user.id}
+            @current_list_group = ListGroup.find_by(list_id: @my_list.id, group_id: @group)
+        else 
+            redirect_to  select_group_path(@group)
+        end
         @group_user = GroupUser.where(group_id: @group.id)
         if @members.any?
             @leader = GroupUser.find_by(group_id: @group)
@@ -40,6 +46,12 @@ class GroupsController < ApplicationController
     end
 
     def update
+        if @group.update(group_params)
+            redirect_to @group
+            flash[:success] = "グループ名を変更しました"
+        else
+            render :edit
+        end
     end
 
     def edit
@@ -59,6 +71,7 @@ class GroupsController < ApplicationController
         @list_names = List.where(user_id: current_user).map(&:name)
         @list_id = List.where(user_id: current_user).map(&:id)
         @select_list = List.new
+        
     end
 
     def join

@@ -1,7 +1,14 @@
 body {
-    .form-group {
+    .form_group {
+      margin-top: 80px;
       text-align: center;
-      margin-top: 100px;
+      margin-bottom: 30px;
+      textarea {
+        margin: auto;
+      }
+      input {
+          margin: auto;
+      }
     }
 
     .row {
@@ -16,7 +23,6 @@ body {
       font-size: 1rem;
       width: 30%;
       height: 4vh;
-      margin-right: 10px;
     }
 
     .area_width {
@@ -52,7 +58,6 @@ body {
 
     .white_text{
         color: white;
-        font-size: 3rem;
     }
 
     .list_title {
@@ -62,5 +67,15 @@ body {
     h1 {
         text-align: center;
         color: white;
+    }
+
+    .display {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .list_select {
+        margin-bottom: 10px;
     }
 }

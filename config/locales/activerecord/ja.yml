@@ -12,3 +12,10 @@ ja:
         name: 'ユーザーネーム'
       list:
         name: 'リスト名'
+      group_user:
+        created_at: '参加日'
+      list_group:
+        name: '共有リスト'
+      group:
+        name: 'グループ名'
+        description: 'グループの説明'

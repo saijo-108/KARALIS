@@ -1,0 +1,46 @@
+body {
+    .white_text {
+        color: white;
+    }
+
+    .text_center {
+        text-align: center;
+    }
+
+    .head {
+        position: relative;
+        top: -56px;
+    }
+
+    .list_change {
+        .btn_cubic {
+            border-bottom: 5px solid #21366a;
+        }
+
+        .btn_cubic:hover {
+            margin-top: 3px;
+            border-bottom: 2px solid #d75b45;
+        }
+
+        .btn_radius {
+            border-radius: 100vh;
+        }
+
+        .change {
+            position: absolute;
+            top: 14%;
+            left: 72%;
+            margin-left: 55px;
+        }
+
+        .btn_back {
+            background-color: #4144a1;
+            color: white;
+            width: 10%;
+        }
+    }
+
+    .share_list {
+        text-align: center;
+    }
+}

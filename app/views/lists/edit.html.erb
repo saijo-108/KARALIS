@@ -6,12 +6,12 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
-      <h1 class="white_text text_center">リスト名変更</h1>
+      <h1 class="white_text text_center"><%= t(".title") %></h1>
       <%= render 'form' %>
     </div>
   </div>
 </div>
 
 <div class="back_btn">
-  <%= link_to "リストへ戻る", list_path(@list) %>
+  <%= link_to t(".back_list"), list_path(@list) %>
 </div>

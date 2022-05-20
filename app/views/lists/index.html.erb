@@ -7,12 +7,12 @@
 <div class="new">
   <%= link_to new_list_path do %>
     <div class="button new-button new-list">
-      <span>新しくリストを作成する</span>
+      <span><%= t(".new_list") %></span>
     </div>
   <% end %>
   <%= link_to groups_path do %>
     <div class="button new-button new-list">
-      <span>参加しているグループ</span>
+      <span><%= t(".joined_group") %></span>
     </div>
   <% end %>
 </div>
@@ -21,7 +21,7 @@
   <div class="list">
     <div class="list-wrapper">
       <div class="list-head">
-        リスト一覧
+        <%= t("defaults.list_index") %>
       </div>
       <div class="playlist">
         <% if @lists.present? %>
@@ -31,7 +31,7 @@
             <% end %>
           <% end %>
         <% else %>
-          <p><%= t('リストがありません') %></p>
+          <p><%= t(".not_list") %></p>
         <% end %>
       </div>
     </div>

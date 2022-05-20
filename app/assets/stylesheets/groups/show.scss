@@ -231,6 +231,7 @@ body {
 
     .destroy {
       width: 10%;
+      border-bottom: 1px solid #dee2e6;
     }
 
     tbody {
@@ -282,5 +283,12 @@ body {
       text-align: right;
       margin-right: 10px;
       margin-bottom: 10px;
+      display: grid;
+    }
+
+    .edit {
+      position: absolute;
+      top: 17%;
+      left: 25%;
     }
 }

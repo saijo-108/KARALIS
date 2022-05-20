@@ -7,7 +7,7 @@
 <div class="new">
   <%= link_to new_group_path do %>
     <div class="button new-button">
-      <span>新しくグループを作成する</span>
+      <span><%= t(".new_group") %></span>
     </div>
   <% end %>
 </div>
@@ -16,7 +16,7 @@
   <div class="group">
     <div class="group-wrapper">
       <div class="group-head">
-        グループ一覧
+        <%= t("defaults.group_list") %>
       </div>
       <div class="grouplist">
         <% if @groups.present? %>
@@ -24,7 +24,7 @@
               <%= render group %>
           <% end %>
         <% else %>
-          <p><%= t('グループがありません') %></p>
+          <p><%= t(".not_group") %></p>
         <% end %>
       </div>
     </div>
