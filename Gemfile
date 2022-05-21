@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.7'
+gem 'rails', '~> 6.1.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
@@ -70,7 +70,7 @@ gem 'jquery-rails'
 gem 'omniauth-line'
 gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
-gem 'rails-i18n', '5.1.3'
+gem 'rails-i18n', '~> 6.0.0'
 gem 'jQuery-Validation-Engine-rails'
 gem 'rspotify'
 gem 'enum_help'
