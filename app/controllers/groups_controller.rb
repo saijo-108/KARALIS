@@ -71,7 +71,6 @@ class GroupsController < ApplicationController
         @list_names = List.where(user_id: current_user).map(&:name)
         @list_id = List.where(user_id: current_user).map(&:id)
         @select_list = List.new
-        
     end
 
     def join

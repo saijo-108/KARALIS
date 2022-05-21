@@ -217,6 +217,10 @@ body {
       border-top: none;
     }
 
+    .tr_top {
+      border-top: none;
+    }
+
     .user {
       width: 13%;
     }
@@ -290,5 +294,10 @@ body {
       position: absolute;
       top: 17%;
       left: 25%;
+    }
+
+    tr {
+      border-top: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
     }
 }
