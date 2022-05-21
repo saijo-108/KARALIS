@@ -36,6 +36,8 @@
 <%= form_with model: @select_list, url: {controller: 'groups', action: 'join'}, class:"share_form", local: true do |f| %>
   <% if current_user == nil %>
     <%= link_to "まずはログインしよう！", new_user_session_path %>
+  <% elsif @members.any? { |m| m == current_user } %>
+    <%= link_to "グループページへ", group_path(@group) %>
   <% else %>
     <% if @list_id.present? %>
       <div class="share_list">

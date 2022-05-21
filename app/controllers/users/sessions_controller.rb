@@ -6,6 +6,7 @@ class Users::SessionsController < Devise::SessionsController
   # GET /resource/sign_in
   def new
     super
+    session[:previous_url] = request.referer
   end
 
   # POST /resource/sign_in
@@ -14,7 +15,11 @@ class Users::SessionsController < Devise::SessionsController
     set_flash_message!(:notice, :signed_in)
     sign_in(resource_name, resource)
     yield resource if block_given?
-    respond_with resource, location: after_sign_in_path_for(resource)
+    if session[:previous_url].include?("select")
+      redirect_to session[:previous_url]
+    else
+      redirect_to lists_path
+    end
   end
 
   # DELETE /resource/sign_out
@@ -29,4 +34,6 @@ class Users::SessionsController < Devise::SessionsController
   def configure_sign_in_params
     devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   end
+
+
 end
