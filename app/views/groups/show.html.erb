@@ -1,0 +1,50 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'groups/show' %>
+<% end %>
+
+<div class="readmore over_view">
+    <p class="white_text head_text"><%= t(".description") %></p>
+    <input id="check1" class="readmore-check" type="checkbox">
+    <div class="readmore-content white_text description">
+      <%= simple_format(@group.description) %>
+    </div>
+    <label class="readmore-label" for="check1"></label>
+</div>
+
+<p class="name_title white_text"><%= t("defaults.group_name") %></p>
+<div class="white_text name"><%= simple_format(@group.name) %></div>
+<%= link_to "変更", edit_group_path(@group), class:"edit"%>
+
+<div class="flex">
+  <div class="group">
+    <div class="group-head">
+      <%= t(".member") %>
+    </div>
+    <div class="grouplist">
+      <%= render partial:"member" %>
+    </div>
+    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="http://localhost:3000/groups/63" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
+      <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+    <div class="leave">
+      <% if @group.users.include?(current_user) %>
+        <%= link_to t(".leave"), group_path(@group.id), class:"text_red", method: :delete, data: { confirm: "退会しますか？" }  %>
+      <% end %>
+      <% if @leader.user_id == current_user.id %>
+        <%= link_to t(".delete"), group_destroy_group_path(@group.id),class:"text_red", method: :delete, data: { confirm: "グループを削除しますか？" } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="list_change">
+  <%= link_to t("defaults.group_list"), groups_path, class:"btn change btn_cubic1 btn_radius btn_back" %>
+  <%= link_to t("defaults.home"), lists_path, class:"btn change btn_cubic2 btn_radius btn_back" %>
+  <% @list.each do |list| %>
+    <% if list.user_id == current_user.id %>
+      <%= link_to "共有リスト変更", edit_group_list_group_path(@group, @current_list_group.id), class:"btn change btn_cubic2 btn_radius btn_back" %>
+    <% end %>
+  <% end %>
+</div>
+
+

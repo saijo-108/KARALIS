@@ -1,0 +1,52 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'groups/select' %>
+<% end %>
+
+<div class="group_wrap">
+  <div class="name_wrap">
+    <div><p class="name_title white_text"><%= t(".invite_group") %></p></div>
+    <div class="white_text name"><%= simple_format(@group.name) %></div>
+  </div>
+  <div class="readmore over_view">
+      <p class="white_text head_text"><%= t(".description") %></p>
+      <input id="check1" class="readmore-check" type="checkbox">
+      <div class="readmore-content white_text">
+        <%= simple_format(@group.description) %>
+      </div>
+      <label class="readmore-label" for="check1"></label>
+  </div>
+</div>
+
+<div class="flex margin">
+  <div class="group">
+    <div class="group-heads">
+    <%= t(".current_member") %>
+    </div>
+    <div class="grouplist">
+        <% @members.each do |member| %>
+            <div class="member_name white_text">
+              <%= member.name %><font> さん</font>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<%= form_with model: @select_list, url: {controller: 'groups', action: 'join'}, class:"share_form", local: true do |f| %>
+  <% if current_user == nil %>
+    <%= link_to "まずはログインしよう！", new_user_session_path %>
+  <% else %>
+    <% if @list_id.present? %>
+      <div class="share_list">
+        <div class="white_text"><%= t(".select_share_list") %></div>
+        <%= f.select :id, List.where(user_id: current_user).map { |l| [l.name, l.id] } %>
+      </div>
+    <% else %>
+      <div class="white_text"><%= t(".not_select_share_list") %></div>
+    <% end %>
+    <div class="join_button">
+      <%= f.submit t(".join"), class:"button" %>
+    </div>
+  <% end %>
+<% end %>

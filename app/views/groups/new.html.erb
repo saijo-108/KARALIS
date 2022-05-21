@@ -1,0 +1,14 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'groups/new' %>
+<% end %>
+
+<h1><%= t('.title') %></h1>
+
+<div class="list_form">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <%= render 'form', { group: @group } %>
+    </div>
+  </div>
+</div>

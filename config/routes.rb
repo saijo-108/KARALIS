@@ -4,11 +4,23 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     omniauth_callbacks: "omniauth_callbacks"
   }
+  
   root 'top_pages#top'
   resources :lists do
     resources :songs
     collection do
       get 'search'
+    end
+  end
+
+  resource :profile, only: %i[show edit update]
+  resources :groups do
+    resources :group_users, only: %i[destroy]
+    resources :list_groups, only: %i[edit update]
+    member do
+      get 'select'
+      post 'join'
+      delete 'group_destroy'
     end
   end
 end

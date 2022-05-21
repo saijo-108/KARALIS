@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_list, only: [:edit, :update, :destroy]
+  before_action :set_list, only: [:edit, :update, :destroy, :show]
   require 'rspotify'
   require 'open-uri'
   
@@ -26,12 +26,13 @@ class ListsController < ApplicationController
   end
 
   def show
-    @list = List.find(params[:id])
     @user = @list.user
     @songs = Song.all
     @song = @songs.select do |x|
       x.list_id == @list.id
     end
+    @release_song = Song.where(list_id: @list.id).where(status: "release")
+    @nonrelease_song =Song.where(list_id: @list.id).where(status: "nonrelease")
   end
 
   def destroy
@@ -46,7 +47,7 @@ class ListsController < ApplicationController
       redirect_to @list
       flash[:success] = "リスト名を変更しました"
     else
-      flash.now['danger'] = "リストを変更できません"
+      flash.now['alert'] = "リストを変更できません"
       render :edit
     end
   end

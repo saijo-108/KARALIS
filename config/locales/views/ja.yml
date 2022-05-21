@@ -5,8 +5,17 @@ ja:
     logout: 'ログアウト'
     home: 'ホーム'
     mypage: 'マイページ'
-    make_group: 'グループ作成'
+    group_list: 'グループ一覧'
+    list_index: 'リスト一覧'
+    group_name: 'グループ名'
     make_list: 'リスト作成'
+    list_name: 'リスト名'
+    make: '作成'
+    destroy: '削除'
+    change: '変更'
+    edit: '編集'
+    forget_password: 'パスワードを忘れた方'
+    new_user: 'はじめての方はこちら'
   devise:
     login_success: 'ログインしました'
     login_fail: 'ログインに失敗しました'
@@ -19,9 +28,62 @@ ja:
       to_login_page: 'ログインページへ'
   lists:
     index:
-      title: 'リスト一覧'
+      title: 'ホーム'
+      new_list: '新しくリストを作成する'
+      joined_group: '参加しているグループ'
+      not_list: 'リストがありません'
     new:
-      title: 'リスト作成'
-  group:
+      title: '新規リスト作成'
+    show:
+      title: 'リスト詳細'
+      change_list_name: 'リスト名を変更'
+      add_song: '曲を追加'
+      back_to_group: 'グループに戻る'
+      delete_list: 'リストを削除'
+    edit:
+      title: 'リスト名変更'
+      back_list: 'リストへ戻る'
+  songs:
+    new:
+      title: '曲検索'
+      search: '曲を検索'
+      search_song: '曲を検索する'
+      result: '検索結果'
+  groups:
     index:
       title: 'グループ一覧'
+      new_group: '新しくグループを作成する'
+      not_group: 'グループがありません'
+    new:
+      title: '新規グループ作成'
+    show:
+      title: 'グループ詳細'
+      leave: '退会する'
+      delete: 'グループを削除する'
+      description: 'このグループについて'
+      member: "メンバー"
+    edit:
+      title: 'グループ名変更'
+      back_group: 'グループに戻る'
+    select:
+      title: '参加確認ページ'
+      invite_group: '招待されているグループ'
+      description: 'このグループについて'
+      select_share_list: '共有リストを選択'
+      not_select_share_list: '共有するリストがまだありません'
+      join: '参加する'
+      current_member: '参加しているメンバー'
+  profiles:
+    show:
+      title: 'プロフィール'
+      made_list: '作ったリスト'
+      joing_group: '所属グループ'
+    edit:
+      title: 'プロフィール編集'
+      not_change: '変更せずに戻る'
+  list_groups:
+    edit:
+      title: '共有リスト選択'
+      select_share_list: '共有リストを選択'
+      not_select_share_list: '共有するリストがまだありません'
+      not_update: '更新せずに戻る'

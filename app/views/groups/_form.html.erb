@@ -1,0 +1,22 @@
+<%= form_with model: group, local: true do |f| %>
+  <%= render 'shared/error_messages_model', model: f.object %>
+  <div class="form_group">
+    <%= text_field_tag 'group[user_ids]', "#{current_user.id}", type: 'hidden' %>
+    <div class="form_group">
+      <%= f.label :name, class:"white_text" %>
+      <%= f.text_field :name, class: 'form form-control validate[required]', placeholder:"(20字以内)" %>
+    </div>
+    <div class="from_group">
+      <%= f.label :description, class:"white_text" %>
+      <%= f.text_area :description, class: 'form-control form area_width', placeholder:"(250字以内)" %>
+    </div>
+      <%= form_with model: @select_list, local: true do |f| %>
+        <div class="display">
+          <div class="white_text list_select">共有リスト選択</div>
+          <%= f.select :id, List.where(user_id: current_user).map { |l| [l.name, l.id] } %>
+        </div>
+      <% end %>
+    <%= f.submit t("defaults.make"), class: 'btn btn-primary register' %>
+  </div>
+<% end %>
+

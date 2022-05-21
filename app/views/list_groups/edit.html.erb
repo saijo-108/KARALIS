@@ -1,0 +1,34 @@
+<% content_for(:title, t('.title')) %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'list_groups/edit' %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1 class="white_text text_center head"><%= t(".title") %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="list_change">
+  <%= link_to t('.not_update'), :back, class:"btn change btn_cubic btn_radius btn_back" %>
+</div>
+
+<div class="white_text text_center">
+  グループ名：<%= @group.name %>
+</div>
+
+<%= form_with(model: @list_group, method: :patch, url:"/groups/#{@group.id}/list_groups/#{@list_group.id}", local:true) do |f| %>
+  <% if @list_id.present? %>
+    <div class="share_list">
+      <div class="white_text"><%= t(".select_share_list") %></div>
+      <%= f.select :list_id, List.where(user_id: current_user).map { |l| [l.name, l.id] } %>
+      <%= f.hidden_field :id, :value => params[:id] %>
+      <%= f.submit "更新"%>
+    </div>
+  <% else %>
+    <div class="white_text"><%= t(".not_select_share_list") %></div>
+  <% end %>
+<% end %>
+
