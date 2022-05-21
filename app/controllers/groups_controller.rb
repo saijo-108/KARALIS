@@ -33,9 +33,7 @@ class GroupsController < ApplicationController
         @lists = List.all.includes(:user).order(created_at: :asc)
         @list = @group.lists
         @my_list =  @list.find{|n| n.user_id == current_user.id }
-        if @members.any? { |m| m.id == current_user.id}
-            @current_list_group = ListGroup.find_by(list_id: @my_list.id, group_id: @group)
-        else 
+        unless @members.any? { |m| m.id == current_user.id}
             redirect_to  select_group_path(@group)
         end
         @group_user = GroupUser.where(group_id: @group.id)

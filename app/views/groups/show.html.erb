@@ -42,8 +42,12 @@
   <%= link_to t("defaults.home"), lists_path, class:"btn change btn_cubic2 btn_radius btn_back" %>
   <% @list.each do |list| %>
     <% if list.user_id == current_user.id %>
-      <%= link_to "共有リスト変更", edit_group_list_group_path(@group, @current_list_group.id), class:"btn change btn_cubic2 btn_radius btn_back" %>
+      <%= link_to "共有リスト変更", edit_group_list_group_path(@group, ListGroup.find_by(list_id: @my_list.id, group_id: @group).id), class:"btn change btn_cubic2 btn_radius btn_back" %>
     <% end %>
+  <% end %>
+  <%= link_to "リストを作成する", new_list_path, class:"btn change btn_cubic2 btn_radius btn_back" %>
+  <% unless @list.any? {|u| u.user_id == current_user.id} %>
+    <%= link_to "共有リストを選択", "#", class:"btn change btn_cubic2 btn_radius btn_back" %>
   <% end %>
 </div>
 
