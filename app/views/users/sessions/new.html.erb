@@ -2,12 +2,12 @@
   <%= stylesheet_link_tag 'another/sign_up' %>
 <% end %>
 
+<%= render "shared/error_messages", resource: resource %>
 <div class="text_align z_index2">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <h1 class="white_text">ログイン</h1>
 
   <div class="white_text block">
-    <%= render "shared/error_messages", resource: resource %>
     <%= f.label :email, class:"" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text" %>
     <%= f.label :password, class:"" %>
