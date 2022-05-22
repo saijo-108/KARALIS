@@ -24,8 +24,11 @@
     <div class="grouplist">
       <%= render partial:"member" %>
     </div>
-    <div class="line-it-button" data-lang="ja" data-type="share-a" data-env="REAL" data-url="http://localhost:3000/groups/63" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
-      <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+    <div class="text_center">
+      <p class="white_text">↓メンバーを招待する場合はこちら↓</p>
+      <div class="line-it-button text_center" data-lang="ja" data-type="share-a" data-env="REAL" data-url="http://localhost:3000/groups/<%= @group.id %>/select" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
+        <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+    </div>
     <div class="leave">
       <% if @group.users.include?(current_user) %>
         <%= link_to t(".leave"), group_path(@group.id), class:"text_red", method: :delete, data: { confirm: "退会しますか？" }  %>
