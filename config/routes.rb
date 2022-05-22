@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resource :profile, only: %i[show edit update]
   resources :groups do
     resources :group_users, only: %i[destroy]
-    resources :list_groups, only: %i[edit update]
+    resources :list_groups, only: %i[edit update new create]
     member do
       get 'select'
       post 'join'
