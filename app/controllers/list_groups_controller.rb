@@ -1,6 +1,22 @@
 class ListGroupsController < ApplicationController
-    before_action :set_list_group
+    before_action :set_list_group, only: [:edit, :update]
     before_action :set_group
+
+    def new
+        @list_id = List.where(user_id: current_user).map(&:id)
+        @list_group = ListGroup.new
+    end
+
+    def create
+        @list_group = ListGroup.new(new_list_group_params)
+        if @list_group.save
+            redirect_to group_path(@group)
+            flash[:success] = "共有リストを登録しました"
+        else
+            render :new
+        end
+    end
+
     def edit
         @list_id = List.where(user_id: current_user).map(&:id)
     end
@@ -27,5 +43,9 @@ class ListGroupsController < ApplicationController
 
     def list_group_params
         params.require(:list_group).permit(:id, :list_id)
+    end
+
+    def new_list_group_params
+        params.require(:list_group).permit(:group_id, :list_id)
     end
 end

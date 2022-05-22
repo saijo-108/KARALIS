@@ -87,3 +87,8 @@ ja:
       select_share_list: '共有リストを選択'
       not_select_share_list: '共有するリストがまだありません'
       not_update: '更新せずに戻る'
+    new:
+      title: '共有リスト登録'
+      not_registration: '登録せずに戻る'
+      not_select_share_list: '共有するリストがまだありません'
+      select_share_list: '共有リストを選択'
