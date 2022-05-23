@@ -18,6 +18,18 @@ body {
 
     .block {
         display: inline-grid;
+        box-shadow: rgb(0, 0, 0) 0px 2px 10px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        width: 100%;
+        padding: 2rem;
+        max-width: 550px;
+        margin: auto;
+        color: black;
+
+        input {
+            margin-bottom: 1rem;
+        }
     }
 
     .background_img {
@@ -34,5 +46,45 @@ body {
 
     .margin_auto {
         margin: auto;
+    }
+
+    .send_btn {
+        text-align: center;
+        margin-top: 1rem;
+
+        input {
+            width: 40%;
+            box-sizing: border-box;
+            margin-bottom: 0;
+        }
+    }
+
+    label {
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .new {
+        margin-top: 2rem;
+    }
+
+    form table{
+        border-spacing: 0;
+    }
+    form td{
+        padding: 10px;
+        border-bottom: 1px solid #EEE;
+    }
+    form th{
+        padding: 15px;
+        border-bottom: 1px solid #EEE;
+        text-align: left;
+        font-weight: normal;
+        vertical-align: top;
+        width: 9rem;
+    }
+
+    .to_login {
+        margin-top: 1rem;
     }
 }
