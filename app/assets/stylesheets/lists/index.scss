@@ -113,5 +113,23 @@ body {
       color: white;
     }
     
+
+    // リストタイル
+
+    .tile_width {
+      width: 30%;
+    }
+    .tile_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      .tile {
+        width: 50%;
+        img {
+          width:100%;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
 }
 

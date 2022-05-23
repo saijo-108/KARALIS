@@ -25,18 +25,7 @@
       </div>
       <div class="playlist">
         <% if @lists.present? %>
-          <% @lists.each do |list| %>
-            <div class="song">
-              <div class="center">
-                <%= link_to list_path(list) do %>
-                  <%= list.name %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-          <% @songs.each do |song| %>
-            <%= image_tag "#{song.image}" %>
-          <% end %>
+          <%= render 'list_tile' %>
         <% else %>
           <p><%= t(".not_list") %></p>
         <% end %>

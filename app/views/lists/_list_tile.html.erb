@@ -1,0 +1,17 @@
+<% @lists.each do |list| %>
+    <div class="song">
+      <div class="center tile_width">
+        <%= link_to list_path(list) do %>
+          <%= list.name %>
+        <% end %>
+        <div class="tile_wrap">
+            <% @songs.each_with_index do |song, i| %>
+              <% if song.list_id == list.id %>
+                <div class="tile"><%= image_tag "#{song.image}", size:"100x100" %></div>
+                <% break if i == 3 %>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>
