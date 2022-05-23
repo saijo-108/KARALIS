@@ -22,6 +22,7 @@ ja:
     logout_success: 'ログアウトしました'
     new_success: 'KARALISへようこそ'
     new_fail: 'ユーザー登録に失敗しました'
+    password_title: 'パスワード再設定'
   users:
     new:
       title: 'ユーザー登録'
