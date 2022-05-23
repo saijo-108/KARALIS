@@ -26,9 +26,16 @@
       <div class="playlist">
         <% if @lists.present? %>
           <% @lists.each do |list| %>
-            <% if current_user.own?(list) %>
-              <%= render list %>
-            <% end %>
+            <div class="song">
+              <div class="center">
+                <%= link_to list_path(list) do %>
+                  <%= list.name %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <% @songs.each do |song| %>
+            <%= image_tag "#{song.image}" %>
           <% end %>
         <% else %>
           <p><%= t(".not_list") %></p>
