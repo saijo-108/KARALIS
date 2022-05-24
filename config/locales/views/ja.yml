@@ -30,8 +30,8 @@ ja:
   lists:
     index:
       title: 'ホーム'
-      new_list: '新しくリストを作成する'
-      joined_group: '参加しているグループ'
+      new_list: 'リスト作成へ'
+      joined_group: 'グループ一覧'
       not_list: 'リストがありません'
     new:
       title: '新規リスト作成'
@@ -53,7 +53,7 @@ ja:
   groups:
     index:
       title: 'グループ一覧'
-      new_group: '新しくグループを作成する'
+      new_group: 'グループを作成する'
       not_group: 'グループがありません'
     new:
       title: '新規グループ作成'

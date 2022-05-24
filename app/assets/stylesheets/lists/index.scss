@@ -7,6 +7,13 @@ body {
       margin: 30px;
     }
 
+    .list_new_btn {
+      text-align: right;
+      a {
+        width: 100%;
+      }
+    }
+
     .button{
       /*影の基点とするためrelativeを指定*/
       position: relative;
@@ -70,10 +77,11 @@ body {
     }
 
     .list-head {
-      font-size: 40px;
+      font-size: 3vw;
       color: white;
       padding-left: 30px;
-      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 30px;
     }
 
     .list {
@@ -81,20 +89,12 @@ body {
       margin: 0 auto;
     }
 
-    .list-wrapper {
-      border: solid;
-      border-color: rgb(255, 255, 255);
-      background-color: rgba(44, 39, 39, 0.552);
-      height: 67vh;
-      margin: 20px;
-    }
-
     .playlist {
       display: flex;
-      height: 67vh;
-      width: 100%;
-      flex-wrap: wrap;
+      height: auto;
+      width: 40%;
       text-align: center;
+      margin: auto;
     }
 
     .song {
@@ -113,5 +113,64 @@ body {
       color: white;
     }
     
+
+    // リストタイル
+
+    .tile_width {
+      width: 45%;
+      background-color: black;
+    }
+    .tile_wrap {
+      display: flex;
+      flex-wrap: wrap;
+      height: auto;
+      .tile {
+        width: 50%;
+        img {
+          width:100%;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .swiper--wrapper {
+      /* wrapperのサイズを調整 */
+      width: 100%;
+      height: 300px;
+    }
+    
+    .swiper-slide {
+      /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+      color: #ffffff;
+      width: 100%;
+      height: 60%;
+      text-align: center;
+      height: auto;
+    }
+
+    .swiper-button-next {
+      color: rgb(251, 255, 0);
+    }
+
+    .swiper-button-prev {
+      color: rgb(251, 255, 0);
+    }
+
+    .list_name {
+      letter-spacing: 10px;
+      color: white;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px !important;
+      height: 12px !important;
+      margin: 0 0 0 10px !important;
+      background: rgb(81, 255, 0) !important;
+    }
+    
+    .swiper-pagination-bullet:first-child {
+      margin: 0 !important;
+    }
 }
 

@@ -1,0 +1,26 @@
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <% @lists.each do |list| %>
+        <% @tile.clear %>
+        <div class="center tile_width swiper-slide">
+            <%= link_to list_path(list), class:"list_name" do %>
+              <%= list.name %>
+            <div class="tile_wrap">
+                <% @songs.each_with_index do |song, i| %>
+                <% if song.list_id == list.id %>
+                    <% @tile.push(song) %>
+                    <div class="tile"><%= image_tag "#{song.image}", size:"100x100" %></div>
+                    <% break if @tile.count == 4 %>
+                <% end %>
+                <% end %>
+            </div>
+            <% end %>
+        </div>
+    <% end %>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+

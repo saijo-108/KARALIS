@@ -22,15 +22,14 @@ class ListsController < ApplicationController
   end
 
   def index
-    @lists = List.all.includes(:user).order(created_at: :asc)
+    @lists = List.where(user_id: current_user.id)
+    @songs = Song.where(list_id: @lists.ids)
+    @tile = []
   end
 
   def show
     @user = @list.user
-    @songs = Song.all
-    @song = @songs.select do |x|
-      x.list_id == @list.id
-    end
+    @song = Song.where(list_id: @list.id)
     @release_song = Song.where(list_id: @list.id).where(status: "release")
     @nonrelease_song =Song.where(list_id: @list.id).where(status: "nonrelease")
   end

@@ -4,36 +4,30 @@
 <% end %>
 
 
-<div class="new">
-  <%= link_to new_list_path do %>
-    <div class="button new-button new-list">
-      <span><%= t(".new_list") %></span>
-    </div>
-  <% end %>
-  <%= link_to groups_path do %>
-    <div class="button new-button new-list">
-      <span><%= t(".joined_group") %></span>
-    </div>
-  <% end %>
-</div>
-
 <div class="flex">
   <div class="list">
-    <div class="list-wrapper">
-      <div class="list-head">
-        <%= t("defaults.list_index") %>
-      </div>
-      <div class="playlist">
-        <% if @lists.present? %>
-          <% @lists.each do |list| %>
-            <% if current_user.own?(list) %>
-              <%= render list %>
-            <% end %>
-          <% end %>
-        <% else %>
-          <p><%= t(".not_list") %></p>
-        <% end %>
-      </div>
+    <div class="list-head">
+      <%= List.model_name.human %>
+    </div>
+    <div class="playlist">
+      <% if @lists.present? %>
+        <%= render 'list_tile' %>
+      <% else %>
+        <p><%= t(".not_list") %></p>
+      <% end %>
+    </div>
+    <div class="list_new_btn">
+      <%= link_to new_list_path do %>
+        <div class="button new-button new-list">
+          <span><%= t(".new_list") %></span>
+        </div>
+      <% end %>
+      <%= link_to groups_path do %>
+        <div class="button new-button new-list">
+          <span><%= t(".joined_group") %></span>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'lists/index' %>
