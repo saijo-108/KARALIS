@@ -4,11 +4,6 @@
 <% end %>
 
 <div class="new">
-  <%= link_to new_list_path do %>
-    <div class="button new-button new-list">
-      <span><%= t(".new_list") %></span>
-    </div>
-  <% end %>
   <%= link_to groups_path do %>
     <div class="button new-button new-list">
       <span><%= t(".joined_group") %></span>
@@ -26,6 +21,13 @@
         <%= render 'list_tile' %>
       <% else %>
         <p><%= t(".not_list") %></p>
+      <% end %>
+    </div>
+    <div class="list_new_btn">
+      <%= link_to new_list_path do %>
+        <div class="button new-button new-list">
+          <span><%= t(".new_list") %></span>
+        </div>
       <% end %>
     </div>
   </div>

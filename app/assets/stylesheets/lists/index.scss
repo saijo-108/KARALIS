@@ -7,8 +7,11 @@ body {
       margin: 30px;
     }
 
-    .new {
+    .list_new_btn {
       text-align: right;
+      a {
+        width: 100%;
+      }
     }
 
     .button{
@@ -86,7 +89,7 @@ body {
 
     .playlist {
       display: flex;
-      height: 22vh;
+      height: auto;
       width: 25%;
       text-align: center;
       margin: auto;
