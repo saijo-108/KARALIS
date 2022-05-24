@@ -7,6 +7,8 @@
 //= require jquery.validationEngine
 //= require jquery.validationEngine-ja.js
 //= require_tree .
+//= require swiper/swiper-bundle.min.js
+
 
 $(function(){
     $('.alert').fadeOut(6000);  //４秒かけて消えていく
