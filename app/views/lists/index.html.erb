@@ -18,17 +18,15 @@
 
 <div class="flex">
   <div class="list">
-    <div class="list-wrapper">
-      <div class="list-head">
-        <%= t("defaults.list_index") %>
-      </div>
-      <div class="playlist">
-        <% if @lists.present? %>
-          <%= render 'list_tile' %>
-        <% else %>
-          <p><%= t(".not_list") %></p>
-        <% end %>
-      </div>
+    <div class="list-head">
+      <%= List.model_name.human %>
+    </div>
+    <div class="playlist">
+      <% if @lists.present? %>
+        <%= render 'list_tile' %>
+      <% else %>
+        <p><%= t(".not_list") %></p>
+      <% end %>
     </div>
   </div>
 </div>

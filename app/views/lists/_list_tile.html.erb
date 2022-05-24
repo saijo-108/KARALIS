@@ -1,27 +1,26 @@
-<% @lists.each do |list| %>
-    <% @tile.clear %>
-      <div class="center tile_width">
-        <%= link_to list_path(list) do %>
-          <%= list.name %>
-        <% end %>
-        <div class="tile_wrap">
-            <% @songs.each_with_index do |song, i| %>
-              <% if song.list_id == list.id %>
-                <% @tile.push(song) %>
-                <div class="tile"><%= image_tag "#{song.image}", size:"100x100" %></div>
-                <% break if @tile.count == 4 %>
-              <% end %>
-            <% end %>
-        </div>
-      </div>
-<% end %>
-
 <div class="swiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">Slide 1</div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
+    <% @lists.each do |list| %>
+        <% @tile.clear %>
+        <div class="center tile_width swiper-slide">
+            <%= link_to list_path(list) do %>
+            <%= list.name %>
+            <% end %>
+            <div class="tile_wrap">
+                <% @songs.each_with_index do |song, i| %>
+                <% if song.list_id == list.id %>
+                    <% @tile.push(song) %>
+                    <div class="tile"><%= image_tag "#{song.image}", size:"100x100" %></div>
+                    <% break if @tile.count == 4 %>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
   </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
 
 

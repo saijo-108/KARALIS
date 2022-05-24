@@ -7,6 +7,10 @@ body {
       margin: 30px;
     }
 
+    .new {
+      text-align: right;
+    }
+
     .button{
       /*影の基点とするためrelativeを指定*/
       position: relative;
@@ -73,7 +77,6 @@ body {
       font-size: 40px;
       color: white;
       padding-left: 30px;
-      text-align: center;
     }
 
     .list {
@@ -81,20 +84,12 @@ body {
       margin: 0 auto;
     }
 
-    .list-wrapper {
-      border: solid;
-      border-color: rgb(255, 255, 255);
-      background-color: rgba(44, 39, 39, 0.552);
-      height: 67vh;
-      margin: 20px;
-    }
-
     .playlist {
       display: flex;
-      height: 67vh;
-      width: 100%;
-      flex-wrap: wrap;
+      height: 22vh;
+      width: 25%;
       text-align: center;
+      margin: auto;
     }
 
     .song {
@@ -117,7 +112,7 @@ body {
     // リストタイル
 
     .tile_width {
-      width: 30%;
+      width: 45%;
     }
     .tile_wrap {
       display: flex;
@@ -142,24 +137,24 @@ body {
       /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
       color: #ffffff;
       width: 100%;
-      height: 100%;
+      height: 60%;
       text-align: center;
-      line-height: 300px;
     }
     
     .swiper-slide:nth-child(3n + 1) {
       /*1、4、7、3n+1枚目の背景色 */
-      background-color: #de4439;
+      background: #000000;
+      height: auto;
     }
     
     .swiper-slide:nth-child(3n + 2) {
       /*2、5、8、3n+2枚目の背景色 */
-      background-color: #fcd500;
+      background-color: #000000;
     }
     
     .swiper-slide:nth-child(3n + 3) {
       /*3、6、9、3n+3枚目の背景色 */
-      background-color: #53c638;
+      background-color: #000000;
     }
 }
 
