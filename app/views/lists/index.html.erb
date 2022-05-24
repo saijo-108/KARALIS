@@ -3,13 +3,6 @@
     <%= stylesheet_link_tag 'lists/index' %>
 <% end %>
 
-<div class="new">
-  <%= link_to groups_path do %>
-    <div class="button new-button new-list">
-      <span><%= t(".joined_group") %></span>
-    </div>
-  <% end %>
-</div>
 
 <div class="flex">
   <div class="list">
@@ -29,8 +22,12 @@
           <span><%= t(".new_list") %></span>
         </div>
       <% end %>
+      <%= link_to groups_path do %>
+        <div class="button new-button new-list">
+          <span><%= t(".joined_group") %></span>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-
 <%= javascript_pack_tag 'lists/index' %>

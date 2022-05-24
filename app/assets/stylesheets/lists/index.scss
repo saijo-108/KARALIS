@@ -77,9 +77,11 @@ body {
     }
 
     .list-head {
-      font-size: 40px;
+      font-size: 3vw;
       color: white;
       padding-left: 30px;
+      margin-top: 50px;
+      margin-bottom: 30px;
     }
 
     .list {
@@ -90,7 +92,7 @@ body {
     .playlist {
       display: flex;
       height: auto;
-      width: 25%;
+      width: 40%;
       text-align: center;
       margin: auto;
     }
@@ -116,10 +118,12 @@ body {
 
     .tile_width {
       width: 45%;
+      background-color: black;
     }
     .tile_wrap {
       display: flex;
       flex-wrap: wrap;
+      height: auto;
       .tile {
         width: 50%;
         img {
@@ -142,22 +146,31 @@ body {
       width: 100%;
       height: 60%;
       text-align: center;
-    }
-    
-    .swiper-slide:nth-child(3n + 1) {
-      /*1、4、7、3n+1枚目の背景色 */
-      background: #000000;
       height: auto;
     }
-    
-    .swiper-slide:nth-child(3n + 2) {
-      /*2、5、8、3n+2枚目の背景色 */
-      background-color: #000000;
+
+    .swiper-button-next {
+      color: rgb(251, 255, 0);
+    }
+
+    .swiper-button-prev {
+      color: rgb(251, 255, 0);
+    }
+
+    .list_name {
+      letter-spacing: 10px;
+      color: white;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px !important;
+      height: 12px !important;
+      margin: 0 0 0 10px !important;
+      background: rgb(81, 255, 0) !important;
     }
     
-    .swiper-slide:nth-child(3n + 3) {
-      /*3、6、9、3n+3枚目の背景色 */
-      background-color: #000000;
+    .swiper-pagination-bullet:first-child {
+      margin: 0 !important;
     }
 }
 

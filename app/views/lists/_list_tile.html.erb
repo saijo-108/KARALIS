@@ -3,9 +3,8 @@
     <% @lists.each do |list| %>
         <% @tile.clear %>
         <div class="center tile_width swiper-slide">
-            <%= link_to list_path(list) do %>
-            <%= list.name %>
-            <% end %>
+            <%= link_to list_path(list), class:"list_name" do %>
+              <%= list.name %>
             <div class="tile_wrap">
                 <% @songs.each_with_index do |song, i| %>
                 <% if song.list_id == list.id %>
@@ -15,6 +14,7 @@
                 <% end %>
                 <% end %>
             </div>
+            <% end %>
         </div>
     <% end %>
   </div>
