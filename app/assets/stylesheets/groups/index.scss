@@ -66,19 +66,24 @@ body {
     }
 
     .flex {
+      width: 75%;
       display: flex;
+      margin: auto;
     }
 
     .group-head {
       font-size: 40px;
       color: white;
-      padding-left: 30px;
       text-align: center;
     }
 
     .group {
-      width: 100%;
-      margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
+    border: solid;
+    border-color: white;
+    background-color: rgba(44, 39, 39, 0.552);
+    margin: 20px;
     }
 
     .group-wrapper {
@@ -90,11 +95,9 @@ body {
     }
 
     .grouplist {
-      display: flex;
-      height: 67vh;
-      width: 100%;
-      flex-wrap: wrap;
+      width: 80%;
       text-align: center;
+      margin: auto;
     }
 
     .song {
@@ -111,6 +114,34 @@ body {
 
     .white_text {
       color: white;
+    }
+
+    .table {
+      margin-bottom: 30px;
+    }
+
+    .tr_top {
+      border-top: none;
+    }
+
+    .user {
+      width: 13%;
+    }
+
+    .count_user {
+      width: 20%;
+    }
+
+    .date {
+      width: 10%;
+    }
+
+    .th_top {
+      border-top: none;
+    }
+
+    .new {
+      text-align: end;
     }
 }
 

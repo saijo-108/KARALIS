@@ -16,7 +16,9 @@
           <%= f.select :id, List.where(user_id: current_user).map { |l| [l.name, l.id] } %>
         </div>
       <% end %>
-    <%= f.submit t("defaults.make"), class: 'btn btn-primary register' %>
+      <div class="register_btn">
+        <%= f.submit t("defaults.make"), class: 'btn btn-primary register' %>
+      </div>
   </div>
 <% end %>
 

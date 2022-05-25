@@ -3,12 +3,10 @@ body {
       margin: 0 10px 0 10px;
     }
 
-    .new-button {
-      margin: 30px;
-    }
 
     .list_new_btn {
       text-align: right;
+      margin-top: 100px;
       a {
         width: 100%;
       }
@@ -77,11 +75,16 @@ body {
     }
 
     .list-head {
-      font-size: 3vw;
       color: white;
-      padding-left: 30px;
-      margin-top: 50px;
-      margin-bottom: 30px;
+      padding-left: calc(52px);
+      padding-right: calc(52px);
+      display: flex;
+
+      h1 {
+        width:-moz-fit-content; /* Firefox */
+        width:fit-content;
+        margin: 10px;
+      }
     }
 
     .list {
@@ -92,9 +95,11 @@ body {
     .playlist {
       display: flex;
       height: auto;
-      width: 40%;
+      width: 50%;
+      min-width: 500px;
       text-align: center;
       margin: auto;
+      margin-top: 30px;
     }
 
     .song {
@@ -171,6 +176,29 @@ body {
     
     .swiper-pagination-bullet:first-child {
       margin: 0 !important;
+    }
+
+    .controls {
+      flex: 1 0 auto;
+      text-align: end;
+    }
+
+    .new-button {
+      margin: 10px;
+    }
+
+    .no_playlist {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .one_playlist {
+      height: auto;
+      width: 25%;
+      min-width: 500px;
+      text-align: center;
+      margin: auto;
+      margin-top: 30px;
     }
 }
 

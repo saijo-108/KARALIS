@@ -1,17 +1,20 @@
-<% content_for :css do %>
-  <%= stylesheet_link_tag 'groups/index' %>
-<% end %>
-
-<div class="song">
-  <div class="center">
-    <% if group.user_ids.any? { |id| id == current_user.id } %>
-      <%= link_to group_path(group) do %>
-        <%= group.name %>
-      <% end %>
-    <% else %>
-      <%= link_to select_group_path(group) do %>
-        <%= group.name %>
-      <% end %>
-    <% end %>
-  </div>
-</div>
+<table class="white_text table">
+  <tr class="tr_top">
+    <th class="th_top user">グループ名</th>
+    <th class="th_top count_user">参加人数</th>
+    <th class="th_top date">参加日</th>
+  </tr>
+  <% @groups.each do |group| %>
+      <tr>
+        <% if group.user_ids.any? { |id| id == current_user.id } %>
+          <td>
+            <%= link_to group_path(group) do %>
+              <%= group.name %>
+            <% end %>
+          </td>
+          <td><%= group.users.count %>人</td>
+          <td><%= @user.find_by(group_id: group.id).created_at.strftime('%Y/%m/%d') %></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>

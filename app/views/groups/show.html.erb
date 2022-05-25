@@ -41,8 +41,6 @@
 </div>
 
 <div class="list_change">
-  <%= link_to t("defaults.group_list"), groups_path, class:"btn change btn_cubic1 btn_radius btn_back" %>
-  <%= link_to t("defaults.home"), lists_path, class:"btn change btn_cubic2 btn_radius btn_back" %>
   <% @list.each do |list| %>
     <% if list.user_id == current_user.id %>
       <%= link_to "共有リスト変更", edit_group_list_group_path(@group, ListGroup.find_by(list_id: @my_list.id, group_id: @group).id), class:"btn change btn_cubic2 btn_radius btn_back" %>

@@ -204,9 +204,7 @@ body {
 
     .share_form {
         padding-top: 30px;
-        text-align: right;
         position: relative;
-        margin-right: 40px;
         select {
             height: 30%;
         }
@@ -214,5 +212,9 @@ body {
 
     .navbar-expand-lg .navbar-collapse{
         display: none !important;
+    }
+
+    .branch {
+        text-align: center;
     }
 }

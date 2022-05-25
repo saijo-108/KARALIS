@@ -47,7 +47,7 @@ ja:
   songs:
     new:
       title: '曲検索'
-      search: '曲を検索'
+      search: '検索'
       search_song: '曲を検索する'
       result: '検索結果'
   groups:

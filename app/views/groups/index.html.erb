@@ -3,7 +3,6 @@
     <%= stylesheet_link_tag 'groups/index' %>
 <% end %>
 
-
 <div class="new">
   <%= link_to new_group_path do %>
     <div class="button new-button">
@@ -14,19 +13,14 @@
 
 <div class="flex">
   <div class="group">
-    <div class="group-wrapper">
       <div class="group-head">
         <%= t("defaults.group_list") %>
       </div>
       <div class="grouplist">
         <% if @groups.present? %>
-          <% @groups.each do |group| %>
-              <%= render group %>
-          <% end %>
-        <% else %>
-          <p><%= t(".not_group") %></p>
+          <%= render "group" %>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
+
