@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
     before_action :authenticate_user!, except: [:select]
     before_action :set_group, only: [:edit, :update, :destroy, :join, :group_destroy, :member_destroy]
+    before_action :not_enter, only: [:show]
 
     def index
         @groups = Group.all
@@ -41,7 +42,7 @@ class GroupsController < ApplicationController
         if @members.any?
             @leader = GroupUser.find_by(group_id: @group)
         end
-        @times = GroupUser.where(group_id: params[:id])
+        @times = GroupUser.where(group_id: @group)
     end
 
     def update
@@ -105,6 +106,14 @@ class GroupsController < ApplicationController
 
     def list_params
         params.require(:list).permit(:id)
+    end
+
+    def not_enter
+        @group = Group.find(params[:id])
+        unless @group.users.any? { |g| g.id == current_user.id }
+          flash[:alert] = "グループメンバーではありません"
+          return redirect_to groups_path
+        end
     end
     
 end
