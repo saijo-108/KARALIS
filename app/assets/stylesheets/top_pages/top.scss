@@ -1,36 +1,104 @@
 // トップページ
+.wrapper {
+  background-color: #FFF;
+}
 .top-wrapper {
-  background-image: image-url("top.png");
-  background-repeat:  no-repeat;
-  background-position:center right;
-  background-size: 2500px;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 50vh;
+  position: relative;
 
   h1 {
     font-size: 5rem;
+    text-align:center;
+    line-height:0.95em;
+    font-weight:bold;
+    color: #FFF;
+    text-shadow: 0 0 0.2em rgba(0,0,0,1);
   }
 
   .top-inner-text {
-    position: absolute;
-    top: 45%;
-    left: 65%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -130%);
     max-width: 100%;
     text-align: center;
     color: white;
-    width: 60%;
+    width: 100%;
 
     @media screen and (max-width: 767px) {
-      font-size: 2.0rem;
+      font-size: 5.0rem;
     }
   }
 }
 
+
+.bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 85vh;
+  color: #fff;
+}
+
+.bg.-visible:before {
+  transform: translate(0, 0);
+}
+
+.bg:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: image-url("back.png");
+  background-position: calc(50% - 20px) calc(50% - 30px);
+  background-size: cover;
+  transform: translate(0, 100%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) .6s;
+  content: '';
+}
+
+/* テキストのスタイル */
+.title {
+  display: block;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+.title h1 {
+  display: block;
+  opacity: 0;
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 1s, opacity linear 0.7s;
+}
+
+.title h1:first-child {
+  transform: translate(0, 40px);
+  transition-delay: 0.25s;
+}
+
+.title h1:last-child {
+  margin-top: 18px;
+  transform: translate(0, 30px);
+  transition-delay: 0.45s;
+}
+
+.bg.-visible .title h1 {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/****** Base style. ******/
+
+
 // ヘッダー
 header {
+  z-index: 3;
   position: fixed;
   width: 100%;
   align-items: center;
@@ -51,25 +119,33 @@ header {
 
 // フッター
 footer {
-  position: absolute;
-  bottom: 0;
-  margin-top: auto;
-  width: 100%;
-  height: auto;
-  display: flex;
-  height: auto;
-  background-color: rgba(19,20,19,0.9);
-  box-shadow: black;
-
-  p {
-    display: inline;
-  }
-
-  .text-copyright p {
-    color: white;
-  }
+    /*footerの装飾*/
+    width: 100%;
+    background-color: #89c7de;
+    color: #fff;
+    text-align: center;
 }
 
-.text-color {
+.white_text {
   color: white;
+}
+
+.use_wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .how_to_use_text {
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    span {
+      font-size: 3rem;
+      color: black;
+    }
+  }
+
+  .under_line {
+    border-bottom: 1px solid #333;
+    width: 80%;
+  }
 }

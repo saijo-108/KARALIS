@@ -17,8 +17,18 @@
       "js.map": [
         "/packs/js/lists/index-880d9e341190020ae771.js.map"
       ]
+    },
+    "top_pages/new": {
+      "js": [
+        "/packs/js/top_pages/new-28aec159ce20d960d3eb.js"
+      ],
+      "js.map": [
+        "/packs/js/top_pages/new-28aec159ce20d960d3eb.js.map"
+      ]
     }
   },
   "lists/index.js": "/packs/js/lists/index-880d9e341190020ae771.js",
-  "lists/index.js.map": "/packs/js/lists/index-880d9e341190020ae771.js.map"
+  "lists/index.js.map": "/packs/js/lists/index-880d9e341190020ae771.js.map",
+  "top_pages/new.js": "/packs/js/top_pages/new-28aec159ce20d960d3eb.js",
+  "top_pages/new.js.map": "/packs/js/top_pages/new-28aec159ce20d960d3eb.js.map"
 }

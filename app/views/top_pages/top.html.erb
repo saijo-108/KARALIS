@@ -2,33 +2,27 @@
   <%= stylesheet_link_tag 'top_pages/top' %>
 <% end %>
 
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1>『好き』を共有しよう</h1>
-  </div>
+
+<div class="wrapper">
+    <div class='top-wrapper bg'>
+        <span class='top-inner-text title'>
+            <h1>『好き』を共有しよう</h1>
+        </span>
+    </div>
+
+    <div class="use_wrapper">
+        <div class="how_to_use_text under_line">
+            <span class="white_text">使用方法</span>
+        </div>
+
+        <div class="gif">
+          <div class="gif_image">
+            <%= image_tag "" %>
+          </div>
+        </div>
+    </div>
 </div>
-<%= render("sign_up") %>
 
-<%= render("sign_in") %>
 
-<script>
-    $(function(){
-        $('#register').on('click', function() {
-            changeModal('loginModal', 'signUpModal');
-        });
-        function changeModal(beforeModal, afterModal) {
-            $('#'+beforeModal).modal( 'hide' );
-            $('#'+afterModal).modal( 'hide' );
-        }
-    });
 
-    $(function(){
-        $('#to_login').on('click', function() {
-            changeModal('signUpModal', 'loginModal');
-        });
-        function changeModal(beforeModal, afterModal) {
-            $('#'+beforeModal).modal( 'hide' );
-            $('#'+afterModal).modal( 'hide' );
-        }
-    });
-</script>
+<%= javascript_pack_tag 'top_pages/new' %>
