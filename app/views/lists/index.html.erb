@@ -7,27 +7,35 @@
 <div class="flex">
   <div class="list">
     <div class="list-head">
-      <%= List.model_name.human %>
+      <div>
+        <h1><%= List.model_name.human %></h1>
+      </div>
+      <div class="controls">
+        <%= link_to new_list_path do %>
+          <div class="button new-button">
+            <span><%= t(".new_list") %></span>
+          </div>
+        <% end %>
+        <%= link_to groups_path do %>
+          <div class="button new-button">
+            <span><%= t(".joined_group") %></span>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="playlist">
-      <% if @lists.present? %>
-        <%= render 'list_tile' %>
+      <% if @lists.size >= 2 %>
+        <div class="playlist">
+          <%= render 'list_tile' %>
+        </div>
+      <% elsif @lists.size == 1 %>
+      <div class="one_playlist">
+        <%= render 'one_tile' %>
+      </div>
       <% else %>
-        <p><%= t(".not_list") %></p>
-      <% end %>
-    </div>
-    <div class="list_new_btn">
-      <%= link_to new_list_path do %>
-        <div class="button new-button new-list">
-          <span><%= t(".new_list") %></span>
+        <div class="no_playlist white_text">
+          <p><%= t(".not_list") %></p>
         </div>
       <% end %>
-      <%= link_to groups_path do %>
-        <div class="button new-button new-list">
-          <span><%= t(".joined_group") %></span>
-        </div>
-      <% end %>
-    </div>
   </div>
 </div>
 <%= javascript_pack_tag 'lists/index' %>

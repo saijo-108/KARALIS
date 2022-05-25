@@ -1,8 +1,4 @@
 body {
-    background-image: image-url("top.png");
-    background-repeat:  no-repeat;
-    background-position:center right;
-    height: 100vh;
 
     h1 {
         color: white;
@@ -10,11 +6,17 @@ body {
     }
 
     .search {
+        margin-top: 30px;
         text-align: center;
     }
 
     .form1 {
         margin-bottom: 30px;
+        form {
+            width:-moz-fit-content; /* Firefox */
+            width:fit-content; /* other browsers */
+            margin: auto;
+        }
     }
 
     .result {
@@ -33,7 +35,7 @@ body {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        margin-left: calc(50% - 48vw);
+        margin: auto;
     }
 
     .artist-name {
