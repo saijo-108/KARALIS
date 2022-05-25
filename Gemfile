@@ -76,3 +76,4 @@ gem 'rspotify'
 gem 'enum_help'
 gem 'kaminari'
 gem 'webpacker'
+gem "hashid-rails", "~> 1.0"
