@@ -13,6 +13,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # folder are already added.
 Rails.application.config.assets.precompile += [lambda do |filename, path|
   path.start_with?(Rails.root.join('app', 'assets').to_s) &&
-      %w(.js .css).include?(File.extname(filename)) &&
-      !File.basename(filename).start_with?('_')
+    %w[.js .css].include?(File.extname(filename)) &&
+    !File.basename(filename).start_with?('_')
 end]
