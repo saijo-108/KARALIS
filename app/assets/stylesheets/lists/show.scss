@@ -1,8 +1,4 @@
 body {
-    .rrr {
-        margin-bottom: 10px;
-        display: flex;
-    }
 
     .list_change {
         .btn_cubic {
@@ -38,7 +34,7 @@ body {
         .list_title {
             display: inline-block;
             font-size: 2rem;
-            position: absolute;
+            position: relative;
             left: 18%;
             top: 10%;
         }
@@ -229,7 +225,7 @@ body {
     }
 
     .name_list {
-        position: absolute;
+        position: relative;
         left: 16%;
         top: 8%;
     }

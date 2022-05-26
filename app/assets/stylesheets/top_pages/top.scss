@@ -1,6 +1,11 @@
 // トップページ
-.wrapper {
+main {
   background-color: #FFF;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
 }
 .top-wrapper {
   background-color: black;
@@ -40,7 +45,7 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 85vh;
+  height: 88vh;
   color: #fff;
 }
 
@@ -130,6 +135,7 @@ footer {
   color: white;
 }
 
+// 使用方法
 .use_wrapper {
   flex-direction: column;
   justify-content: center;
@@ -137,7 +143,7 @@ footer {
   .how_to_use_text {
     text-align: center;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 6%;
     span {
       font-size: 3rem;
       color: black;
@@ -148,4 +154,186 @@ footer {
     border-bottom: 1px solid #333;
     width: 80%;
   }
+
+  .gif {
+    text-align: center;
+  }
+
+  .gif_image1 {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #ce6a6a38;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    img {
+      width: 50%;
+      height: auto;
+      max-width: 655px;
+      min-width: 580px;
+      margin: 30px;
+      border: 7px solid #ffffff;
+    }
+  }
+
+  .description1 {
+    width: 40%;
+    margin: auto;
+  }
+
+  .gif_image2 {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #6fce6a38;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    img {
+      width: 50%;
+      height: auto;
+      max-width: 655px;
+      min-width: 580px;
+      margin: 30px;
+      border: 7px solid #ffffff;
+    }
+  }
+
+  .description2 {
+    width: 40%;
+    margin: auto;
+  }
+}
+
+// サービス
+.what_wrapper {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .how_to_use_text {
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    span {
+      font-size: 3rem;
+      color: black;
+    }
+  }
+
+  .under_line {
+    border-bottom: 1px solid #333;
+    width: 80%;
+  }
+}
+
+.service {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+  // スライド1
+  .service1 {
+    width: 660px;
+  }
+  .slide1 {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .slide2 {
+    img {
+      width: 100%;
+    }
+  }
+  .swiper--wrapper {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .swiper-slide {
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 300px;
+  }
+
+  // スライド2
+  .service2 {
+    width: 660px;
+  }
+  .slide3 {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .slide4 {
+    img {
+      width: 100%;
+    }
+  }
+
+  .slide5 {
+    img {
+      width: 100%;
+    }
+  }
+
+  .slide6 {
+    img {
+      width: 100%;
+    }
+  }
+
+  .swiper-wrapper {
+    width: 100%;
+    height: auto;
+    margin: auto;
+  }
+  
+  .swiper-slide {
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 300px;
+    margin: auto;
+    border: 2px solid;
+    border-color: #d3ff00c2;
+  }
+
+  h3 {
+    text-align: center;
+    span {
+      border-bottom: 2px solid;
+      border-color: #ff0808b3;
+    }
+  }
+
+  p {
+    text-align: center;
+    span {
+      display: inline-block;
+    }
+  }
+  p span {
+    display: inline-block;
+  }
+
+  .swiper {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+}
+
+.blue {
+  color: #7cb0f8;
 }
