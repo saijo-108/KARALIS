@@ -2,33 +2,112 @@
   <%= stylesheet_link_tag 'top_pages/top' %>
 <% end %>
 
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1>『好き』を共有しよう</h1>
-  </div>
+
+<div class="wrapper">
+    <div class='top-wrapper bg'>
+        <span class='top-inner-text title'>
+            <h1>『好き』を共有しよう</h1>
+        </span>
+    </div>
+
+    <div class="what_wrapper">
+        <div class="how_to_use_text under_line">
+            <span>サービス</span>
+        </div>
+
+        <div class="service">
+          <div class="service1 swiper">
+            <h3><span>プレイリストを作成</span></h3>
+            <p>
+              <span>曲を検索し、</span>
+              <span>プレイリストを作成できます</span>
+            </p>
+            <div class="swiper-wrapper">
+              <div class="slide1 swiper-slide">
+                <%= image_tag "service.png", height:"400" %>
+              </div>
+              <div class="slide2 swiper-slide">
+                <%= image_tag "service_search.png", height:"400" %>
+              </div>
+              <div class="slide2 swiper-slide">
+                <%= image_tag "service2.png", height:"400" %>
+              </div>
+            </div>
+            <div class="swiper-pagination blue"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+
+          <div class="service2 swiper">
+            <h3><span>グループを作成</span></h3>
+            <p>
+              <span>グループをLINEで共有し招待したり、</span>
+              <span>グループに参加できます</span>
+            </p>
+            <div class="swiper-wrapper">
+              <div class="slide3 swiper-slide">
+                <%= image_tag "service30.png", height:"400" %>
+              </div>
+              <div class="slide4 swiper-slide">
+                <%= image_tag "service_line1.png", height:"400" %>
+              </div>
+              <div class="slide5 swiper-slide">
+                <%= image_tag "service_group3.png", height:"400" %>
+              </div>
+            </div>
+            <div class="swiper-pagination blue"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+    </div>
+
+    <div class="use_wrapper">
+        <div class="how_to_use_text under_line", id="how">
+            <span>使用方法</span>
+        </div>
+
+        <div class="gif">
+          <div class="gif_image1">
+            <%= image_tag "list_descr.gif" %>
+            <div class="description1">
+              <h2>まずはリストを作成しよう！</h2></ br>
+              <% if user_signed_in? %>
+                <%= link_to "リスト作成へ", lists_path %>
+              <% else %>
+                <%= link_to "ログインへ", new_user_session_path %>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="gif_image2">
+            <div class="description2">
+              <h2>グループを作成しよう！</h2></ br>
+              <% if user_signed_in? %>
+                <%= link_to "グループ作成へ", new_group_path %>
+              <% else %>
+                <%= link_to "ログインへ", new_user_session_path %>
+              <% end %>
+            </div>
+            <%= image_tag "group.gif" %>
+          </div>
+
+          <div class="gif_image2">
+            <%= image_tag "line.gif" %>
+            <div class="description2">
+              <h2>メンバーを招待しよう！</h2></ br>
+              <% if user_signed_in? %>
+                <%= link_to "グループ一覧へ", groups_path %>
+              <% else %>
+                <%= link_to "ログインへ", new_user_session_path %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
 </div>
-<%= render("sign_up") %>
 
-<%= render("sign_in") %>
 
-<script>
-    $(function(){
-        $('#register').on('click', function() {
-            changeModal('loginModal', 'signUpModal');
-        });
-        function changeModal(beforeModal, afterModal) {
-            $('#'+beforeModal).modal( 'hide' );
-            $('#'+afterModal).modal( 'hide' );
-        }
-    });
 
-    $(function(){
-        $('#to_login').on('click', function() {
-            changeModal('signUpModal', 'loginModal');
-        });
-        function changeModal(beforeModal, afterModal) {
-            $('#'+beforeModal).modal( 'hide' );
-            $('#'+afterModal).modal( 'hide' );
-        }
-    });
-</script>
+<%= javascript_pack_tag 'top_pages/new' %>

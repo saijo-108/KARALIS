@@ -3,7 +3,7 @@
 <% end %>
 
 <%= render "shared/error_messages", resource: resource %>
-<div class="text_align z_index2">
+<div class="text_align z_index2 wrapper">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <h1 class="white_text">ログイン</h1>
   <div class="white_text block">
