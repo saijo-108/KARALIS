@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
-  before_action :set_song, only: [:edit, :update, :destroy]
-  before_action :list_set, only: [:edit, :update, :destroy, :new]
+  before_action :set_song, only: %i[edit update destroy]
+  before_action :list_set, only: %i[edit update destroy new]
 
   def index
     @songs = Song.find_by(list_id: params[:list_id])
@@ -10,26 +10,23 @@ class SongsController < ApplicationController
     @song = current_user.songs.build(song_params)
     @list = List.find(params[:list_id])
     if @song.save
-      flash[:success] = "曲を追加しました"
+      flash[:success] = '曲を追加しました'
       redirect_to list_path(@list)
     else
-      flash[:alert] = "すでに登録されています"
+      flash[:alert] = 'すでに登録されています'
       redirect_to list_path(@list)
     end
   end
 
   def new
     @song = current_user.songs.build
-    if params[:search].present?
-      @searchsongs = RSpotify::Track.search(params[:search])
-    end
+    @searchsongs = RSpotify::Track.search(params[:search]) if params[:search].present?
   end
 
   def destroy
     @song.destroy!
-    redirect_to list_path(@list), success: "削除しました！"
+    redirect_to list_path(@list), success: '削除しました！'
   end
-
 
   def edit
     @list = List.find(params[:list_id])
@@ -42,10 +39,10 @@ class SongsController < ApplicationController
   def update
     if @song.update!(song_params)
       redirect_to @list
-      flash[:success] = "設定を保存しました"
+      flash[:success] = '設定を保存しました'
     else
       redirect_to @list
-      flash[:danger] = "設定を変更できません"
+      flash[:danger] = '設定を変更できません'
     end
   end
 
@@ -56,11 +53,10 @@ class SongsController < ApplicationController
   end
 
   def set_song
-    @song = Song.find_by(id: params[:id],list_id: params[:list_id])
+    @song = Song.find_by(id: params[:id], list_id: params[:list_id])
   end
 
   def list_set
     @list = List.find(params[:list_id])
   end
-
 end

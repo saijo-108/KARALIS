@@ -38,13 +38,13 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -59,21 +59,53 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
+# Used for user authentication
 gem 'devise'
-gem 'carrierwave'
+
+# Used for debugging
 gem 'pry-rails'
+
+# Css framework used for design
 gem 'bootstrap', '~> 4.3.1'
+
+# Used for the icon
 gem 'font-awesome-sass', '~>5.11.2'
+
+# Used for jquery
 gem 'jquery-rails'
+
+# Used for LINE session
 gem 'omniauth-line'
+
+# Countermeasures for omniauth vulnerabilities
 gem 'omniauth-rails_csrf_protection'
+
+# Management of environment variables
 gem 'dotenv-rails'
+
+# Translating custom language
 gem 'rails-i18n', '~> 6.0.0'
+
+# Validation check in real time
 gem 'jQuery-Validation-Engine-rails'
+
+# API that can use spotify functions
 gem 'rspotify'
+
+# Apply i18n to enum
 gem 'enum_help'
+
+# Pagenation
 gem 'kaminari'
+
+# Use JavaScript with Webpack
 gem 'webpacker'
-gem "hashid-rails", "~> 1.0"
+
+# For hashing URLs
+gem 'hashid-rails', '~> 1.0'
+
+# Coding check
+gem 'rubocop', require: false
+gem 'rubocop-rails', require: false

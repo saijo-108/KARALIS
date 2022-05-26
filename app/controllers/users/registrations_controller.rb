@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       if resource.active_for_authentication?
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
-        if session[:previous_url].include?("select")
+        if session[:previous_url].include?('select')
           redirect_to session[:previous_url]
         else
           redirect_to lists_path
@@ -79,9 +79,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    lists_path
-  end
+  # def after_sign_up_path_for(resource)
+  #   lists_path
+  # end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

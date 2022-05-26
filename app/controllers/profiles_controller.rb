@@ -1,14 +1,14 @@
 class ProfilesController < ApplicationController
-before_action :set_user, only: %i[edit update]
-  
+  before_action :set_user, only: %i[edit update]
+
   def edit; end
 
   def update
     if @user.update(user_params)
-      flash[:success] = "変更しました"
+      flash[:success] = '変更しました'
       redirect_to profile_path
     else
-      flash[:alert] = "変更できませんでした"
+      flash[:alert] = '変更できませんでした'
       redirect_to edit_profile_path
     end
   end
