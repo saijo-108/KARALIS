@@ -3,5 +3,8 @@
   "private": true,
   "dependencies": {
     "swiper": "^8.1.6"
+  },
+  "scripts": {
+    "setup": "yarn"
   }
 }
