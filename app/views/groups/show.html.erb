@@ -3,18 +3,26 @@
   <%= stylesheet_link_tag 'groups/show' %>
 <% end %>
 
-<div class="readmore over_view">
-    <p class="white_text head_text"><%= t(".description") %></p>
-    <input id="check1" class="readmore-check" type="checkbox">
-    <div class="readmore-content white_text description">
-      <%= simple_format(@group.description) %>
+<div class="flex name_head">
+  <div class="name_wrapper">
+    <p class="name_title white_text"><%= t("defaults.group_name") %></p>
+    <div class="end_align">
+      <div class="white_text name">
+        <%= simple_format(@group.name) %>
+      </div>
+      <%= link_to "変更", edit_group_path(@group), class:"edit"%>
     </div>
-    <label class="readmore-label" for="check1"></label>
-</div>
+  </div>
 
-<p class="name_title white_text"><%= t("defaults.group_name") %></p>
-<div class="white_text name"><%= simple_format(@group.name) %></div>
-<%= link_to "変更", edit_group_path(@group), class:"edit"%>
+  <div class="readmore over_view">
+      <p class="white_text head_text"><%= t(".description") %></p>
+      <input id="check1" class="readmore-check" type="checkbox">
+      <div class="readmore-content white_text description">
+        <%= simple_format(@group.description) %>
+      </div>
+      <label class="readmore-label" for="check1"></label>
+  </div>
+</div>
 
 <div class="flex">
   <div class="group">
