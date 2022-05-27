@@ -1,4 +1,12 @@
 body {
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    
+    }
     .white_text {
         color: white;
     }
@@ -9,7 +17,6 @@ body {
 
     .head {
         position: relative;
-        top: -56px;
     }
 
     .list_change {
@@ -27,20 +34,27 @@ body {
         }
 
         .change {
-            position: absolute;
-            top: 14%;
-            left: 72%;
-            margin-left: 55px;
+            position: relative;
         }
 
         .btn_back {
             background-color: #4144a1;
             color: white;
-            width: 10%;
+            width: auto;
         }
     }
 
     .share_list {
-        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 5%;
+    }
+
+    .name_wrapper{
+        margin-bottom: 5%;
+        font-size: 2rem;
+    }
+
+    .wrapper {
+        width: 100%;
     }
 }
