@@ -1,5 +1,7 @@
 {
   "name": "karalis",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "swiper": "^8.1.6"
+  }
 }
