@@ -5,4 +5,8 @@ class List < ApplicationRecord
   has_many :songs, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 100 }
+
+  def self.user_lists_get(user_self)
+    self.where(user_id: user_self)
+  end
 end

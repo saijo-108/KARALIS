@@ -7,11 +7,11 @@
               <%= list.name %>
             <div class="tile_wrap">
                 <% @songs.each_with_index do |song, i| %>
-                <% if song.list_id == list.id %>
-                    <% @tile.push(song) %>
-                    <div class="tile"><%= image_tag "#{song.image}", size:"100x100" %></div>
-                    <% break if @tile.count == 4 %>
-                <% end %>
+                  <% if song.list_id == list.id %>
+                      <% @tile.push(song) %>
+                      <div class="tile"><%= image_tag "#{song.image}", size:"100x100" %></div>
+                      <% break if @tile.count == 4 %>
+                  <% end %>
                 <% end %>
             </div>
             <% end %>

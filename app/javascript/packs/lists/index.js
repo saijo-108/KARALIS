@@ -16,7 +16,6 @@ const swiper = new Swiper(".swiper", {
         slideShadows: true
       },
     
-      // ナビボタンが必要なら追加
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
