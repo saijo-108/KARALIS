@@ -22,16 +22,15 @@ class ListsController < ApplicationController
   end
 
   def index
-    @lists = List.where(user_id: current_user.id)
+    @lists = List.user_lists_get(current_user.id)
     @songs = Song.where(list_id: @lists.ids)
     @tile = []
   end
 
   def show
-    @user = @list.user
     @song = Song.where(list_id: @list.id)
-    @release_song = Song.where(list_id: @list.id).where(status: 'release')
-    @nonrelease_song = Song.where(list_id: @list.id).where(status: 'nonrelease')
+    @release_song = @song.where(status: 'release')
+    @nonrelease_song = @song.where(status: 'nonrelease')
   end
 
   def destroy

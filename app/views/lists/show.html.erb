@@ -9,7 +9,7 @@
     <font class="name_list"><%= t('defaults.list_name') %></font>
       <%= form_with model: @list, class:"text_center", local: true do |f| %>
         <div class="list_title"><%= @list.name %></div>
-        <% if @user.id == current_user.id %>
+        <% if current_user.own?(@list) %>
           <div class="list_change">
             <%= link_to t('.change_list_name'), edit_list_path(@list), class:"btn change btn_cubic btn_radius btn_back" %>
           </div>
@@ -28,12 +28,12 @@
 
 
 
-<%= render "list_table" %>
+<%= render "list_table", list: @list  %>
 
 <div class="text_right">
   <%= link_to t('defaults.home'), lists_path, class:'back_home' %>
   <%= link_to t('defaults.group_list'), groups_path, class:'back_group' %>
-  <% if @user.id == current_user.id %>
+  <% if @list.user_id == current_user.id %>
     <%= link_to t('.delete_list'), list_path(@list.id),class:"text_red", method: :delete, data: { confirm: "このリストを削除しますか？" } %>
   <% end %>
 </div>

@@ -4,16 +4,16 @@
     <li class="preview1">プレビュー</li>
     <li class="song_title1">曲名</li>
     <li class="artist1">アーティスト</li>
-    <% if @user.id == current_user.id %>
+    <% if current_user.own?(list) %>
       <li class="status1">非公開</li>
       <li class="save1"></li>
       <li class="delete1"></li>
     <% end %>
   </ul>
   <div class="list_content">
-        <% if @user.id == current_user.id %>
+        <% if current_user.own?(list) %>
           <% @song.each_with_index do |song, i| %>
-            <%= form_with model: [@list, song], local: true do |f| %>
+            <%= form_with model: [list, song], local: true do |f| %>
               <ul class="list">
                   <li class="index"><%= i+1 %>.</li>
                   <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
