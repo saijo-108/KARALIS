@@ -2,6 +2,6 @@
   <div class="form-group">
   <%= render 'shared/error_messages_model', model: f.object %>
     <%= f.text_field :name, class: 'form validate[required]', placeholder:"グループ名" %>
-    <%= f.submit "登録", class: 'btn btn-primary register' %>
+    <%= f.submit t("defaults.new"), class: 'btn btn-primary register' %>
   </div>
 <% end %>

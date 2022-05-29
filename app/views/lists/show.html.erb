@@ -31,7 +31,7 @@
 <%= render "list_table", list: @list  %>
 
 <div class="text_right">
-  <%= link_to t('defaults.home'), lists_path, class:'back_home' %>
+  <%= link_to t('defaults.list_index'), lists_path, class:'back_home' %>
   <%= link_to t('defaults.group_list'), groups_path, class:'back_group' %>
   <% if @list.user_id == current_user.id %>
     <%= link_to t('.delete_list'), list_path(@list.id),class:"text_red", method: :delete, data: { confirm: "このリストを削除しますか？" } %>
