@@ -1,20 +1,19 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!, except: [:select]
   before_action :set_group, only: %i[edit update destroy join group_destroy member_destroy]
-  before_action :not_enter, only: [:show]
+  before_action :not_enter, only: %i[show]
+  before_action :set_list, only: %i[new create]
 
   def index
-    @groups = Group.all
-    @user = GroupUser.where(user_id: current_user)
+    @group_user = GroupUser.user_groups_get(current_user)
+    @groups = current_user.groups
   end
 
   def new
     @group = Group.new
-    @select_list = List.new
   end
 
   def create
-    @select_list = List.new
     @group = Group.new(group_params)
     @list_id = List.where(user_id: current_user).map(&:id)
     if @list_id.present?
@@ -97,6 +96,10 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def set_list
+    @select_list = List.new
   end
 
   def list_params

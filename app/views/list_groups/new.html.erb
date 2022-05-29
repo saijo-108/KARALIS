@@ -23,8 +23,8 @@
   <% if @list_id.present? %>
     <div class="share_list">
       <div class="white_text"><%= t(".select_share_list") %></div>
-      <%= f.select :list_id, List.where(user_id: current_user).map { |l| [l.name, l.id] } %>
-      <%= f.hidden_field :group_id, :value => params[:group_id] %>
+      <%= f.select :list_id, @list_id.map { |l| [l.name, l.id] } %>
+      <%= f.hidden_field :group_id, :value => @group.id %>
       <%= f.submit "登録"%>
     </div>
   <% else %>

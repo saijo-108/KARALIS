@@ -17,10 +17,11 @@
         <%= t("defaults.group_list") %>
       </div>
       <div class="grouplist">
-        <% if @groups.present? %>
+        <% if @group_user.present? %>
           <%= render "group" %>
+        <% else %>
+          <h3 class="white_text">グループがありません</h3>
         <% end %>
       </div>
   </div>
 </div>
-

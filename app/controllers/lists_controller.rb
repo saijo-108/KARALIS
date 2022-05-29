@@ -22,7 +22,7 @@ class ListsController < ApplicationController
   end
 
   def index
-    @lists = List.user_lists_get(current_user.id)
+    @lists = List.user_lists_get(current_user)
     @songs = Song.where(list_id: @lists.ids)
     @tile = []
   end
