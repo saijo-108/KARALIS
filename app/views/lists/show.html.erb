@@ -12,8 +12,6 @@
         <% if current_user.own?(@list) %>
           <div class="list_change">
             <%= link_to t('.change_list_name'), edit_list_path(@list), class:"btn change btn_cubic btn_radius btn_back" %>
-          </div>
-          <div class="add">
             <%= link_to t('.add_song'), new_list_song_path(@list.id), class:"btn change btn_cubic btn_radius btn_back" %>
           </div>
         <% else %>

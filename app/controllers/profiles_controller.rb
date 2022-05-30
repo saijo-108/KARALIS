@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
       redirect_to profile_path
     else
       flash[:alert] = '変更できませんでした'
-      redirect_to edit_profile_path
+      render :edit
     end
   end
 

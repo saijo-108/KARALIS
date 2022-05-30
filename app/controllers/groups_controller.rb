@@ -38,6 +38,8 @@ class GroupsController < ApplicationController
     @group_user = GroupUser.where(group_id: @group.id)
     @leader = GroupUser.find_by(group_id: @group) if @members.any?
     @times = GroupUser.where(group_id: @group)
+    @comments = @group.comments
+    @comment = current_user.comments.new
   end
 
   def update

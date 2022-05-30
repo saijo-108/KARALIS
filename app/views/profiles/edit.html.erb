@@ -8,14 +8,14 @@
     <div class="col-md-10 offset-md-1">
       <h1><%= t('.title') %></h1>
       <%= form_with model: @user, url: profile_path, html: { id: "edit_validate" }, local: true do |f| %>
+        <%= render 'shared/error_messages_model', model: @user %>
         <%= f.label :email, class: "white_text" %>
         <%= f.email_field :email, class: 'form-control mb-3 validate[required]' %>
-
         <%= f.label :name, class: "white_text" %>
         <%= f.text_field :name, class: 'form-control mb-3 validate[required]' %>
         <div class="btn_zone">
           <%= f.submit t('defaults.change'), class: 'btn btn-primary' %>
-          <%= link_to t('.not_change'), :back, class: "btn btn-danger left" %>
+          <%= link_to t('.not_change'), profile_path, class: "btn btn-danger left" %>
         </div>
       <% end %>
     </div>
