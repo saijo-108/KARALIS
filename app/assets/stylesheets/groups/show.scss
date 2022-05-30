@@ -104,10 +104,13 @@ body {
 
 
     .flex {
-      width: 60%;
+      width: 100%;
       display: flex;
+      justify-content: center;
+      align-items: center;
       margin: auto;
-      margin-top: 20px
+      margin-top: 20px;
+      flex-wrap: wrap;
     }
 
     .group-head {
@@ -118,11 +121,13 @@ body {
 
     .group {
       width: 100%;
+      max-width: 800px;
       margin: 0 auto;
       border: solid;
       border-color: rgb(255, 255, 255);
       background-color: rgba(44, 39, 39, 0.552);
       margin: 20px;
+      min-width: 500px;
     }
 
 
@@ -319,5 +324,120 @@ body {
 
     .end_align {
       text-align: end;
+    }
+
+    // コメント
+    .board {
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid;
+    }
+
+    .text_right {
+      text-align: left;
+    }
+
+    .comment_form {
+      margin-top: 10px;
+      margin-bottom: 10px;
+       form {
+        display: flex;
+        justify-content: center; /*左右中央揃え*/
+        align-items: center;
+       }
+    }
+
+    .content_size {
+      height: 250px;
+      overflow-y: scroll;
+      margin: 10px;
+      background-color: #38c0ff;
+    }
+
+    .content_size::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 7px;
+  }
+  
+
+  .content_size::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(180deg, #1511ff 0%, #708AD4 99%);
+    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+    border-radius: 100px;
+}
+
+  .content_size::-webkit-scrollbar-track {
+    background: #ffffffab;
+  }
+
+    .bubble {
+      position: relative;
+      margin: 2em auto 2em auto;
+      padding: 15px;
+      background: #fff0c6;
+      border-radius: 20px;
+      width: 78%;
+      padding-top: 3px;
+      padding-bottom: 2px;
+    }
+    .bubble:before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      width: 13px;
+      height: 12px;
+      bottom: 0;
+      background: #fff0c6;
+      border-radius: 50%;
+    }
+    .bubble::after {
+      content: "";
+      position: absolute;
+      left: -24px;
+      width: 20px;
+      height: 18px;
+      bottom: 3px;
+      background: #fff0c6;
+      border-radius: 50%;
+    }
+    .bubble p {
+      margin: 0; 
+      padding: 0;
+      word-break: break-all;
+    }
+
+    .comment_text {
+      color: black;
+
+      p {
+        text-align: left;
+      }
+    }
+
+
+    .comment_delete {
+      text-align: end !important;
+
+      a {
+        color: red;
+        font-size: 13px;
+      }
+    }
+
+    .comment_name {
+      font-size: 15px;
+      margin-top: 10px !important;
+    }
+
+    .comment_content {
+      font-size: 20px;
+      font-family: serif;
+      margin: 10px !important;
+    }
+
+    .comment_date {
+      font-weight: lighter;
+      font-size: 12px;
+      margin-left: 14px;
     }
 }
