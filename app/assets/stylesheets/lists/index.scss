@@ -99,11 +99,11 @@ body {
     .playlist {
       display: flex;
       height: auto;
-      width: 50%;
-      min-width: 500px;
+      width: 100%;
       text-align: center;
       margin: auto;
       margin-top: 30px;
+      max-width: 930px;
     }
 
     .song {
@@ -183,7 +183,6 @@ body {
     }
 
     .controls {
-      flex: 1 0 auto;
       text-align: end;
     }
 
