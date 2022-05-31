@@ -56,76 +56,76 @@ html {
 }
 
 // フラッシュメッセージ
-  .alert {
+.alert {
+  color: red;
+  position: absolute;
+  padding: 0px;
+  border: 0px;
+  margin-bottom: 0px;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.notice {
+  position: absolute;
+  color: rgb(0, 255, 47);
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+.success {
+  position: absolute;
+  color: rgb(110, 207, 255);
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+// パーシャル共有
+
+.back_to_page {
+  text-align: right;
+  margin-top: 50px;
+  font-size: 2rem;
+  padding-right: 150px;
+}
+
+#error_explanation {
+  color: white;
+  margin-top: 50px;
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  li {
+    margin-top: 0.5rem;
+    font-size: 1rem;
     color: red;
-    position: absolute;
-    padding: 0px;
-    border: 0px;
-    margin-bottom: 0px;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    font-size: 20px;
+    list-style-position: inside;
   }
+}
 
-  .notice {
-    position: absolute;
-    color: rgb(0, 255, 47);
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    font-size: 20px;
-  }
-
-  .success {
-    position: absolute;
-    color: rgb(110, 207, 255);
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    font-size: 20px;
-  }
-
-  // パーシャル共有
-
-  .back_to_page {
-    text-align: right;
-    margin-top: 50px;
-    font-size: 2rem;
-    padding-right: 150px;
-  }
-
-  #error_explanation {
-    color: white;
-    margin-top: 50px;
-    h2 {
-      font-size: 1.5rem;
-    }
-    
-    li {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      color: red;
-      list-style-position: inside;
-    }
-  }
-
-  .navbar-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  }
-  .navbar-light .navbar-toggler {
-    border-color: white;
-  }
-  .navbar-toggler{
-    background-color: #000000;
-  }
-  .navbar {
-    padding: 0;
-    padding-right: 13px;
-  }
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-light .navbar-toggler {
+  border-color: white;
+}
+.navbar-toggler{
+  background-color: #000000;
+}
+.navbar {
+  padding: 0;
+  padding-right: 13px;
+}
