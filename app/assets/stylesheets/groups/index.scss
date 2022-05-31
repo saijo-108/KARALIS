@@ -4,7 +4,7 @@ body {
     }
 
     .new-button {
-      margin: 30px;
+      margin: 15px;
     }
 
     .button{
@@ -33,10 +33,10 @@ body {
       z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
         /*テキストの形状*/
       display: block;
-      padding: 10px 30px;
-      background:rgb(104, 182, 221);
+      padding: 4px 15px;
+      background:#5c5d5e;
       border-radius: 25px;
-      color:#333;
+      color: white;
         /*アニメーションの指定*/
       transition: all 0.3s ease;
     }
@@ -66,7 +66,7 @@ body {
     }
 
     .flex {
-      width: 75%;
+      width: 100%;
       display: flex;
       margin: auto;
     }

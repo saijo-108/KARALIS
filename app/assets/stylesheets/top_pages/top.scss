@@ -24,6 +24,12 @@ main {
     text-shadow: 0 0 0.2em rgba(0,0,0,1);
   }
 
+  @media only screen and (max-width: 540px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
   .top-inner-text {
     max-width: 100%;
     text-align: center;
@@ -147,6 +153,12 @@ footer {
       font-size: 3rem;
       color: black;
     }
+
+    @media only screen and (max-width: 540px) {
+      span {
+        font-size: 2rem;
+      }
+    }
   }
 
   .under_line {
@@ -172,7 +184,7 @@ footer {
       height: auto;
       max-width: 655px;
       min-width: 250px;
-      margin: 30px;
+      margin: 9px;
       border: 7px solid #ffffff;
     }
   }
@@ -196,7 +208,7 @@ footer {
       height: auto;
       max-width: 655px;
       min-width: 250px;
-      margin: 30px;
+      margin: 9px;
       border: 7px solid #ffffff;
     }
   }
@@ -220,6 +232,11 @@ footer {
       font-size: 3rem;
       color: black;
     }
+    @media only screen and (max-width: 540px) {
+      span {
+        font-size: 2rem;
+      }
+    }
   }
 
   .under_line {
@@ -230,6 +247,7 @@ footer {
 
 .service {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 5%;
   margin-left: 2%;
@@ -335,4 +353,35 @@ footer {
 
 .blue {
   color: #7cb0f8;
+}
+
+@media only screen and (max-width: 540px) {
+  h2 {
+  font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .make_wrap {
+  margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .swiper-slide{
+    line-height: 0 !important;
+
+    img {
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .service1 {
+    width: 100% !important;
+  }
+  .service2 {
+    width: 100% !important;
+  }
 }
