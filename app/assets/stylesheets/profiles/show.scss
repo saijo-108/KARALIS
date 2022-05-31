@@ -41,9 +41,30 @@ body {
         }
 
         .btn_back {
-            background-color: #4144a1;
+            background-color: #474753;
             color: white;
             width: 10%;
         }
+    }
+
+    .table th {
+        width: 50%;
+    }
+
+    .float-left {
+        font-size: 2rem;
+    }
+
+    .btn_wrap {
+        text-align: end;
+    }
+
+    .edit {
+        text-align: center;
+    }
+
+    .btn-success {
+        width: 30%;
+        max-width: 158px;
     }
 }
