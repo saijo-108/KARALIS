@@ -1,8 +1,13 @@
 @import 'bootstrap';
-@import "font-awesome-sprockets";
-@import "font-awesome";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
 @import "validationEngine.jquery";
 @import 'swiper/swiper-bundle';
+
 
 
 html {
@@ -28,18 +33,91 @@ html {
     align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.15);
     background-color: rgba(15,17,17,0.37);
+    z-index: 99;
     .logo {
       padding-top: 10px;
       width: 250px;
       height: 65px;
     }
-
     @media only screen and (max-width: 540px) {
       .logo {
         padding-top: 10px;
         width: 136px;
         height: 40px;
       }
+    }
+    header a {
+      padding-left: 0;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      .head_link1  {
+        top:15px;
+        left: 42% !important;
+        p { 
+          width: 0;
+        }
+        span {
+          display: none;
+        }
+      }
+
+      .head_link2  {
+        top: 15px;
+        left: 53% !important;
+        p { 
+          width: 0;
+        }
+        span {
+          display: none;
+        }
+      }
+
+      .head_link3  {
+        top:15px;
+        left: 66% !important;
+        p { 
+          width: 0;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+
+
+    .link:hover {
+      color:#1ad2fb;
+    }
+    
+    .link {
+      margin-bottom: 0;
+    }
+    
+    .head_font {
+      font-size: 1rem;
+    }
+
+    .fa-solid {
+      font-size: 1.5rem;
+    }
+
+    .navbar-brand {
+      margin-right: 30px;
+      margin-left: 15px;
+    }
+
+    .head_link1 {
+      position: absolute;
+      left: 32%;
+    }
+    .head_link2 {
+      position: absolute;
+      left: 47%;
+    }
+    .head_link3 {
+      position: absolute;
+      left: 62%;
     }
   }
   
@@ -78,6 +156,7 @@ html {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   font-size: 20px;
+  z-index: 1000;
 }
 
 .notice {
@@ -89,6 +168,7 @@ html {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   font-size: 20px;
+  z-index: 1000;
 }
 
 .success {
@@ -100,6 +180,7 @@ html {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   font-size: 20px;
+  z-index: 1000;
 }
 
 // パーシャル共有
@@ -138,6 +219,7 @@ html {
 }
 .navbar {
   padding: 0;
+  backdrop-filter: blur(12px);
 }
 
 @media only screen and (max-width: 540px) {
@@ -148,4 +230,14 @@ html {
       padding-left: 0;
     }
   }
+}
+
+@media only screen and (max-width: 540px) {
+  .navbar-nav .mr-3{
+    margin-right: 0 !important;
+  }
+}
+
+.teketeke {
+  text-align: center;
 }
