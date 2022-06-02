@@ -71,7 +71,7 @@ gem 'pry-rails'
 gem 'bootstrap', '~> 4.3.1'
 
 # Used for the icon
-gem 'font-awesome-sass', '~>6.0.0'
+gem 'font-awesome-sass', '~>5.11.2'
 
 # Used for jquery
 gem 'jquery-rails'
