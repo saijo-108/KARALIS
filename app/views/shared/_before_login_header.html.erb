@@ -12,15 +12,15 @@
     <div class='collapse navbar-collapse' id='navbarSupportedContent'>
       <ul class='navbar-nav ml-auto main-nav align-items-center'>
         <li class='nav-item ml-5 dropdown dropdown-slide'>
-          <%= link_to "使用方法", root_path(anchor: 'how'), class:'text-color use_menu' %>
+          <%= link_to "使用方法", root_path(anchor: 'how'), class:'text-color use_menu link' %>
         </li>
 
         <li class='nav-item ml-5'>
-          <%= link_to (t 'defaults.register'), new_user_registration_path, class: 'nav-link text-color' %>
+          <%= link_to (t 'defaults.register'), new_user_registration_path, class: 'nav-link text-color link' %>
         </li>
 
         <li class='nav-item ml-5'>
-          <%= link_to (t 'defaults.login'), new_user_session_path, class: 'nav-link text-color' %>
+          <%= link_to (t 'defaults.login'), new_user_session_path, class: 'nav-link text-color link' %>
         </li>
       </ul>
     </div>

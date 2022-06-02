@@ -3,7 +3,10 @@
         <% @tile.clear %>
         <div class="center tile_width swiper-slide">
             <%= link_to list_path(list), class:"list_name" do %>
-              <%= list.name %>
+                <%= list.name %>
+                <% unless @songs.any? %>
+                    <p class="white_text">曲を追加しよう！</p>
+                <% end %>
             <div class="tile_wrap">
                 <% @songs.each_with_index do |song, i| %>
                 <% if song.list_id == list.id %>
