@@ -1,11 +1,11 @@
 <footer>
   <div class="container flex-column justify-content-center text-center">
       <div class="float">
-        <p><a class="link link-light text-color" href="#">プライバシーポリシー</a></p>
+        <p><%= link_to t("defaults.privacy"), page_path('privacy'), class:"link link-light text-color" %></p>
         <p class="text-light">|</p>
-        <p><a class="link link-light text-color" href="#">利用規約</a></p>
+        <p><%= link_to t("defaults.about"), page_path('about'), class:"link link-light text-color" %></p>
         <p class="text-light">|</p>
-        <p><a class="link link-light text-color" href="#">お問い合わせ</a></p>
+        <p><%= link_to t("defaults.question"), "https://forms.gle/Cobd6PS7MK2xhGp66", class:"link link-light text-color" %></p>
       </div>
       <div class="text-copyright">
         <p>© 2022 KARALIS</p>
