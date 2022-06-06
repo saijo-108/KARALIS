@@ -1,0 +1,35 @@
+.white_text {
+    color: white;
+}
+
+.container {
+    .headline {
+        text-align: center;
+        margin-top: 48px!important;
+        margin-bottom: 48px!important;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    h1[data-v-90cc9602]:after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 4px;
+        margin: 10px auto 0;
+        background-color: #ccc;
+    }
+    
+    :after {
+        text-decoration: inherit;
+        vertical-align: inherit;
+    }
+    :after {
+        background-repeat: no-repeat;
+        box-sizing: inherit;
+    }
+
+    h5 {
+        font-weight: 700;
+    }
+}
