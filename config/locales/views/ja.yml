@@ -18,6 +18,7 @@ ja:
     new: '登録'
     privacy: 'プライバシーポリシー'
     about: '利用規約'
+    question: 'お問い合わせ'
   devise:
     login_success: 'ログインしました'
     login_fail: 'ログインに失敗しました'
