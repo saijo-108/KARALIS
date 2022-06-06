@@ -130,6 +130,7 @@ GEM
       hashids (~> 1.0)
     hashids (1.0.6)
     hashie (5.0.0)
+    high_voltage (3.1.2)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
     i18n (1.10.0)
@@ -377,6 +378,7 @@ DEPENDENCIES
   enum_help
   font-awesome-sass (~> 5.11.2)
   hashid-rails (~> 1.0)
+  high_voltage
   jQuery-Validation-Engine-rails
   jbuilder (~> 2.5)
   jquery-rails
