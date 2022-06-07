@@ -1,48 +1,77 @@
 body {
 
-    .list_change {
+
+    .controls {
+        margin-left: auto;
         text-align: end;
-        .btn_cubic {
-            border-bottom: 5px solid #21366a;
-        }
-
-        .btn_cubic:hover {
-            margin-top: 3px;
-            border-bottom: 2px solid #d75b45;
-        }
-
-        .btn_radius {
-            border-radius: 100vh;
-        }
-
-        .change {
-            position: relative;
-            margin-left: 15px;
-            margin-right: 15px;
-        }
-
-        .btn_back {
-            background-color: #4144a1;
-            color: white;
-        }
-    }
+        width: 45%;
+      }
+  
+      .button{
+        /*影の基点とするためrelativeを指定*/
+        position: relative;
+          /*ボタンの形状*/
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        background: transparent;
+        border-radius: 25px;
+        border: solid 1px #333;
+        outline: none;
+          /*アニメーションの指定*/
+        transition: all 0.2s ease;
+      }
+      
+      /*hoverをした後のボタンの形状*/
+      .button:hover{
+        border-color:transparent; 
+      }
+      
+      /*ボタンの中のテキスト*/
+      .button span {
+        position: relative;
+        z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+          /*テキストの形状*/
+        display: block;
+        padding: 4px 15px;
+        background:#5c5d5e;
+        border-radius: 25px;
+        color:white;
+          /*アニメーションの指定*/
+        transition: all 0.3s ease;
+      }
+      
+      /*== 下に押し込まれる（立体が平面に） */
+      
+      /*影の設定*/
+      .button:before {
+          content:"";
+          /*絶対配置で影の位置を決める*/
+        position: absolute;
+        z-index: -1;
+        top:3px;
+        left:2px;
+          /*影の形状*/
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: #333;
+      }
+      
+      /*hoverの際にY軸に4pxずらす*/
+      .button:hover span {
+        background-color: rgb(51, 33, 140);
+        color: #fff;
+        transform: translateY(4px);
+      }
 
     .white_text{
         color: white;
-
-        .list_title {
-            display: inline-block;
-            font-size: 2rem;
-            position: relative;
-            left: 18%;
-            top: 10%;
-        }
     }
 
-    .text_right {
-        text-align: center;
-        margin-bottom: 50px;
-        margin-top: 100px;
+    .delete_wrap {
+        text-align: right;
+        margin-top: 160px;
 
         a {
             margin: 0 40px;
@@ -192,10 +221,51 @@ body {
         height: 4%;
         max-width: 180px;
     }
+}
+
+.new-button {
+    margin: 10px;
+  }
+  
+  @media only screen and (max-width: 670px) {
+    .controls {
+      display: none;
+    }
+
+    .delete_wrap {
+        text-align: center !important;
+    }
+  }
+
+.list_name {
+    position: relative;
 
     .name_list {
         position: relative;
         left: 16%;
         top: 8%;
     }
+
+    .list_title {
+        font-size: 2rem;
+        position: relative;
+        left: 18%;
+        top: 10%;
+    }
+}
+
+.list-head {
+    color: white;
+    padding-left: calc(52px);
+    display: flex;
+
+    h1 {
+        width:-moz-fit-content; /* Firefox */
+        width:fit-content;
+        margin: 10px;
+    }
+}
+
+.delete_list {
+    font-size: 1.3rem;
 }
