@@ -22,19 +22,19 @@
         <% end %>
       </div>
     </div>
-      <% if @lists.size >= 2 %>
-        <div class="playlist">
-          <%= render 'list_tile' %>
-        </div>
-      <% elsif @lists.size == 1 %>
-      <div class="one_playlist">
-        <%= render 'one_tile' %>
+    <% if @lists.size >= 2 %>
+      <div class="playlist">
+        <%= render 'list_tile' %>
       </div>
-      <% else %>
-        <div class="no_playlist white_text">
-          <p><%= t(".not_list") %></p>
-        </div>
-      <% end %>
+    <% elsif @lists.size == 1 %>
+    <div class="one_playlist">
+      <%= render 'one_tile' %>
+    </div>
+    <% else %>
+      <div class="no_playlist white_text">
+        <p><%= t(".not_list") %></p>
+      </div>
+    <% end %>
   </div>
 </div>
 <%= javascript_pack_tag 'lists/index' %>

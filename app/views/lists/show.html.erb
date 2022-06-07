@@ -3,36 +3,38 @@
   <%= stylesheet_link_tag 'lists/show' %>
 <% end %>
 
-<div class="list_form">
-  <div class="rrr">
-    <div class="white_text">
-    <font class="name_list"><%= t('defaults.list_name') %></font>
-      <%= form_with model: @list, class:"text_center", local: true do |f| %>
-        <div class="list_title"><%= @list.name %></div>
-        <% if current_user.own?(@list) %>
-          <div class="list_change">
-            <%= link_to t('.change_list_name'), edit_list_path(@list), class:"btn change btn_cubic btn_radius btn_back" %>
-            <%= link_to t('.add_song'), new_list_song_path(@list.id), class:"btn change btn_cubic btn_radius btn_back" %>
-          </div>
-        <% else %>
-          <div class="list_change">
-            <%= link_to t('.back_to_group'), :back, class:"btn change btn_cubic btn_radius btn_back" %>
-          </div>
-        <% end %>
+<div class="list-head">
+  <div>
+    <h1><%= @list.name %></h1>
+  </div>
+  <% if current_user.own?(@list) %>
+    <div class="controls">
+      <%= link_to edit_list_path(@list) do %>
+        <div class="button new-button">
+          <span><%= t('.change_list_name') %></span>
+        </div>
+      <% end %>
+      <%= link_to new_list_song_path(@list.id) do %>
+        <div class="button new-button">
+          <span><%= t('.add_song') %></span>
+        </div>
       <% end %>
     </div>
-  </div>
+  <% else %>
+    <div class="list_change">
+      <%= link_to t('.back_to_group'), :back, class:"btn change btn_cubic btn_radius btn_back" %>
+    </div>
+  <% end %>
 </div>
+
+
 
 
 
 <%= render "list_table", list: @list  %>
 
-<div class="text_right">
-  <%= link_to t('defaults.list_index'), lists_path, class:'back_home' %>
-  <%= link_to t('defaults.group_list'), groups_path, class:'back_group' %>
+<div class="delete_wrap">
   <% if @list.user_id == current_user.id %>
-    <%= link_to t('.delete_list'), list_path(@list.id),class:"text_red", method: :delete, data: { confirm: "このリストを削除しますか？" } %>
+    <%= link_to t('.delete_list'), list_path(@list.id),class:"text_red delete_list", method: :delete, data: { confirm: "このリストを削除しますか？" } %>
   <% end %>
 </div>
-

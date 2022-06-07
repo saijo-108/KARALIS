@@ -2,6 +2,8 @@ class SongsController < ApplicationController
   before_action :set_song, only: %i[edit update destroy]
   before_action :list_set, only: %i[edit update destroy new]
 
+  RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
+
   def index
     @songs = Song.find_by(list_id: params[:list_id])
   end
