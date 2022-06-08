@@ -38,7 +38,8 @@
             <%= link_to (t 'defaults.group_list'), groups_path, class: 'dropdown-item' %>
             <%= link_to (t 'defaults.make_list'), new_list_path, class: 'dropdown-item' %>
             <%= link_to (t 'defaults.mypage'), profile_path, class: 'dropdown-item' %>
-            <%= link_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: 'dropdown-item logout' %>
+            <%= link_to (t 'defaults.questions'), page_path('question'), class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: 'dropdown-item logout text_red' %>
           </div>
         </li>
         

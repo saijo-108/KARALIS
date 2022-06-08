@@ -1,0 +1,23 @@
+<% content_for(:title, t('defaults.questions')) %>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'pages/question' %>
+<% end %>
+
+<div class="space"></div>
+
+<div class="privacy_wrapper container px-4 px-lg-5 vh-auto white_text">
+  <h1 data-v-90cc9602 data-v-7d2f97e8 class="headline">よくある質問</h1>
+
+    <div class="accordion">
+
+        <div class="option">
+            <input type="checkbox" id="toggle1" class="toggle">
+            <label class="title" for="toggle1">Q1.　リストに追加した曲の公開/非公開設定ができない！</label>
+            <div class="content">
+                <p>A.　非公開のチェックボックスにチェックを入れたあと、更新ボタンを押して設定を保存してください。</br >
+                ※なお、公開/非公開の設定はパソコンからのみ可能です。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,12 +1,11 @@
 <div class="list_wrapper">
   <ul class="list_header">
     <li class="index1"></li>
-    <li class="preview1">プレビュー</li>
     <li class="song_title1">曲名</li>
     <li class="artist1">アーティスト</li>
+    <li class="preview1">プレビュー</li>
     <% if current_user.own?(list) %>
       <li class="status1">非公開</li>
-      <li class="save1"></li>
       <li class="delete1"></li>
     <% end %>
   </ul>
@@ -16,12 +15,18 @@
             <%= form_with model: [list, song], local: true do |f| %>
               <ul class="list">
                   <li class="index"><%= i+1 %>.</li>
-                  <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
-                  <li class="song_title"><%= song.song_title %></li>
+                  <li class="song_title">
+                      <div class="line_height"><span><%= song.song_title %></span></div>
+                      <div class="line_height"><span class="mobile_artist"><%= song.artist %></span></div>
+                  </li>
                   <li class="artist"><%= song.artist %></li>
-                    <li class="status"><%= f.check_box :status, {}, "nonrelease", "release" %></li>
-                    <li class="save"><%= f.submit "保存" %></li>
-                    <li class="delete"><%= link_to '削除', list_song_path(song.list_id, song.id), class:"text_red", method: :delete, data: { confirm: "「#{song.song_title}」を削除しますか？" } %></li>
+                  <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
+                  <li class="status"><%= f.check_box :status, {}, "nonrelease", "release" %><%= f.submit "更新", class:"update" %></li>
+                  <li class="delete text_red">
+                    <%= link_to list_song_path(song.list_id, song.id), class:"text_red", method: :delete, data: { confirm: "「#{song.song_title}」を削除しますか？" } do %>
+                      <i class="fa-solid fa-trash"><span class="delete_span">削除</span></i>
+                    <% end %>
+                  </li>
               </ul>
             <% end %>
           <% end %>
@@ -45,4 +50,4 @@
           <% end %> 
         <% end %>
   </div>
-
+</div>

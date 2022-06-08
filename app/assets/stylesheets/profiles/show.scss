@@ -61,10 +61,26 @@ body {
 
     .edit {
         text-align: center;
+        margin-top: 50px;
     }
 
     .btn-success {
         width: 30%;
         max-width: 158px;
     }
+}
+
+.space {
+    min-height: 40px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+    h1 {
+        text-align: center;
+    }
+}
+
+h1 {
+    margin-bottom: 30px;
 }

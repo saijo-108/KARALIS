@@ -3,6 +3,8 @@
     <%= stylesheet_link_tag 'lists/index' %>
 <% end %>
 
+<div class="space"></div>
+
 <div class="flex">
   <div class="list">
     <div class="list-head">
@@ -37,4 +39,18 @@
     <% end %>
   </div>
 </div>
+
+<div class="controls2">
+  <%= link_to new_list_path do %>
+    <div class="button new-button">
+      <span><%= t(".new_list") %></span>
+    </div>
+  <% end %>
+  <%= link_to groups_path do %>
+    <div class="button new-button">
+      <span><%= t(".joined_group") %></span>
+    </div>
+  <% end %>
+</div>
+
 <%= javascript_pack_tag 'lists/index' %>
