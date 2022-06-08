@@ -5,6 +5,7 @@
 
 <div class="list-head">
   <div>
+    <small class="label">リスト名</small>
     <h1><%= @list.name %></h1>
   </div>
   <% if current_user.own?(@list) %>
@@ -27,12 +28,15 @@
   <% end %>
 </div>
 
-
-
-
-
 <%= render "list_table", list: @list  %>
 
+<div class="media_add">
+  <%= link_to new_list_song_path(@list.id) do %>
+    <div class="button new-button">
+      <span><%= t('.add_song') %></span>
+    </div>
+  <% end %>
+</div>
 <div class="delete_wrap">
   <% if @list.user_id == current_user.id %>
     <%= link_to t('.delete_list'), list_path(@list.id),class:"text_red delete_list", method: :delete, data: { confirm: "このリストを削除しますか？" } %>
