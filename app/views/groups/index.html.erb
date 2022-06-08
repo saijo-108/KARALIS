@@ -3,6 +3,8 @@
     <%= stylesheet_link_tag 'groups/index' %>
 <% end %>
 
+<div class="space"></div>
+
 <div class="new">
   <%= link_to new_group_path do %>
     <div class="button new-button">
@@ -24,4 +26,12 @@
         <% end %>
       </div>
   </div>
+</div>
+
+<div class="new2">
+  <%= link_to new_group_path do %>
+    <div class="button new-button">
+      <span><%= t(".new_group") %></span>
+    </div>
+  <% end %>
 </div>

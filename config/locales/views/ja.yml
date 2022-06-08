@@ -19,6 +19,7 @@ ja:
     privacy: 'プライバシーポリシー'
     about: '利用規約'
     question: 'お問い合わせ'
+    questions: 'よくある質問'
   devise:
     login_success: 'ログインしました'
     login_fail: 'ログインに失敗しました'
