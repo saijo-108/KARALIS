@@ -1,7 +1,7 @@
 <%= form_with model: @group, local: true do |f| %>
   <div class="form-group">
   <%= render 'shared/error_messages_model', model: f.object %>
-    <%= f.text_field :name, class: 'form validate[required]', placeholder:"グループ名" %>
-    <%= f.submit t("defaults.new"), class: 'btn btn-primary register' %>
+    <%= f.text_field :name, class: 'form validate[required] name_field', placeholder:"グループ名" %>
+    <div class="a"><%= f.submit t("defaults.new"), class: 'btn btn-primary register' %></div>
   </div>
 <% end %>
