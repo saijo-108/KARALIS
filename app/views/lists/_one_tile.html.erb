@@ -1,7 +1,7 @@
 <div class="">
     <% @lists.each do |list| %>
         <% @tile.clear %>
-        <div class="center tile_width swiper-slide">
+        <div class="center tile_width one_tile swiper-slide">
             <%= link_to list_path(list), class:"list_name" do %>
                 <%= list.name %>
                 <% unless @songs.any? %>

@@ -3,14 +3,16 @@
   <%= stylesheet_link_tag 'groups/show' %>
 <% end %>
 
-<div class="flex name_head">
+<div class="flex name_head white_text">
   <div class="name_wrapper">
-    <p class="name_title white_text"><%= t("defaults.group_name") %></p>
+      <small class="label"><%= t("defaults.group_name") %></small>
     <div class="end_align">
-      <div class="white_text name">
+      <div class="name">
         <%= simple_format(@group.name) %>
       </div>
-      <%= link_to "変更", edit_group_path(@group), class:"edit"%>
+      <%= link_to edit_group_path(@group), class:"edit" do %>
+        <button class="btn-primary">グループ名変更</button>
+      <% end %>
     </div>
   </div>
 
@@ -46,7 +48,9 @@
       <% end %>
     </div>
   </div>
-  <div class="white_text board text_center">
+</div>
+
+<div class="white_text board text_center">
     <h2>コミュニケーションボード</h2>
 
     <div id="scroll-inner", class="content_size">
@@ -67,11 +71,10 @@
       <%= form_with(model: [@group, @comment], local: true) do |f| %>
         <%= f.text_area :content %>
         <%= f.hidden_field :group_id, value: @group.id %>
-        <%= f.submit 'コメントする' %>
+        <%= f.submit 'コメントする', class:"comment_btn" %>
       <% end %>
     </div>
   </div>
-</div>
 
 <div class="list_change">
   <% @list.each do |list| %>
@@ -79,11 +82,34 @@
       <%= link_to "共有リスト変更", edit_group_list_group_path(@group, ListGroup.find_by(list_id: @my_list.id, group_id: @group).id), class:"btn change btn_cubic2 btn_radius btn_back" %>
     <% end %>
   <% end %>
-  <%= link_to "リストを作成する", new_list_path, class:"btn change btn_cubic2 btn_radius btn_back" %>
   <% unless @list.any? {|u| u.user_id == current_user.id} %>
     <%= link_to "共有リストを登録", new_group_list_group_path(@group), class:"btn change btn_cubic2 btn_radius btn_back" %>
   <% end %>
 </div>
 
+
+<div class="controls2">
+  <% @list.each do |list| %>
+    <% if list.user_id == current_user.id %>
+      <%= link_to edit_group_list_group_path(@group, ListGroup.find_by(list_id: @my_list.id, group_id: @group).id) do %>
+        <div class="button new-button">
+          <span><%= "共有リスト変更" %></span>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% unless @list.any? {|u| u.user_id == current_user.id} %>
+    <%= link_to new_group_list_group_path(@group) do %>
+      <div class="button new-button">
+        <span><%= "共有リスト登録" %></span>
+      </div>
+    <% end %>
+  <% end %>
+  <%= link_to edit_group_path(@group) do %>
+    <div class="button new-button">
+      <span><%= "グループ名変更" %></span>
+    </div>
+  <% end %>
+</div>
 
 <%= javascript_pack_tag 'groups/index' %>
