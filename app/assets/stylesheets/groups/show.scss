@@ -40,9 +40,7 @@ body {
     }
 
     .over_view {
-        position: absolute;
-        width: 30%;
-        top: 4%;
+        width: 50%;
     }
     
 
@@ -51,8 +49,6 @@ body {
         box-sizing: border-box;
         padding: 5px;
         border-bottom: 2px solid #c6c6c6b8;
-        margin-right: 40px;
-        margin-left: auto;
     }
     
     .readmore-content{
@@ -127,7 +123,6 @@ body {
       border-color: rgb(255, 255, 255);
       background-color: rgba(44, 39, 39, 0.552);
       margin: 20px;
-      min-width: 500px;
     }
 
 
@@ -136,67 +131,6 @@ body {
         width: 80%;
         text-align: center;
         margin: auto;
-    }
-    .new-button {
-        margin: 30px;
-      }
-
-      .button{
-      /*影の基点とするためrelativeを指定*/
-      position: relative;
-        /*ボタンの形状*/
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-      background: transparent;
-      border-radius: 25px;
-      border: solid 1px #333;
-      outline: none;
-        /*アニメーションの指定*/
-      transition: all 0.2s ease;
-    }
-    
-    /*hoverをした後のボタンの形状*/
-    .button:hover{
-      border-color:transparent; 
-    }
-    
-    /*ボタンの中のテキスト*/
-    .button span {
-      position: relative;
-      z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
-        /*テキストの形状*/
-      display: block;
-      padding: 10px 30px;
-      background:rgb(104, 182, 221);
-      border-radius: 25px;
-      color:#333;
-        /*アニメーションの指定*/
-      transition: all 0.3s ease;
-    }
-    
-    /*== 下に押し込まれる（立体が平面に） */
-    
-    /*影の設定*/
-    .button:before {
-        content:"";
-        /*絶対配置で影の位置を決める*/
-      position: absolute;
-      z-index: -1;
-      top:3px;
-      left:2px;
-        /*影の形状*/
-      width: 100%;
-      height: 100%;
-      border-radius: 25px;
-      background-color: #333;
-    }
-    
-    /*hoverの際にY軸に4pxずらす*/
-    .button:hover span {
-      background-color: rgb(51, 33, 140);
-      color: #fff;
-      transform: translateY(4px);
     }
 
     .text_red {
@@ -328,9 +262,9 @@ body {
 
     // コメント
     .board {
-      width: 100%;
-      max-width: 400px;
+      width: 63%;
       border: 1px solid;
+      margin: auto;
     }
 
     .text_right {
@@ -343,7 +277,7 @@ body {
        form {
         display: flex;
         justify-content: center; /*左右中央揃え*/
-        align-items: center;
+        align-items: end;
        }
     }
 
@@ -440,4 +374,165 @@ body {
       font-size: 12px;
       margin-left: 14px;
     }
+}
+
+.label {
+  color: rgb(26, 210, 251);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 750px) {
+  .board {
+    width: 90% !important;
+  }
+
+  .name_wrapper {
+    width: 100% !important;
+  }
+
+  .readmore {
+    margin: auto;
+    width: 85% !important;
+  }
+
+  .edit {
+    display: none;
+  }
+
+  .list_change {
+    display: none;
+  }
+
+  .grouplist {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (min-width: 749px) {
+  .controls2{
+    display: none;
+  }
+}
+
+.edit2 {
+  position: relative;
+}
+
+.change_list_wrap {
+  margin: 30px;
+  text-align: center;
+}
+
+.list_change2 {
+  position: relative;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  .btn_cubic1 {
+      border-bottom: 5px solid #21366a;
+  }
+
+  .btn_cubic1:hover {
+      margin-top: 3px;
+      border-bottom: 2px solid #d75b45;
+  }
+
+  .btn_cubic2 {
+      border-bottom: 5px solid #21366a;
+  }
+
+  .btn_cubic2:hover {
+      margin-top: 3px;
+      border-bottom: 2px solid #45d74f;
+  }
+
+
+  .btn_radius {
+      border-radius: 100vh;
+  }
+
+  .change {
+      margin-right: 30px;
+  }
+
+  .btn_back {
+      background-color: #4144a1;
+      color: white;
+  }
+}
+
+.comment_btn {
+  margin-left: 20px;
+}
+
+.button{
+  /*影の基点とするためrelativeを指定*/
+  position: relative;
+    /*ボタンの形状*/
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  border-radius: 25px;
+  border: solid 1px #333;
+  outline: none;
+    /*アニメーションの指定*/
+  transition: all 0.2s ease;
+}
+
+/*hoverをした後のボタンの形状*/
+.button:hover{
+  border-color:transparent; 
+}
+
+/*ボタンの中のテキスト*/
+.button span {
+  position: relative;
+  z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+    /*テキストの形状*/
+  display: block;
+  padding: 4px 15px;
+  background:#5c5d5e;
+  border-radius: 25px;
+  color:white;
+    /*アニメーションの指定*/
+  transition: all 0.3s ease;
+}
+
+/*== 下に押し込まれる（立体が平面に） */
+
+/*影の設定*/
+.button:before {
+    content:"";
+    /*絶対配置で影の位置を決める*/
+  position: absolute;
+  z-index: -1;
+  top:3px;
+  left:2px;
+    /*影の形状*/
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #333;
+}
+
+/*hoverの際にY軸に4pxずらす*/
+.button:hover span {
+  background-color: rgb(51, 33, 140);
+  color: #fff;
+  transform: translateY(4px);
+}
+
+.controls2 {
+  text-align: center;
+  width: 100%;
+  margin: 30px;
+  margin-left: auto;
+}
+
+.new-button {
+  margin: 10px;
 }
