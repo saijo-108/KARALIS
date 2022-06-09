@@ -124,8 +124,9 @@ body {
     // リストタイル
 
     .tile_width {
-      width: 45%;
+      width: 30%;
       background-color: black;
+
     }
     .tile_wrap {
       display: flex;
@@ -141,16 +142,10 @@ body {
       }
     }
 
-    .swiper--wrapper {
-      /* wrapperのサイズを調整 */
-      width: 100%;
-      height: 300px;
-    }
     
     .swiper-slide {
       /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
       color: #ffffff;
-      width: 100%;
       height: 60%;
       text-align: center;
       height: auto;
@@ -197,7 +192,7 @@ body {
 
     .one_playlist {
       height: auto;
-      width: 60%;
+      width: 100%;
       text-align: center;
       margin: auto;
       margin-top: 30px;
@@ -231,4 +226,8 @@ body {
   text-align: center;
   width: 100%;
   margin-top: 100px;
+}
+
+.one_tile {
+  min-width: 300px;
 }
