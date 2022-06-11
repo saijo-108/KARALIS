@@ -9,5 +9,14 @@ module ApplicationHelper
     base_description = "KARALISは、自分の好きな曲でリストを作り仲間と共有できるアプリです。URLを共有するだけで好きな曲を共有できます。"
     page_description.empty? ? base_description : page_description
   end
-  
+
+  def og_description(page_description = '')
+    base_description = "KARALISは、自分の好きな曲でリストを作り仲間と共有できるアプリです。"
+    page_description.empty? ? base_description : page_description
+  end
+
+  def og_image(page_image = '')
+    base_image = "app/assets/images/og_image.png"
+    page_image.empty? ? base_image : page_image
+  end
 end
