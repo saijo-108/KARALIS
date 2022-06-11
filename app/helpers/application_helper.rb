@@ -16,7 +16,8 @@ module ApplicationHelper
   end
 
   def og_image(page_image = '')
-    base_image = "app/assets/images/og_image.png"
+    base_image = "http://www.playlist-karalis.com/assets/og_image.png"
     page_image.empty? ? base_image : page_image
   end
 end
+
