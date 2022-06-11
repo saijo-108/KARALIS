@@ -5,7 +5,6 @@ class GroupsController < ApplicationController
   before_action :set_list, only: %i[new create]
 
   def index
-    @group_user = GroupUser.user_groups_get(current_user)
     @groups = current_user.groups
   end
 
@@ -15,12 +14,12 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @list_id = List.where(user_id: current_user).map(&:id)
-    if @list_id.present?
-      @list = List.find(list_params['id'])
-      @group.add_list_groups(@list)
-    end
+    @user_lists = List.where(user_id: current_user)
     if @group.save
+      if @user_lists.present?
+        @list = List.find(list_params['id'])
+        @group.add_list_groups(@list)
+      end
       flash[:success] = 'グループを作成しました'
       redirect_to groups_path
     else
