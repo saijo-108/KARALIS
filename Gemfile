@@ -112,3 +112,7 @@ gem 'rubocop-rails', require: false
 
 # To create a static page
 gem 'high_voltage'
+
+
+# To create meta tag
+gem 'meta-tags'
