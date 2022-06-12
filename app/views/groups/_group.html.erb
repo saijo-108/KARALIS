@@ -13,7 +13,7 @@
             <% end %>
           </td>
           <td><%= group.users.count %>人</td>
-          <td><%= @group_user.find_by(group_id: group.id).created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= group.created_at.strftime('%Y/%m/%d') %></td>
         <% end %>
       </tr>
   <% end %>

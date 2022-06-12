@@ -1,11 +1,10 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!, except: [:select]
-  before_action :set_group, only: %i[edit update destroy join group_destroy member_destroy]
+  before_action :set_group, only: %i[show  select edit update destroy join group_destroy member_destroy]
   before_action :not_enter, only: %i[show]
   before_action :set_list, only: %i[new create]
 
   def index
-    @group_user = GroupUser.user_groups_get(current_user)
     @groups = current_user.groups
   end
 
@@ -15,28 +14,27 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @list_id = List.where(user_id: current_user).map(&:id)
-    if @list_id.present?
-      @list = List.find(list_params['id'])
-      @group.add_list_groups(@list)
-    end
+    @user_lists = List.where(user_id: current_user)
     if @group.save
+      if @user_lists.present?
+        @list = List.find(list_params['id'])
+        @group.add_list_groups(@list)
+      end
       flash[:success] = 'グループを作成しました'
       redirect_to groups_path
     else
+      flash.now['alert'] = ' リストが作成できませんでした'
       render :new
     end
   end
 
   def show
-    @group = Group.find(params[:id])
     @members = @group.users
-    @lists = List.all.includes(:user).order(created_at: :asc)
     @list = @group.lists
     @my_list = @list.find { |n| n.user_id == current_user.id }
-    redirect_to select_group_path(@group) unless @members.any? { |m| m.id == current_user.id }
+    @list_group = ListGroup.find_by(list_id: @my_list.id, group_id: @group).id if @my_list.present?
     @group_user = GroupUser.where(group_id: @group.id)
-    @leader = GroupUser.find_by(group_id: @group) if @members.any?
+    @leader = GroupUser.find_by(group_id: @group)
     @times = GroupUser.where(group_id: @group)
     @comments = @group.comments
     @comment = current_user.comments.new
@@ -62,7 +60,6 @@ class GroupsController < ApplicationController
   end
 
   def select
-    @group = Group.find(params[:id])
     @members = @group.users
     @list_names = List.where(user_id: current_user).map(&:name)
     @list_id = List.where(user_id: current_user).map(&:id)

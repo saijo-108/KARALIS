@@ -17,4 +17,6 @@ class Group < ApplicationRecord
   def delete_list_groups(list)
     lists.delete(list)
   end
+
+
 end

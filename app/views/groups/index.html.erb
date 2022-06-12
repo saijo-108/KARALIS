@@ -19,7 +19,7 @@
         <%= t("defaults.group_list") %>
       </div>
       <div class="grouplist">
-        <% if @group_user.present? %>
+        <% if @groups.present? %>
           <%= render "group" %>
         <% else %>
           <h3 class="white_text">グループがありません</h3>
@@ -35,3 +35,4 @@
     </div>
   <% end %>
 </div>
+

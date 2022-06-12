@@ -36,8 +36,13 @@
     </div>
     <div class="text_center">
       <p class="white_text">↓メンバーを招待する場合はこちら↓</p>
-      <div class="line-it-button text_center" data-lang="ja" data-type="share-a" data-env="REAL" data-url="http://www.playlist-karalis.com/groups/<%= @group.hashid %>/select" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
-        <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+      <% if Rails.env.production? %>
+        <div class="line-it-button text_center" data-lang="ja" data-type="share-a" data-env="REAL" data-url="http://www.playlist-karalis.com/groups/<%= @group.hashid %>/select" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
+          <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+      <% else %>
+        <div class="line-it-button text_center" data-lang="ja" data-type="share-a" data-env="REAL" data-url="http://localhost:3000/groups/<%= @group.hashid %>/select" data-color="default" data-size="large" data-count="false" data-ver="3" style="display: none;"></div>
+          <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+      <% end %>
     </div>
     <div class="leave">
       <% if @group.users.include?(current_user) %>
@@ -60,8 +65,8 @@
             <font class="comment_date"><%= comment.created_at.strftime('%Y/%m/%d /%H:%M') %></font>
           </p>
           <%= simple_format(comment.content, { class: 'comment_content' }) %>
-          <% if comment.user_id == current_user.id %>
-          <p class="comment_delete"><%=link_to "削除", group_comment_path(comment.group.id, comment.id), method: :delete %></p>
+          <% if current_user.own?(comment) %>
+            <p class="comment_delete"><%=link_to "削除", group_comment_path(comment.group.id, comment.id), method: :delete %></p>
           <% end %>
         </div>
       <% end %>
@@ -78,11 +83,11 @@
 
 <div class="list_change">
   <% @list.each do |list| %>
-    <% if list.user_id == current_user.id %>
-      <%= link_to "共有リスト変更", edit_group_list_group_path(@group, ListGroup.find_by(list_id: @my_list.id, group_id: @group).id), class:"btn change btn_cubic2 btn_radius btn_back" %>
+    <% if current_user.own?(list) %>
+      <%= link_to "共有リスト変更", edit_group_list_group_path(@group, @list_group), class:"btn change btn_cubic2 btn_radius btn_back" %>
     <% end %>
   <% end %>
-  <% unless @list.any? {|u| u.user_id == current_user.id} %>
+  <% unless @my_list.present? %>
     <%= link_to "共有リストを登録", new_group_list_group_path(@group), class:"btn change btn_cubic2 btn_radius btn_back" %>
   <% end %>
 </div>
