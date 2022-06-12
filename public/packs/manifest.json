@@ -10,6 +10,14 @@
         "/packs/js/application-e8c5d2e8df94fc3cf3c5.js.map"
       ]
     },
+    "groups/index": {
+      "js": [
+        "/packs/js/groups/index-555dde1a74d4bdf6c0be.js"
+      ],
+      "js.map": [
+        "/packs/js/groups/index-555dde1a74d4bdf6c0be.js.map"
+      ]
+    },
     "lists/index": {
       "js": [
         "/packs/js/lists/index-cf73b4d65c3f4e12a2c4.js"
@@ -20,15 +28,17 @@
     },
     "top_pages/new": {
       "js": [
-        "/packs/js/top_pages/new-940cc16cee17433ef5dc.js"
+        "/packs/js/top_pages/new-e25eaf569b390e5aa63c.js"
       ],
       "js.map": [
-        "/packs/js/top_pages/new-940cc16cee17433ef5dc.js.map"
+        "/packs/js/top_pages/new-e25eaf569b390e5aa63c.js.map"
       ]
     }
   },
+  "groups/index.js": "/packs/js/groups/index-555dde1a74d4bdf6c0be.js",
+  "groups/index.js.map": "/packs/js/groups/index-555dde1a74d4bdf6c0be.js.map",
   "lists/index.js": "/packs/js/lists/index-cf73b4d65c3f4e12a2c4.js",
   "lists/index.js.map": "/packs/js/lists/index-cf73b4d65c3f4e12a2c4.js.map",
-  "top_pages/new.js": "/packs/js/top_pages/new-940cc16cee17433ef5dc.js",
-  "top_pages/new.js.map": "/packs/js/top_pages/new-940cc16cee17433ef5dc.js.map"
+  "top_pages/new.js": "/packs/js/top_pages/new-e25eaf569b390e5aa63c.js",
+  "top_pages/new.js.map": "/packs/js/top_pages/new-e25eaf569b390e5aa63c.js.map"
 }

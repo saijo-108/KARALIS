@@ -1,29 +1,45 @@
 <header>
   <nav class='navbar navbar-expand-lg navigation navbar-light'>
     <div class= 'navbar-brand'>
-    <%= link_to root_path do %>
-      <%= image_tag 'logo.png', class:"logo", size:"260x64" %>
-    <% end %>
+      <%= link_to root_path do %>
+        <%= image_tag 'logo.png', class:"logo", size:"260x64", title:"ホーム画面へ" %>
+      <% end %>
     </div>
     <button class='navbar-toggler' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
       <span class='navbar-toggler-icon'></span>
     </button>
+    <div class="head_link1">
+      <%= link_to lists_path do %>
+        <p class="white_text link", title="リスト一覧へ"><i class="fa-solid fa-headphones-simple"></i><span class="head_font">リスト</span></p>
+      <% end %>
+    </div>
+    <div class="head_link2">
+      <%= link_to groups_path do %>
+        <p class="white_text link", title="グループ一覧へ"><i class="fa-solid fa-users-between-lines"></i><span class="head_font">グループ</span></p>
+      <% end %>
+    </div>
+    <div class="head_link3">
+      <%= link_to profile_path do %>
+        <p class="white_text link", title="プロフィールページへ"><i class="fa-solid fa-user"></i><span class="head_font">プロフィール</span></p>
+      <% end %>
+    </div>
 
     <div class='collapse navbar-collapse' id='navbarSupportedContent'>
       <ul class='navbar-nav ml-auto main-nav align-items-center'>
         <li class='nav-item dropdown dropdown-slide'>
-          <%= link_to "使用方法", root_path(anchor: 'how'), class:'text-color use_menu' %>
-
-          <a href='#' class='menu dropdown-toggle text-color ml-5' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+          <%= link_to "使用方法", root_path(anchor: 'how'), class:'text-color use_menu link' %>
+        </li>
+        <li class="teketeke">
+          <a href='#' class='menu dropdown-toggle text-color ml-5 mr-3 link' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
             メニュー
           </a>
-
           <div class='dropdown-menu dropdown-menu-right'>
-            <%= link_to (t 'defaults.home'), lists_path, class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.list_index'), lists_path, class: 'dropdown-item' %>
             <%= link_to (t 'defaults.group_list'), groups_path, class: 'dropdown-item' %>
             <%= link_to (t 'defaults.make_list'), new_list_path, class: 'dropdown-item' %>
             <%= link_to (t 'defaults.mypage'), profile_path, class: 'dropdown-item' %>
-            <%= link_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: 'dropdown-item logout' %>
+            <%= link_to (t 'defaults.questions'), page_path('question'), class: 'dropdown-item' %>
+            <%= link_to (t 'defaults.logout'), destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: 'dropdown-item logout text_red' %>
           </div>
         </li>
         

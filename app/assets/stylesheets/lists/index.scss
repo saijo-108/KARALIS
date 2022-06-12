@@ -10,7 +10,6 @@ body {
 
     .list_new_btn {
       text-align: right;
-      margin-top: 100px;
       a {
         width: 100%;
       }
@@ -42,10 +41,10 @@ body {
       z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
         /*テキストの形状*/
       display: block;
-      padding: 10px 30px;
-      background:rgb(104, 182, 221);
+      padding: 4px 15px;
+      background:#5c5d5e;
       border-radius: 25px;
-      color:#333;
+      color:white;
         /*アニメーションの指定*/
       transition: all 0.3s ease;
     }
@@ -81,7 +80,6 @@ body {
     .list-head {
       color: white;
       padding-left: calc(52px);
-      padding-right: calc(52px);
       display: flex;
 
       h1 {
@@ -99,11 +97,11 @@ body {
     .playlist {
       display: flex;
       height: auto;
-      width: 50%;
-      min-width: 500px;
+      width: 100%;
       text-align: center;
       margin: auto;
       margin-top: 30px;
+      max-width: 930px;
     }
 
     .song {
@@ -126,8 +124,9 @@ body {
     // リストタイル
 
     .tile_width {
-      width: 45%;
+      width: 30%;
       background-color: black;
+
     }
     .tile_wrap {
       display: flex;
@@ -143,16 +142,10 @@ body {
       }
     }
 
-    .swiper--wrapper {
-      /* wrapperのサイズを調整 */
-      width: 100%;
-      height: 300px;
-    }
     
     .swiper-slide {
       /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
       color: #ffffff;
-      width: 100%;
       height: 60%;
       text-align: center;
       height: auto;
@@ -183,8 +176,9 @@ body {
     }
 
     .controls {
-      flex: 1 0 auto;
+      margin-left: auto;
       text-align: end;
+      width: 45%;
     }
 
     .new-button {
@@ -193,16 +187,47 @@ body {
 
     .no_playlist {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 100px;
     }
 
     .one_playlist {
       height: auto;
-      width: 25%;
-      min-width: 500px;
+      width: 100%;
       text-align: center;
       margin: auto;
       margin-top: 30px;
     }
 }
 
+.space {
+  min-height: 40px;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .controls {
+      display: none;
+  }
+
+  .list-head {
+    padding-left: 0 !important;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 749px) {
+  .controls2 {
+      display: none;
+  }
+}
+
+.controls2 {
+  margin-left: auto;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.one_tile {
+  min-width: 300px;
+}

@@ -2,20 +2,22 @@
   <%= stylesheet_link_tag 'another/sign_up' %>
 <% end %>
 
+<div class="space"></div>
+
 <%= render "shared/error_messages", resource: resource %>
 <div class="text_align z_index2 wrapper">
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <h1 class="white_text">ログイン</h1>
-  <div class="white_text block">
-    <%= f.label :email, class:"" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text" %>
-    <%= f.label :password, class:"" %>
-    <%= f.password_field :password, autocomplete: "new-password", placeholder:"パスワード", class:"password_text" %>
-    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-      <%= link_to "パスワードを忘れた方", new_password_path(resource_name), class:"forget_text" %><br />
-    <% end %>
-    <div class="send_btn"><%= f.submit "ログイン", class:"btn btn-primary" %></div>
-  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h1 class="white_text b">ログイン</h1>
+    <div class="white_text block">
+      <%= f.label :email, class:"" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text" %>
+      <%= f.label :password, class:"" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"パスワード", class:"password_text" %>
+      <div class="send_btn"><%= f.submit "ログイン", class:"btn btn-primary" %></div>
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "パスワードを忘れた方", new_password_path(resource_name), class:"forget_text" %><br />
+      <% end %>
+    </div>
 
   <div class="white_text new">
     新規登録は<%= link_to "こちら", new_user_registration_path %>

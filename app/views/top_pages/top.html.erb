@@ -16,52 +16,57 @@
         </div>
 
         <div class="service">
-          <div class="service1 swiper">
+          <div class="service1">
             <h3><span>プレイリストを作成</span></h3>
             <p>
               <span>曲を検索し、</span>
               <span>プレイリストを作成できます</span>
             </p>
-            <div class="swiper-wrapper">
-              <div class="slide1 swiper-slide">
-                <%= image_tag "service.png", height:"400" %>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="slide1 swiper-slide">
+                  <%= image_tag "service.png", height:"400", title:"プレイリストを作成", alt:"プレイリスト作成のスライド" %>
+                </div>
+                <div class="slide2 swiper-slide">
+                  <%= image_tag "service_search.png", height:"400" %>
+                </div>
+                <div class="slide2 swiper-slide">
+                  <%= image_tag "service2.png", height:"400" %>
+                </div>
               </div>
-              <div class="slide2 swiper-slide">
-                <%= image_tag "service_search.png", height:"400" %>
-              </div>
-              <div class="slide2 swiper-slide">
-                <%= image_tag "service2.png", height:"400" %>
-              </div>
+              <div class="swiper-pagination blue"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-pagination blue"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
           </div>
 
 
-          <div class="service2 swiper">
-            <h3><span>グループを作成</span></h3>
+          <div class="service2">
+            <h3 class="make_wrap"><span>グループを作成</span></h3>
             <p>
               <span>グループをLINEで共有し招待したり、</span>
               <span>グループに参加できます</span>
             </p>
-            <div class="swiper-wrapper">
-              <div class="slide3 swiper-slide">
-                <%= image_tag "service30.png", height:"400" %>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="slide3 swiper-slide">
+                  <%= image_tag "service30.png", height:"400", title:"グループを作成", alt:"グループ作成のスライド" %>
+                </div>
+                <div class="slide4 swiper-slide">
+                  <%= image_tag "service_line1.png", height:"400" %>
+                </div>
+                <div class="slide5 swiper-slide">
+                  <%= image_tag "service_group3.png", height:"400" %>
+                </div>
               </div>
-              <div class="slide4 swiper-slide">
-                <%= image_tag "service_line1.png", height:"400" %>
-              </div>
-              <div class="slide5 swiper-slide">
-                <%= image_tag "service_group3.png", height:"400" %>
-              </div>
+              <div class="swiper-pagination blue"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div class="swiper-pagination blue"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
           </div>
         </div>
     </div>
+
 
     <div class="use_wrapper">
         <div class="how_to_use_text under_line", id="how">
@@ -70,7 +75,7 @@
 
         <div class="gif">
           <div class="gif_image1">
-            <%= image_tag "list_descr.gif" %>
+            <%= image_tag "list_descr.gif", title:"リスト作成", alt:"リスト作成する方法のGIF" %>
             <div class="description1">
               <h2>まずはリストを作成しよう！</h2></ br>
               <% if user_signed_in? %>
@@ -90,11 +95,11 @@
                 <%= link_to "ログインへ", new_user_session_path %>
               <% end %>
             </div>
-            <%= image_tag "group.gif" %>
+            <%= image_tag "group.gif", title:"グループを作成", alt:"グループ作成する方法のGIF" %>
           </div>
 
           <div class="gif_image2">
-            <%= image_tag "line.gif" %>
+            <%= image_tag "line.gif", title:"LINEで招待", alt:"LINEで招待する方法のGIF" %>
             <div class="description2">
               <h2>メンバーを招待しよう！</h2></ br>
               <% if user_signed_in? %>

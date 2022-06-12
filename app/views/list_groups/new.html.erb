@@ -3,32 +3,42 @@
     <%= stylesheet_link_tag 'list_groups/new' %>
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 offset-lg-2">
-      <h1 class="white_text text_center head"><%= t(".title") %></h1>
+<div class="space"></div>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h1 class="white_text text_center head"><%= t(".title") %></h1>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="list_change">
-  <%= link_to t('.not_registration'), :back, class:"btn change btn_cubic btn_radius btn_back" %>
-</div>
+  <div class="text_center">
+    <small class="label"><%= t("defaults.group_name") %></small>
+    <div class="name_wrapper"><%= @group.name %></div>
+  </div>
 
-<div class="white_text text_center">
-  グループ名：<%= @group.name %>
-</div>
 
-<%= form_with model: @list_group, url:"/groups/#{@group.id}/list_groups", local:true do |f| %>
-  <% if @list_id.present? %>
-    <div class="share_list">
-      <div class="white_text"><%= t(".select_share_list") %></div>
-      <%= f.select :list_id, List.where(user_id: current_user).map { |l| [l.name, l.id] } %>
-      <%= f.hidden_field :group_id, :value => params[:group_id] %>
-      <%= f.submit "登録"%>
-    </div>
-  <% else %>
-    <div class="white_text share_list"><%= t(".not_select_share_list") %></div>
-    <div class="make_list"><%= link_to t('defaults.make_list'), new_list_path, class:"btn change btn_cubic btn_radius btn_back" %></div>
+  <%= form_with model: @list_group, url:"/groups/#{@group.id}/list_groups", local:true do |f| %>
+    <% if @list_id.present? %>
+      <div class="share_list">
+        <div class="white_text s"><%= t(".select_share_list") %></div>
+        <%= f.select :list_id, @list_id.map { |l| [l.name, l.id] } %>
+        <%= f.hidden_field :group_id, :value => @group.id %>
+        <%= f.submit "登録", class:"btn-primary" %>
+      </div>
+    <% else %>
+      <div class="white_text share_list"><%= t(".not_select_share_list") %></div>
+      <div class="make_list"><%= link_to t('defaults.make_list'), new_list_path, class:"btn change btn_cubic btn_radius btn_back" %></div>
+    <% end %>
   <% end %>
-<% end %>
+
+  <div class="controls2">
+    <%= link_to :back do %>
+      <div class="button new-button">
+        <span><%= t('.not_registration') %></span>
+      </div>
+    <% end %>
+  </div>
+</div>

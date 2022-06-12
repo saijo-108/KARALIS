@@ -1,79 +1,75 @@
 body {
-
-    .list_change {
-        .btn_cubic {
-            border-bottom: 5px solid #21366a;
-        }
-
-        .btn_cubic:hover {
-            margin-top: 3px;
-            border-bottom: 2px solid #d75b45;
-        }
-
-        .btn_radius {
-            border-radius: 100vh;
-        }
-
-        .change {
-            position: absolute;
-            top: 14%;
-            left: 72%;
-            margin-left: 55px;
-        }
-
-        .btn_back {
-            background-color: #4144a1;
-            color: white;
-            width: 10%;
-        }
-    }
+    .controls {
+        margin-left: auto;
+        text-align: end;
+        width: 45%;
+      }
+  
+      .button{
+        /*影の基点とするためrelativeを指定*/
+        position: relative;
+          /*ボタンの形状*/
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        background: transparent;
+        border-radius: 25px;
+        border: solid 1px #333;
+        outline: none;
+          /*アニメーションの指定*/
+        transition: all 0.2s ease;
+      }
+      
+      /*hoverをした後のボタンの形状*/
+      .button:hover{
+        border-color:transparent; 
+      }
+      
+      /*ボタンの中のテキスト*/
+      .button span {
+        position: relative;
+        z-index: 2;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+          /*テキストの形状*/
+        display: block;
+        padding: 4px 15px;
+        background:#5c5d5e;
+        border-radius: 25px;
+        color:white;
+          /*アニメーションの指定*/
+        transition: all 0.3s ease;
+      }
+      
+      /*== 下に押し込まれる（立体が平面に） */
+      
+      /*影の設定*/
+      .button:before {
+          content:"";
+          /*絶対配置で影の位置を決める*/
+        position: absolute;
+        z-index: -1;
+        top:3px;
+        left:2px;
+          /*影の形状*/
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        background-color: #333;
+      }
+      
+      /*hoverの際にY軸に4pxずらす*/
+      .button:hover span {
+        background-color: rgb(51, 33, 140);
+        color: #fff;
+        transform: translateY(4px);
+      }
 
     .white_text{
         color: white;
-
-        .list_title {
-            display: inline-block;
-            font-size: 2rem;
-            position: relative;
-            left: 18%;
-            top: 10%;
-        }
     }
 
-
-    .add {
-        margin-top: 50px;
-
-        .btn_cubic {
-            border-bottom: 5px solid #21366a;
-        }
-
-        .btn_cubic:hover {
-            margin-top: 3px;
-            border-bottom: 2px solid #88e350;
-        }
-
-        .btn_radius {
-            border-radius: 100vh;
-        }
-
-        .change {
-            position: absolute;
-            top: 14%;
-            left: 84%;
-            margin-left: 55px;
-        }
-
-        .btn_back {
-            background-color: #4144a1;
-            color: white;
-            width: 8%;
-        }
-    }
-    .text_right {
-        text-align: center;
-        margin-bottom: 50px;
-        margin-top: 100px;
+    .delete_wrap {
+        text-align: right;
+        margin-top: 65px;
 
         a {
             margin: 0 40px;
@@ -95,14 +91,14 @@ body {
             background-color: black;
             text-align: center;
             list-style: none;
-            width: 70%;
+            width: 90%;
             margin: auto;
             height: 4vh;
             line-height: 4vh;
             font-size: large;
             display: flex;
             align-items: center;
-            margin-top: 120px;
+            margin-top: 30px;
             padding: 0;
 
             .index1 {
@@ -112,6 +108,7 @@ body {
             .preview1 {
                 width: 20%;
                 text-align: center;
+                min-width: 91px;
             }
 
             .song_title1 {
@@ -135,16 +132,12 @@ body {
             .delete1 {
                 width: 11%;
             }
-
-            li {
-                display: inline;
-            }
         }
         .list_content {
             color: white;
             background-color: rgba(51, 228, 149, 0.47);
             text-align: center;
-            width: 70%;
+            width: 90%;
             margin: auto;
             font-size: large;
 
@@ -154,7 +147,6 @@ body {
                 align-items: center;
 
                 li {
-                    display: inline;
                     height: 4vh;
                     line-height: 4vh;
                 }
@@ -219,14 +211,238 @@ body {
     }
     audio {
         position: absolute;
-        width: 10%;
+        width: 15%;
         height: 4%;
-        margin-left: 10px;
+        max-width: 260px;
     }
+}
+
+.new-button {
+    margin: 10px;
+}
+
+.list_name {
+    position: relative;
 
     .name_list {
         position: relative;
         left: 16%;
         top: 8%;
     }
+
+    .list_title {
+        font-size: 2rem;
+        position: relative;
+        left: 18%;
+        top: 10%;
+    }
+}
+
+.list-head {
+    color: white;
+    padding-left: calc(52px);
+    display: flex;
+
+    h1 {
+        width:-moz-fit-content; /* Firefox */
+        width:fit-content;
+        margin: 10px;
+        margin-top: 0;
+        font-size: 3rem;
+    }
+}
+
+.delete_list {
+    font-size: 1.3rem;
+}
+
+.media_add {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.label {
+    color: rgb(26, 210, 251);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+    .controls {
+        display: none;
+    }
+
+    .delete_wrap {
+        text-align: center !important;
+    }
+
+    .list-head {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .text_center {
+        text-align: center;
+    }
+
+    .status1 {
+        display: none;
+    }
+    .status {
+        display: none;
+    }
+
+    .list_header {
+        display: none !important;
+    }
+    .artist {
+        display: none;
+    }
+
+    .song_title {
+        margin: 0 20px;
+    }
+
+    .song_title::-webkit-scrollbar {
+        display:none;
+    }
+
+    .mobile_artist {
+        font-size: 12px;
+    }
+
+    .line_height {
+        line-height: 120%;
+    }
+
+    .preview {
+        width: 45% !important;
+    }
+
+    .preview audio {
+        width: 37%;
+    }
+
+    .index {
+        margin-left: 10px;
+    }
+
+    .delete_span {
+        display: none;
+    }
+
+    .list_change2 {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 669px) {
+    .media_add {
+        display: none;
+    }
+    .mobile_artist {
+        display: none !important;
+    }
+}
+
+.blank {
+    margin-top: 10px;
+    min-height: 40px;
+}
+
+
+.song_title {
+    height: auto !important;
+}
+
+.list_change {
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .btn_cubic1 {
+        border-bottom: 5px solid #21366a;
+    }
+
+    .btn_cubic1:hover {
+        margin-top: 3px;
+        border-bottom: 2px solid #d75b45;
+    }
+
+    .btn_cubic2 {
+        border-bottom: 5px solid #21366a;
+    }
+
+    .btn_cubic2:hover {
+        margin-top: 3px;
+        border-bottom: 2px solid #45d74f;
+    }
+
+
+    .btn_radius {
+        border-radius: 100vh;
+    }
+
+    .change {
+        top: 14%;
+        left: 72%;
+        margin-left: 30px;
+        margin-right: 30px;
+        min-width: 170px;
+    }
+
+    .btn_back {
+        background-color: #4144a1;
+        color: white;
+        width: 10%;
+    }
+}
+
+
+.list_change2 {
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .btn_cubic1 {
+        border-bottom: 5px solid #21366a;
+    }
+
+    .btn_cubic1:hover {
+        margin-top: 3px;
+        border-bottom: 2px solid #d75b45;
+    }
+
+    .btn_cubic2 {
+        border-bottom: 5px solid #21366a;
+    }
+
+    .btn_cubic2:hover {
+        margin-top: 3px;
+        border-bottom: 2px solid #45d74f;
+    }
+
+
+    .btn_radius {
+        border-radius: 100vh;
+    }
+
+    .change {
+        top: 14%;
+        left: 72%;
+        margin-left: 30px;
+        margin-right: 30px;
+        min-width: 170px;
+    }
+
+    .btn_back {
+        background-color: #4144a1;
+        color: white;
+        width: 10%;
+    }
+}
+#song_status {
+    margin-right: 20px;
 }

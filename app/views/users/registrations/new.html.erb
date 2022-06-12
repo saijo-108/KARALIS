@@ -2,41 +2,26 @@
   <%= stylesheet_link_tag 'users/registrations' %>
 <% end %>
 
+<div class="space"></div>
+
 <div class="text_align z_index2 wrapper">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <h1 class="white_text">新規ユーザー登録</h1>
+    <h1 class="white_text z">新規ユーザー登録</h1>
 
-  <%= render "shared/error_messages", resource: resource %>
-  <div class="white_text block">
-    <table>
-      <tr>
-        <th class="hissu">
-          <%= f.label :name%>
-          <font>(20文字以内)</font>
-        </th>
-        <td><%= f.text_field :name, autofocus: true, autocomplete: "user-name", class:"name_text", size:"30" %></td>
-      </tr>
-      <tr>
-        <th class="hissu"><%= f.label :email%></th>
-        <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"email_text", size:"30" %></td>
-      </tr>
-      <tr>
-        <th class="hissu">
-          <%= f.label :password%>
-          <font>(6文字以上)</font>
-        </th>
-        <td><%= f.password_field :password, autocomplete: "new-password", class:"password_text", size:"30" %></td>
-      </tr>
-      <tr>
-        <th class="hissu"><%= f.label :password_confirmation%></th>
-        <td><%= f.password_field :password_confirmation, autocomplete: "new-password", class:"password2_text", size:"30" %>
-      </tr>
-    </table>
-    <div class="send_btn"><%= f.submit "登録", class:"btn btn-primary" %></div>
-  </div>
-  <% end %>
+    <%= render "shared/error_messages", resource: resource %>
+    <div class="white_text block">
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "user-name", class:"name_text", size:"30", placeholder:"ユーザーネーム" %>
+      <%= f.label :email, class:"" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"メールアドレス", class:"email_text" %>
+      <%= f.label :password, class:"" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"パスワード", class:"password_text" %>
+      <%= f.label :password_confirmation%>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"password2_text", size:"30", placeholder:"パスワード確認" %>
+      <div class="send_btn"><%= f.submit "登録", class:"btn btn-primary" %></div>
+    </div>
   <div class="white_text to_login">
     登録済みの方は<%= link_to "こちら", new_user_session_path %>
   </div>
-
+  <% end %>
 </div>

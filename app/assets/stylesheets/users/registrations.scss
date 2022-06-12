@@ -5,16 +5,6 @@ body {
 
     .wrapper {
         width: 100%;
-        height: 100%;
-    }
-
-    .z_index2 {
-        z-index: 2;
-        position: relative;
-    }
-
-    .z_index1 {
-        z-index: 1;
     }
 
     .text_align {
@@ -23,39 +13,22 @@ body {
 
     .block {
         display: inline-grid;
-        box-shadow: rgb(0, 0, 0) 0px 2px 10px;
-        background-color: rgb(255, 255, 255);
+        box-shadow: #86f500 0px 2px 10px;
+        background-color: white;
         border-radius: 5px;
-        width: 100%;
-        padding: 2rem;
-        max-width: 550px;
+        width: 40%;
+        padding: 20px;
         margin: auto;
         color: black;
 
         input {
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
-    }
-
-    .background_img {
-        width: 50%;
-        height: 570px;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-        opacity: 1;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-    }
-
-    .margin_auto {
-        margin: auto;
     }
 
     .send_btn {
         text-align: center;
-        margin-top: 1rem;
+        margin-bottom: 30px;
 
         input {
             width: 40%;
@@ -72,24 +45,33 @@ body {
     .new {
         margin-top: 2rem;
     }
+}
 
-    form table{
-        border-spacing: 0;
-    }
-    form td{
-        padding: 10px;
-        border-bottom: 1px solid #EEE;
-    }
-    form th{
-        padding: 15px;
-        border-bottom: 1px solid #EEE;
-        text-align: left;
-        font-weight: normal;
-        vertical-align: top;
-        width: 9rem;
-    }
+.space {
+  min-height: 40px;
+  margin-top: 10px;
+}
 
-    .to_login {
-        margin-top: 1rem;
+@media only screen and (max-width: 750px) {
+    .block {
+        width: 80% !important;
     }
+}
+
+.z {
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    color: black;
+    border-color: #070707;
+    background-color: #00ff63c9;
+}
+
+.forget_text {
+    color: #caf403;
+}
+
+.to_login {
+    margin-top: 30px;
 }

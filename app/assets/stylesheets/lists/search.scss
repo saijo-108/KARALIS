@@ -21,8 +21,9 @@ body {
 
     .result {
         text-align: center;
-        margin: 28px;
-        width: 16%;
+        margin: 10px;
+        min-width: 260px;
+        flex-wrap: wrap;
     }
 
     .song-name {
@@ -36,22 +37,13 @@ body {
         flex-wrap: wrap;
         width: 100%;
         margin: auto;
+        justify-content: center;
     }
 
     .artist-name {
         font-size: 15px;
     }
 
-    .spotify {
-
-        .spotify iframe {
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-        }
-    }
 
     .color {
         color: white;

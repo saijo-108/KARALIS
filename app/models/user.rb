@@ -3,8 +3,8 @@ class User < ApplicationRecord
   has_many :songs, dependent: :destroy
   has_many :group_users
   has_many :groups, through: :group_users, dependent: :destroy
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :comments
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[line]

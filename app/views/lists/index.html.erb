@@ -3,6 +3,8 @@
     <%= stylesheet_link_tag 'lists/index' %>
 <% end %>
 
+<div class="space"></div>
+
 <div class="flex">
   <div class="list">
     <div class="list-head">
@@ -22,19 +24,33 @@
         <% end %>
       </div>
     </div>
-      <% if @lists.size >= 2 %>
-        <div class="playlist">
-          <%= render 'list_tile' %>
-        </div>
-      <% elsif @lists.size == 1 %>
-      <div class="one_playlist">
-        <%= render 'one_tile' %>
+    <% if @lists.size >= 2 %>
+      <div class="playlist">
+        <%= render 'list_tile' %>
       </div>
-      <% else %>
-        <div class="no_playlist white_text">
-          <p><%= t(".not_list") %></p>
-        </div>
-      <% end %>
+    <% elsif @lists.size == 1 %>
+    <div class="one_playlist">
+      <%= render 'one_tile' %>
+    </div>
+    <% else %>
+      <div class="no_playlist white_text">
+        <p><%= t(".not_list") %></p>
+      </div>
+    <% end %>
   </div>
 </div>
+
+<div class="controls2">
+  <%= link_to new_list_path do %>
+    <div class="button new-button">
+      <span><%= t(".new_list") %></span>
+    </div>
+  <% end %>
+  <%= link_to groups_path do %>
+    <div class="button new-button">
+      <span><%= t(".joined_group") %></span>
+    </div>
+  <% end %>
+</div>
+
 <%= javascript_pack_tag 'lists/index' %>

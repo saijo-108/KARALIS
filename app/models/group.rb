@@ -5,6 +5,7 @@ class Group < ApplicationRecord
 
   has_many :list_groups
   has_many :lists, through: :list_groups, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 20 }
   validates :description, length: { maximum: 250 }
@@ -16,4 +17,6 @@ class Group < ApplicationRecord
   def delete_list_groups(list)
     lists.delete(list)
   end
+
+
 end

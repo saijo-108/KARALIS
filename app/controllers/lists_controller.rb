@@ -4,8 +4,6 @@ class ListsController < ApplicationController
   require 'rspotify'
   require 'open-uri'
 
-  RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
-
   def new
     @list = current_user.lists.build
   end
@@ -22,7 +20,7 @@ class ListsController < ApplicationController
   end
 
   def index
-    @lists = List.user_lists_get(current_user.id)
+    @lists = List.user_lists_get(current_user)
     @songs = Song.where(list_id: @lists.ids)
     @tile = []
   end

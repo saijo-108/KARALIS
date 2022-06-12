@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_23_090457) do
+ActiveRecord::Schema.define(version: 2022_05_29_123203) do
+
+  create_table "comments", charset: "utf8mb3", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_comments_on_group_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "group_users", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id"
@@ -24,7 +34,6 @@ ActiveRecord::Schema.define(version: 2022_05_23_090457) do
   create_table "groups", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
-    t.integer "role", default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -75,6 +84,8 @@ ActiveRecord::Schema.define(version: 2022_05_23_090457) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "groups"
+  add_foreign_key "comments", "users"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
   add_foreign_key "list_groups", "groups"
