@@ -49,5 +49,9 @@
             </ul>
           <% end %> 
         <% end %>
+
+        <% unless @song.any? %>
+          <span class="white_text">曲がありません</span>
+        <% end %>
   </div>
 </div>
