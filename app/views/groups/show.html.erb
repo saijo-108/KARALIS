@@ -55,7 +55,8 @@
   </div>
 </div>
 
-<div class="white_text board text_center">
+<% if false %>
+  <div class="white_text board text_center">
     <h2>コミュニケーションボード</h2>
 
     <div id="scroll-inner", class="content_size">
@@ -80,6 +81,8 @@
       <% end %>
     </div>
   </div>
+<% end %>
+
 
 <div class="list_change">
   <% @list.each do |list| %>
