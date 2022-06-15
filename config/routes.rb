@@ -24,4 +24,6 @@ Rails.application.routes.draw do
       delete 'group_destroy'
     end
   end
+
+  get "/pages/*id" => 'pages#show', as: :page, format: false
 end
