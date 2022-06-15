@@ -33,21 +33,31 @@
         <% elsif @nonrelease_song.any? %>
           <% @release_song.each_with_index do |release, i| %>
             <ul class="list">
-              <li class="index"><%= i+1 %>.</li>
-              <li class="preview click"><audio controls controlslist="nodownload" src="<%= release.preview %>"></audio></li>
-              <li class="song_title"><%= release.song_title %></li>
-              <li class="artist"><%= release.artist %></li>
+                  <li class="index"><%= i+1 %>.</li>
+                  <li class="song_title">
+                      <div class="line_height"><span><%= release.song_title %></span></div>
+                      <div class="line_height"><span class="mobile_artist"><%= release.artist %></span></div>
+                  </li>
+                  <li class="artist"><%= release.artist %></li>
+                  <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
             </ul>
           <% end %>
         <% else %>
           <% @song.each_with_index do |song, i| %>
           <ul class="list">
-                <li class="index"><%= i+1 %>.</li>
-                <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
-                <li class="song_title"><%= song.song_title %></li>
-                <li class="artist"><%= song.artist %></li>
+                  <li class="index"><%= i+1 %>.</li>
+                  <li class="song_title">
+                      <div class="line_height"><span><%= song.song_title %></span></div>
+                      <div class="line_height"><span class="mobile_artist"><%= song.artist %></span></div>
+                  </li>
+                  <li class="artist"><%= song.artist %></li>
+                  <li class="preview click"><audio controls controlslist="nodownload" src="<%= song.preview %>"></audio></li>
             </ul>
           <% end %> 
+        <% end %>
+
+        <% unless @song.any? %>
+          <span class="white_text">曲がありません</span>
         <% end %>
   </div>
 </div>
