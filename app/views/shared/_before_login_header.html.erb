@@ -5,13 +5,11 @@
         <%= image_tag 'logo.png', class:"logo", title:"ホーム画面へ" %>
       <% end %>
     </div>
-    <button class='navbar-toggler' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-      <span class='navbar-toggler-icon'></span>
-    </button>
 
-    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+
+    <div class='navbar-collapse'>
       <ul class='navbar-nav ml-auto main-nav align-items-center'>
-        <li class='nav-item ml-5 dropdown dropdown-slide'>
+        <li class='nav-item ml-5 dropdown dropdown-slide  smphidden'>
           <%= link_to "使用方法", root_path(anchor: 'how'), class:'text-color use_menu link' %>
         </li>
 

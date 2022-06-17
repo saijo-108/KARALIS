@@ -237,6 +237,20 @@ html {
     margin-right: 0 !important;
   }
 }
+@media only screen and (max-width: 993px) {
+  .smphidden {
+    display: none;
+  }
+
+  .navbar-collapse {
+    flex-basis: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: unset;
+    justify-content: space-around;
+  }
+}
 
 .teketeke {
   text-align: center;
