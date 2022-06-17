@@ -109,6 +109,6 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
 
-  config.action_mailer.default_url_options = { host: 'http://www.playlist-karalis.com/'}
+  config.action_mailer.default_url_options = { host: 'https://www.playlist-karalis.com/'}
 
 end

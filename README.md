@@ -6,7 +6,9 @@
 あらかじめカラオケに行くメンバーでグループを作り、好きな曲を共有できるサービスです
 
 ## URL
-http://www.playlist-karalis.com
+
+https://www.playlist-karalis.com/
+
 
 ## 開発環境
 
