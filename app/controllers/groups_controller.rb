@@ -34,8 +34,7 @@ class GroupsController < ApplicationController
     @my_list = @list.find { |n| n.user_id == current_user.id }
     @list_group = ListGroup.find_by(list_id: @my_list.id, group_id: @group).id if @my_list.present?
     @group_user = GroupUser.where(group_id: @group.id)
-    @leader = GroupUser.find_by(group_id: @group)
-    @times = GroupUser.where(group_id: @group)
+    @leader = @group_user.first
     @comments = @group.comments
     @comment = current_user.comments.new
   end
