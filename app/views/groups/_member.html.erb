@@ -7,17 +7,17 @@
       <th class="th_top destroy"></th>
     <% end %>
   </tr>
-  <% @members.zip(@times).each do |member, time| %>
+  <% @members.zip(@group_user).each do |member, group_user| %>
     <tr class="white_text">
     <td scope="row"><%= member.name %></td>
-    <td><%= time.created_at.strftime('%Y/%m/%d') %></td>
-    <% @list.zip(@group_user).each do |list, group_user| %>
+    <td><%= group_user.created_at.strftime('%Y/%m/%d') %></td>
+    <% @list.each do |list| %>
       <% if member.id == list.user_id %>
           <td><%= link_to list.name,list_path(list) %>
           </td>
-          <% if @leader.user_id == current_user.id %>
+          <% if current_user.own?(@leader) %>
             <div class="delete_btn">
-              <% unless current_user.id == member.id %>
+              <% unless current_user == member %>
                 <td><%= link_to t('defaults.destroy'), group_group_user_path(group_user.group_id, group_user.id), class:"text_red side", method: :delete , data: { confirm: "メンバーをグループから削除しますか？" } %></td>
               <% end %>
             </div>
