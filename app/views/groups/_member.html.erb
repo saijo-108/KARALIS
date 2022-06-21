@@ -10,7 +10,7 @@
   <% @members.zip(@group_user).each do |member, group_user| %>
     <tr class="white_text">
     <td scope="row"><%= member.name %></td>
-    <td><%= group_user.created_at.strftime('%Y/%m/%d') %></td>
+    <td><%= show_date(@group.created_at)  %></td>
     <% @list.each do |list| %>
       <% if member.id == list.user_id %>
           <td><%= link_to list.name,list_path(list) %>

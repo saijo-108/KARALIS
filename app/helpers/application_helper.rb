@@ -19,5 +19,15 @@ module ApplicationHelper
     base_image = "http://www.playlist-karalis.com/assets/og_image.png"
     page_image.empty? ? base_image : page_image
   end
+
+  def show_date(time)
+    return time unless time
+    time.strftime('%Y/%m/%d')
+  end
+
+  def show_at(time)
+    return time unless time
+    time.strftime('%Y/%m/%d /%H:%M')
+  end
 end
 
