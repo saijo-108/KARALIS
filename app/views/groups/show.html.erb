@@ -62,7 +62,7 @@
     <% @comments.each_with_index do |comment, i| %>
       <div class="bubble comment_text">
         <p class="comment_name"><%= "#{i+1}: " %><%= comment.user.name %>さん
-          <font class="comment_date"><%= comment.created_at.strftime('%Y/%m/%d /%H:%M') %></font>
+          <font class="comment_date"><%= show_at(comment.created_at) %></font>
         </p>
         <%= simple_format(comment.content, { class: 'comment_content' }) %>
         <% if current_user.own?(comment) %>

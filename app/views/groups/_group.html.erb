@@ -13,7 +13,7 @@
             <% end %>
           </td>
           <td><%= group.users.count %>人</td>
-          <td><%= group.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= show_date(group.created_at) %></td>
         <% end %>
       </tr>
   <% end %>
