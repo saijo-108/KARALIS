@@ -4,25 +4,23 @@ class ListsController < ApplicationController
   require 'rspotify'
   require 'open-uri'
 
-  def new
-    @list = current_user.lists.build
-  end
-
-  def create
-    @list = current_user.lists.build(list_params)
-    if @list.save
-      redirect_to list_path(@list.id)
-      flash[:success] = 'リストを作成しました'
-    else
-      flash.now['alert'] = ' リストが作成できませんでした'
-      render :new
-    end
-  end
-
   def index
     @lists = List.user_lists_get(current_user)
     @songs = Song.where(list_id: @lists.ids)
     @tile = []
+  end
+
+  def new
+    @list = List.new
+  end
+
+  def create
+    @list = current_user.lists.new(list_params)
+    if @list.save
+      redirect_to list_path(@list.id), success: t('.success')
+    else
+      render :new
+    end
   end
 
   def show
