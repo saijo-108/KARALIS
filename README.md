@@ -7,7 +7,7 @@
 
 ## URL
 
-https://www.playlist-karalis.com/
+http://www.playlist-karalis.com/
 
 
 ## 開発環境
