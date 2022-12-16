@@ -446,3 +446,18 @@ body {
 #song_status {
     margin-right: 20px;
 }
+
+#pagenate {
+    margin-top: 40px;
+    .pagination {
+        justify-content: center;
+        li a {
+            // ページネーションの枠と文字色
+            // border: none;
+            color: #342929;
+            &:hover {
+                background: #96a3f8;
+            }
+        }
+    }
+}
