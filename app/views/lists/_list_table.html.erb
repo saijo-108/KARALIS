@@ -14,7 +14,7 @@
           <% @song.each_with_index do |song, i| %>
             <%= form_with model: [list, song], local: true do |f| %>
               <ul class="list">
-                  <li class="index"><%= i+1 %>.</li>
+                  <li class="index"><%= @number + i + 1 %>.</li>
                   <li class="song_title">
                       <div class="line_height"><span><%= song.song_title %></span></div>
                       <div class="line_height"><span class="mobile_artist"><%= song.artist %></span></div>
@@ -61,3 +61,9 @@
         <% end %>
   </div>
 </div>
+
+<div id="pagenate">
+  <%= paginate @song %>
+</div>
+
+

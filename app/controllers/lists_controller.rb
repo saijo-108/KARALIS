@@ -24,7 +24,14 @@ class ListsController < ApplicationController
   end
 
   def show
-    @song = Song.where(list_id: @list.id)
+    @song = Song.where(list_id: @list.id).page(params[:page]).per(10)
+    # 連番用に@numberを設定
+    @number = ((params[:page] || 1).to_i - 1) * 10
+    # ページネーションの非同期
+    respond_to do |format|
+      format.html
+      format.js
+    end
     @release_song = @song.where(status: 'release')
     @nonrelease_song = @song.where(status: 'nonrelease')
   end
