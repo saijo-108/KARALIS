@@ -71,3 +71,5 @@ https://www.figma.com/file/sA4mDfDNVGTelE5aYOK7V9/KARALIS%E9%81%B7%E7%A7%BB%E5%9
 
 ## ER図
 https://drive.google.com/file/d/1V5Z9oEObnO-8dXtsp-iB-VgP986EbSdH/view?usp=sharing
+
+
